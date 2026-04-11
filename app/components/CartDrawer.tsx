@@ -3,12 +3,17 @@
 import { useCart } from "../context/cart";
 import { useState } from "react";
 
-const DELIVERY_FEE = 1;
 const WHATSAPP_NUMBER = "96181526075";
+
+const DELIVERY_ZONES = [
+  { label: "Anfeh", fee: 1 },
+  { label: "Chekka", fee: 3 },
+];
 
 type CustomerInfo = {
   name: string;
   phone: string;
+  zone: string;
   location: string;
   notes: string;
 };
@@ -17,6 +22,7 @@ function buildWhatsAppMessage(
   items: ReturnType<typeof useCart>["items"],
   subtotal: number,
   customer: CustomerInfo,
+  deliveryFee: number,
 ) {
   const grouped: Record<string, typeof items> = {};
   for (const item of items) {
@@ -29,7 +35,8 @@ function buildWhatsAppMessage(
 
   msg += `👤 *Customer:* ${customer.name}\n`;
   msg += `📞 *Phone:* +961${customer.phone}\n`;
-  msg += `📍 *Location:* ${customer.location}\n\n`;
+  msg += `📍 *Area:* ${customer.zone}\n`;
+  msg += `🏠 *Address:* ${customer.location}\n\n`;
 
   for (const [restaurant, restaurantItems] of Object.entries(grouped)) {
     msg += `🏪 *${restaurant}*\n`;
@@ -50,8 +57,8 @@ function buildWhatsAppMessage(
   msg += "━━━━━━━━━━━━━━━━━━━━\n";
   const hasLbp = items.some((i) => i.price === null);
   msg += `📦 Subtotal: $${subtotal.toFixed(2)}\n`;
-  msg += `🚚 Delivery: +$${DELIVERY_FEE}.00\n`;
-  msg += `💰 *Total: $${(subtotal + DELIVERY_FEE).toFixed(2)}*`;
+  msg += `🚚 Delivery (${customer.zone}): +$${deliveryFee.toFixed(2)}\n`;
+  msg += `💰 *Total: $${(subtotal + deliveryFee).toFixed(2)}*`;
   if (hasLbp) msg += ` *(+ LBP items)*`;
   msg += "\n\nPlease confirm my order. Thank you! 🙏";
 
@@ -65,12 +72,15 @@ export default function CartDrawer() {
   const [customer, setCustomer] = useState<CustomerInfo>({
     name: "",
     phone: "",
+    zone: DELIVERY_ZONES[0].label,
     location: "",
     notes: "",
   });
   const [errors, setErrors] = useState({ name: false, phone: false, location: false });
 
-  const total = subtotal + DELIVERY_FEE;
+  const deliveryFee = DELIVERY_ZONES.find((z) => z.label === customer.zone)?.fee ?? 1;
+
+  const total = subtotal + deliveryFee;
 
   function handleOrder() {
     const hasName = customer.name.trim().length > 0;
@@ -80,14 +90,14 @@ export default function CartDrawer() {
       setErrors({ name: !hasName, phone: !hasPhone, location: !hasLocation });
       return;
     }
-    const msg = buildWhatsAppMessage(items, subtotal, customer);
+    const msg = buildWhatsAppMessage(items, subtotal, customer, deliveryFee);
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank");
   }
 
   function handleClear() {
     clearCart();
-    setCustomer({ name: "", phone: "", location: "", notes: "" });
+    setCustomer({ name: "", phone: "", zone: DELIVERY_ZONES[0].label, location: "", notes: "" });
     setErrors({ name: false, phone: false, location: false });
   }
 
@@ -267,13 +277,42 @@ export default function CartDrawer() {
                     )}
                   </div>
 
+                  {/* Delivery Zone */}
+                  <div>
+                    <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-slate-300">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+                      </svg>
+                      Delivery Area <span className="text-[#1AABBD]">*</span>
+                    </label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {DELIVERY_ZONES.map((zone) => (
+                        <button
+                          key={zone.label}
+                          type="button"
+                          onClick={() => setCustomer((p) => ({ ...p, zone: zone.label }))}
+                          className={`flex flex-col items-center rounded-xl border py-3 text-sm font-semibold transition ${
+                            customer.zone === zone.label
+                              ? "border-[#1AABBD] bg-[#1AABBD]/10 text-white"
+                              : "border-white/10 bg-white/5 text-slate-400 hover:border-white/20"
+                          }`}
+                        >
+                          {zone.label}
+                          <span className={`mt-0.5 text-xs font-bold ${customer.zone === zone.label ? "text-[#F9B233]" : "text-slate-600"}`}>
+                            +${zone.fee}.00
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Location */}
                   <div>
                     <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-slate-300">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
                       </svg>
-                      Delivery Location <span className="text-[#1AABBD]">*</span>
+                      Delivery Address <span className="text-[#1AABBD]">*</span>
                     </label>
                     <input
                       type="text"
@@ -321,8 +360,8 @@ export default function CartDrawer() {
                   <span>${subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-slate-400">
-                  <span>Delivery fee</span>
-                  <span>+${DELIVERY_FEE}.00</span>
+                  <span>Delivery ({customer.zone})</span>
+                  <span>+${deliveryFee}.00</span>
                 </div>
                 <div className="flex justify-between border-t border-white/10 pt-2 text-base font-bold text-white">
                   <span>Total</span>
