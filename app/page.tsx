@@ -1,4 +1,3 @@
-import Image from "next/image";
 import data from "./data/restaurants.json";
 import RestaurantGrid from "./components/RestaurantGrid";
 
@@ -108,20 +107,6 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Right — logo */}
-            <div className="hidden md:flex md:w-72 lg:w-80 items-center justify-center">
-              <div className="relative h-72 w-72 lg:h-80 lg:w-80">
-                {/* Glow ring */}
-                <div className="absolute inset-0 rounded-full bg-[#1AABBD]/10 blur-2xl" />
-                <Image
-                  src="/logos/visit-anfeh-delivery-logo.jpg"
-                  alt="Visit Anfeh Delivery"
-                  fill
-                  className="relative rounded-3xl object-contain drop-shadow-2xl"
-                  priority
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>

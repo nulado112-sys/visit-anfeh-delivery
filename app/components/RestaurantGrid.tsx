@@ -122,24 +122,20 @@ export default function RestaurantGrid({
                     }}
                   />
 
-                  {/* Logo centered with white card */}
-                  <div className="absolute inset-0 flex items-center justify-center p-6">
-                    <div className="relative h-full w-full max-h-28 max-w-[180px] overflow-hidden rounded-xl bg-white/95 shadow-lg backdrop-blur-sm">
-                      {restaurant.logo ? (
-                        <LogoImage
-                          src={`/logos/${restaurant.logo}`}
-                          alt={restaurant.name}
-                          fill
-                          fallback={restaurant.name[0]}
-                          className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
-                        />
-                      ) : (
-                        <div className="flex h-full items-center justify-center text-3xl font-black text-[#1AABBD]">
-                          {restaurant.name[0]}
-                        </div>
-                      )}
+                  {/* Logo full cover */}
+                  {restaurant.logo ? (
+                    <LogoImage
+                      src={`/logos/${restaurant.logo}`}
+                      alt={restaurant.name}
+                      fill
+                      fallback={restaurant.name[0]}
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-5xl font-black text-white/80">
+                      {restaurant.name[0]}
                     </div>
-                  </div>
+                  )}
 
                   {/* Index badge */}
                   <div className="absolute top-3 left-3 flex h-7 w-7 items-center justify-center rounded-lg bg-black/30 text-xs font-black text-white backdrop-blur-sm">
