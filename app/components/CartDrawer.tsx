@@ -8,6 +8,7 @@ const WHATSAPP_NUMBER = "96181526075";
 
 type CustomerInfo = {
   name: string;
+  phone: string;
   location: string;
   notes: string;
 };
@@ -27,6 +28,7 @@ function buildWhatsAppMessage(
   msg += "━━━━━━━━━━━━━━━━━━━━\n\n";
 
   msg += `👤 *Customer:* ${customer.name}\n`;
+  msg += `📞 *Phone:* +961${customer.phone}\n`;
   msg += `📍 *Location:* ${customer.location}\n\n`;
 
   for (const [restaurant, restaurantItems] of Object.entries(grouped)) {
@@ -62,18 +64,20 @@ export default function CartDrawer() {
 
   const [customer, setCustomer] = useState<CustomerInfo>({
     name: "",
+    phone: "",
     location: "",
     notes: "",
   });
-  const [errors, setErrors] = useState({ name: false, location: false });
+  const [errors, setErrors] = useState({ name: false, phone: false, location: false });
 
   const total = subtotal + DELIVERY_FEE;
 
   function handleOrder() {
     const hasName = customer.name.trim().length > 0;
+    const hasPhone = customer.phone.trim().length > 0;
     const hasLocation = customer.location.trim().length > 0;
-    if (!hasName || !hasLocation) {
-      setErrors({ name: !hasName, location: !hasLocation });
+    if (!hasName || !hasPhone || !hasLocation) {
+      setErrors({ name: !hasName, phone: !hasPhone, location: !hasLocation });
       return;
     }
     const msg = buildWhatsAppMessage(items, subtotal, customer);
@@ -83,8 +87,8 @@ export default function CartDrawer() {
 
   function handleClear() {
     clearCart();
-    setCustomer({ name: "", location: "", notes: "" });
-    setErrors({ name: false, location: false });
+    setCustomer({ name: "", phone: "", location: "", notes: "" });
+    setErrors({ name: false, phone: false, location: false });
   }
 
   return (
@@ -227,6 +231,39 @@ export default function CartDrawer() {
                     />
                     {errors.name && (
                       <p className="mt-1 text-xs text-red-400">Please enter your full name</p>
+                    )}
+                  </div>
+
+                  {/* Phone Number */}
+                  <div>
+                    <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-slate-300">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.76h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.4a16 16 0 0 0 5.69 5.69l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.22 17l-.3-.08z"/>
+                      </svg>
+                      Phone Number <span className="text-[#1AABBD]">*</span>
+                    </label>
+                    <div className="flex gap-2">
+                      <div className="flex items-center rounded-xl border border-white/10 bg-white/5 px-3 text-sm font-semibold text-slate-300 select-none">
+                        +961
+                      </div>
+                      <input
+                        type="tel"
+                        placeholder=""
+                        value={customer.phone}
+                        onChange={(e) => {
+                          const val = e.target.value.replace(/\D/g, "").slice(0, 8);
+                          setCustomer((p) => ({ ...p, phone: val }));
+                          if (errors.phone) setErrors((p) => ({ ...p, phone: false }));
+                        }}
+                        className={`flex-1 rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:bg-white/10 ${
+                          errors.phone
+                            ? "border-red-500 focus:border-red-400"
+                            : "border-white/10 focus:border-[#1AABBD]"
+                        }`}
+                      />
+                    </div>
+                    {errors.phone && (
+                      <p className="mt-1 text-xs text-red-400">Please enter your phone number</p>
                     )}
                   </div>
 
