@@ -1,5 +1,16 @@
 @import "tailwindcss";
-@plugin "flowbite-react/plugin/tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

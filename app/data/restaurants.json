@@ -1,0 +1,3343 @@
+{
+  "city": "Anfeh",
+  "delivery_service": "Visit Anfeh Delivery",
+  "currency_note": "Prices in USD unless noted as LBP (L). Some menus use LBP in millions.",
+  "restaurants": [
+    {
+      "id": "kahwet-el-ostez",
+      "name": "Kahwet El Ostez",
+      "name_ar": "قهوة الإستاذ",
+      "logo": "kahwet-el-ostez-logo.jpg",
+      "source_url": "mysitescom.my.canva.site",
+      "categories": [
+        {
+          "name": "Breakfast",
+          "items": [
+            {
+              "name": "Oriental Tray",
+              "description": "Grilled Halloumi, labneh, zaatar and olives, served with toast bread and vegetables.",
+              "price": 10
+            },
+            {
+              "name": "French Tray",
+              "description": "2 plain croissants, toast bread, with butter, jams (strawberry and apricots).",
+              "price": 10
+            },
+            {
+              "name": "Halloumi Baguette",
+              "description": "Grilled halloumi, pesto sauce, rocca, tomatoes, served with green salad.",
+              "price": 8
+            }
+          ]
+        },
+        {
+          "name": "Croissants",
+          "items": [
+            {
+              "name": "Plain",
+              "price": 3
+            },
+            {
+              "name": "Zaatar",
+              "price": 4
+            },
+            {
+              "name": "Cheese",
+              "price": 4
+            },
+            {
+              "name": "Almond",
+              "price": 5
+            },
+            {
+              "name": "Choconoix",
+              "price": 5
+            },
+            {
+              "name": "Pain au Chocolat",
+              "price": 5
+            },
+            {
+              "name": "Muffins",
+              "description": "Pistachio, Nutella, Hershey's",
+              "price": 4
+            },
+            {
+              "name": "Cookies",
+              "description": "Original, double chocolate",
+              "price": 4
+            }
+          ]
+        },
+        {
+          "name": "Salads",
+          "items": [
+            {
+              "name": "Caesar Salad",
+              "description": "Iceberg, crouton, parmesan, served with Caesar dressing. Add-on: grilled chicken +3$, bacon +1.5$, shrimps +4$",
+              "price": 9
+            },
+            {
+              "name": "Chef Salad",
+              "description": "Iceberg, corn, cherry tomatoes, cucumber, red onions, pasta, tuna, eggs, olives, served with lemon mayo sauce.",
+              "price": 12
+            },
+            {
+              "name": "Chicken Butter",
+              "description": "Iceberg, red cabbage, carrots, peanuts, cucumber, noodles, chicken, sesame, served with creamy peanut sauce.",
+              "price": 15
+            },
+            {
+              "name": "Halloumi Quinoa",
+              "description": "Quinoa, rocca, cucumber, cherry tomatoes, mint, grilled halloumi, served with lemon mustard sauce.",
+              "price": 9
+            },
+            {
+              "name": "El Estez Salad",
+              "description": "Mixed greens (arugula, lollo rosso, iceberg), goat cheese, dried cranberries, dried apricots, walnuts, served with honey balsamic vinaigrette.",
+              "price": 11
+            },
+            {
+              "name": "Crab Salad",
+              "description": "Crab sticks, iceberg, cherry tomatoes, mushrooms, corn, pineapple, served with lemon mayo sauce.",
+              "price": 10
+            }
+          ]
+        },
+        {
+          "name": "Appetizers",
+          "items": [
+            {
+              "name": "Quesadillas",
+              "description": "Tortilla wrap, chicken, green and red pepper, mozzarella and cheddar cheese, served with salsa and sour cream.",
+              "price": 10
+            },
+            {
+              "name": "Nacho's Cheese",
+              "description": "Nachos, mozzarella and cheddar cheese, tomatoes, jalapeños, served with salsa and sour cream. Add-on: chicken +3$",
+              "price": 8
+            },
+            {
+              "name": "Fries",
+              "description": "Golden crispy fries.",
+              "price": 5
+            },
+            {
+              "name": "Loaded Fries",
+              "description": "Golden crispy fries, mozzarella and cheddar cheese served with special sauce.",
+              "price": 7
+            },
+            {
+              "name": "Chicken Loaded Fries",
+              "description": "Golden crispy fries, mozzarella and cheddar cheese, topped with crispy chicken tenders, served with honey mustard sauce.",
+              "price": 10
+            },
+            {
+              "name": "Wedges",
+              "description": "Wedges served with special sauce.",
+              "price": 6
+            },
+            {
+              "name": "Wings",
+              "description": "6 Crispy fried wings (Buffalo or Barbecue) served with ranch sauce.",
+              "price": 7
+            },
+            {
+              "name": "Chicken Tenders",
+              "description": "4 homemade fried chicken tenders served with honey mustard sauce.",
+              "price": 8
+            },
+            {
+              "name": "Chicken Nuggets",
+              "description": "6 Fried chicken nuggets served with french fries and cocktail sauce.",
+              "price": 6
+            },
+            {
+              "name": "Mozzarella Sticks",
+              "description": "5 Fried mozzarella sticks served with honey mustard.",
+              "price": 6
+            },
+            {
+              "name": "El Estez Tray",
+              "description": "Platter of grilled halloumi, labneh, grilled potatoes, vegetables.",
+              "price": 15
+            },
+            {
+              "name": "Fried Halloumi Osmalieh",
+              "description": "Served with fig jam.",
+              "price": 6.5,
+              "is_new": true
+            }
+          ]
+        },
+        {
+          "name": "Burgers",
+          "note": "All burgers are served with French fries",
+          "items": [
+            {
+              "name": "Grilled Chicken Burger",
+              "description": "Chicken breast, aioli sauce, lollo verde, dill pickles.",
+              "price": 10
+            },
+            {
+              "name": "Crispy Chicken Burger",
+              "description": "Fried crispy chicken breast, cheddar slice, honey mustard, chips, iceberg, dill pickles.",
+              "price": 12
+            },
+            {
+              "name": "Beef Burger",
+              "description": "Beef patty, special sauce, lollo verde, tomatoes, dill pickles.",
+              "price": 12
+            },
+            {
+              "name": "El Estez Beef",
+              "description": "(Loaf bread) beef patty, bacon, breaded cheddar, special sauce, rocca, dill pickles.",
+              "price": 15
+            },
+            {
+              "name": "El Estez Chicken",
+              "description": "(Loaf bread) crispy chicken, cheddar slice, ranch sauce, coleslaw, dill pickles.",
+              "price": 14
+            },
+            {
+              "name": "El Estez M7ar7ar",
+              "description": "(Beef or chicken) quesadillas mix (green and red pepper slices, onions, quesadillas pepper), mozzarella, cheddar, jalapeños, salsa and ranch sauce.",
+              "price": 10
+            },
+            {
+              "name": "Halloumi Burger",
+              "description": "Grilled halloumi, pesto mayo sauce, rocca, tomatoes.",
+              "price": 12
+            }
+          ],
+          "add_ons": [
+            {
+              "name": "Cheddar slice",
+              "price": 1
+            },
+            {
+              "name": "Bacon",
+              "price": 1.5
+            },
+            {
+              "name": "Breaded cheddar / breaded mozzarella / extra chicken / extra beef patty",
+              "price": 3
+            }
+          ]
+        },
+        {
+          "name": "Sandwiches - Baguettes",
+          "note": "All Sandwiches are served with French fries",
+          "items": [
+            {
+              "name": "Chicken Baguette",
+              "description": "Grilled chicken, aioli sauce, BBQ sauce, iceberg, pickles.",
+              "price": 11
+            },
+            {
+              "name": "Chicken Sub",
+              "description": "Grilled chicken, mozzarella, mayo, iceberg, tomatoes, pickles.",
+              "price": 12
+            },
+            {
+              "name": "Light Chicken",
+              "description": "Grilled chicken, mustard, arugula, tomatoes.",
+              "price": 11
+            },
+            {
+              "name": "Crispy Chicken Baguette",
+              "description": "Fried crispy tenders, honey mustard sauce, BBQ sauce, iceberg, pickles, cheddar sauce.",
+              "price": 12
+            },
+            {
+              "name": "Halloumi Baguette",
+              "description": "Grilled halloumi, pesto sauce, rocca, tomatoes.",
+              "price": 8
+            }
+          ],
+          "add_ons": [
+            {
+              "name": "Cheddar slice / parmesan",
+              "price": 1
+            },
+            {
+              "name": "Shredded mozzarella",
+              "price": 2
+            },
+            {
+              "name": "Shredded cheddar / mozzarella sticks / extra chicken",
+              "price": 3
+            },
+            {
+              "name": "Halloumi",
+              "price": 0.8
+            },
+            {
+              "name": "Bacon",
+              "price": 1.5
+            },
+            {
+              "name": "Extra beef patty",
+              "price": 5
+            }
+          ]
+        },
+        {
+          "name": "Sandwiches - Sourdough",
+          "items": [
+            {
+              "name": "Steak Sourdough",
+              "description": "Steak, blue cheese sauce, caramelized onions, arugula.",
+              "price": 15
+            },
+            {
+              "name": "Chicken Sourdough",
+              "description": "Grilled chicken, caesar sauce, sundried tomatoes, baby rocca, parmesan.",
+              "price": 15
+            },
+            {
+              "name": "Submarine Sourdough",
+              "description": "Ham, salami, swiss cheese, lollo verde, tomatoes, pickles, honey mustard.",
+              "price": 12
+            }
+          ]
+        },
+        {
+          "name": "Subs & Wraps",
+          "note": "All Subs & Wraps are served with French fries",
+          "items": [
+            {
+              "name": "Philly Sub",
+              "description": "Minced meat, green pepper, onions, mushroom & cheese",
+              "price": 15,
+              "is_new": true
+            },
+            {
+              "name": "Chick-N-Cheese Boom",
+              "description": "Chicken breast, sweet corn, mozarella, lettuce, aioli sauce.",
+              "price": 14,
+              "is_new": true
+            },
+            {
+              "name": "Chicken Crunch Wrap",
+              "description": "Crispy chicken, honey mustard, lettuce, cheddar sauce, pickles.",
+              "price": 9,
+              "is_new": true
+            }
+          ]
+        },
+        {
+          "name": "Pizza",
+          "items": [
+            {
+              "name": "Margherita",
+              "description": "Tomato sauce, mozzarella, fresh basil.",
+              "price": 13
+            },
+            {
+              "name": "Lebanese Pizza",
+              "description": "Tomato sauce, ham, mozzarella, bell peppers, olives, oregano.",
+              "price": 13
+            },
+            {
+              "name": "Chicken Pizza",
+              "description": "Tomato sauce, mozzarella, chicken, teriyaki, red onions, pineapple.",
+              "price": 15
+            },
+            {
+              "name": "Pepperoni",
+              "description": "Tomato sauce, mozzarella, pepperoni, oregano.",
+              "price": 15
+            },
+            {
+              "name": "Vegetarian",
+              "description": "Tomato sauce, mozzarella, mushrooms, onions, peppers, olives, oregano.",
+              "price": 13
+            },
+            {
+              "name": "El Estez Pizza",
+              "description": "Tomato pesto sauce, mozzarella, feta cheese, roasted red pepper, fresh spinach, black olives.",
+              "price": 12
+            },
+            {
+              "name": "Truffle Pizza",
+              "description": "Cheese, mushroom, truffle paste & oil with arugula.",
+              "price": 16,
+              "is_new": true
+            }
+          ]
+        },
+        {
+          "name": "Pasta",
+          "items": [
+            {
+              "name": "Pomodoro",
+              "description": "Penne, pomodoro sauce, parmesan.",
+              "price": 10
+            },
+            {
+              "name": "Alfredo",
+              "description": "Tagliatelle, alfredo sauce, parmesan. Add-on: chicken +3$",
+              "price": 10
+            },
+            {
+              "name": "Pesto El Estez",
+              "description": "Spaghetti, homemade pesto from broccoli and spinach, parmesan.",
+              "price": 10
+            },
+            {
+              "name": "Pesto Fusilli",
+              "description": "Pesto sauce, creamy sauce, parmesan, chicken.",
+              "price": 13,
+              "is_new": true
+            },
+            {
+              "name": "Shrimp Rosé Pasta",
+              "description": "Rosé sauce, shrimps, parmesan.",
+              "price": 18,
+              "is_new": true
+            }
+          ]
+        },
+        {
+          "name": "Platters",
+          "items": [
+            {
+              "name": "Chicken Mushroom",
+              "description": "Chicken breast, broccoli, green beans, carrots, fries, mushroom sauce.",
+              "price": 16
+            },
+            {
+              "name": "Chicken Schnitzel",
+              "description": "Chicken breast fried, crispy mix, wedges, lemon slice, cocktail sauce.",
+              "price": 15
+            },
+            {
+              "name": "Chicken Schnitzel + Pasta Alfredo",
+              "price": 18,
+              "is_new": true
+            },
+            {
+              "name": "Grilled Chicken",
+              "description": "Chicken breast, broccoli, green beans, baked potatoes, aioli sauce.",
+              "price": 15
+            },
+            {
+              "name": "Steak & Frites",
+              "description": "Tenderloin, chips fries, broccoli, green beans, pepper sauce.",
+              "price": 18
+            }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            {
+              "name": "Pizza Nutella",
+              "price": 10
+            },
+            {
+              "name": "Pain Perdu",
+              "price": 8
+            },
+            {
+              "name": "Tiramisu",
+              "price": 4
+            },
+            {
+              "name": "Fondant",
+              "price": 6
+            },
+            {
+              "name": "Biscuit au Chocolat",
+              "price": 4.5
+            }
+          ]
+        },
+        {
+          "name": "Beverages",
+          "items": [
+            {
+              "name": "Small Water",
+              "price": 1
+            },
+            {
+              "name": "Soft Drinks",
+              "price": 2
+            },
+            {
+              "name": "Balkis",
+              "description": "Mawardi / Orange / Pomegranate",
+              "price": 4
+            },
+            {
+              "name": "Perrier",
+              "price": 3
+            },
+            {
+              "name": "Soda",
+              "price": 3
+            },
+            {
+              "name": "Ginger Ale",
+              "price": 3
+            },
+            {
+              "name": "Redbull / Light",
+              "price": 4
+            },
+            {
+              "name": "Almaza / Light",
+              "description": "Add Mexican +1$",
+              "price": 4
+            },
+            {
+              "name": "Corona / Light",
+              "description": "Add Mexican +1$",
+              "price": 6
+            }
+          ]
+        },
+        {
+          "name": "Hot Drinks",
+          "items": [
+            {
+              "name": "Espresso",
+              "price": 3
+            },
+            {
+              "name": "Double Espresso",
+              "price": 4
+            },
+            {
+              "name": "Americano",
+              "price": 4
+            },
+            {
+              "name": "Machiato",
+              "price": 4
+            },
+            {
+              "name": "Mocha",
+              "price": 5
+            },
+            {
+              "name": "White Chocolate Mocha",
+              "price": 5
+            },
+            {
+              "name": "Caffe Latte",
+              "description": "Add flavor (caramel, vanilla, hazelnut) +0.5$",
+              "price": 4
+            },
+            {
+              "name": "Hot Chocolate",
+              "price": 4.5
+            },
+            {
+              "name": "Cappucino",
+              "price": 4
+            },
+            {
+              "name": "Lebanese Coffee (3prs)",
+              "price": 3.5
+            },
+            {
+              "name": "Lebanese Coffee (5prs)",
+              "price": 4.5
+            },
+            {
+              "name": "Tea Revolution",
+              "price": 2.5
+            },
+            {
+              "name": "Lipton",
+              "price": 2.5
+            }
+          ]
+        },
+        {
+          "name": "Cold Drinks",
+          "items": [
+            {
+              "name": "Affogato",
+              "description": "1 scoop ice cream + 1 shot espresso",
+              "price": 4.5
+            },
+            {
+              "name": "Iced Americano",
+              "price": 4
+            },
+            {
+              "name": "Iced Latte",
+              "description": "Add flavor (caramel, vanilla, hazelnut) +0.5$",
+              "price": 4
+            }
+          ]
+        },
+        {
+          "name": "Arguileh (أرجيلة)",
+          "items": [
+            {
+              "name": "Khaltet El Ostez (خلطة الأستاذ)",
+              "price": 6
+            },
+            {
+              "name": "Tofahtein (تفاحتين)",
+              "price": 6
+            },
+            {
+              "name": "Hamed w Naana (حامض ونعنع)",
+              "price": 6
+            },
+            {
+              "name": "Enab (عنب)",
+              "price": 6
+            },
+            {
+              "name": "Enab w Naana (عنب و نعنع)",
+              "price": 6
+            },
+            {
+              "name": "Limon (ليمون)",
+              "price": 6
+            },
+            {
+              "name": "Toot (توت)",
+              "price": 6
+            },
+            {
+              "name": "Loof (لوف)",
+              "price": 6
+            },
+            {
+              "name": "Elke (علكة)",
+              "price": 6
+            },
+            {
+              "name": "Elke w Meske (علكة و مسكة)",
+              "price": 6
+            },
+            {
+              "name": "Elke w Erfe (علكة و قرفة)",
+              "price": 6
+            },
+            {
+              "name": "Battikh (بطيخ)",
+              "price": 6
+            },
+            {
+              "name": "Trendy (ترندي)",
+              "price": 6
+            },
+            {
+              "name": "Naana (نعنع)",
+              "price": 6
+            },
+            {
+              "name": "Tango",
+              "price": 6
+            },
+            {
+              "name": "French Tobacco",
+              "price": 6
+            },
+            {
+              "name": "Ruby Crush Molasses",
+              "price": 6
+            },
+            {
+              "name": "Trendy",
+              "price": 6
+            },
+            {
+              "name": "English Plus",
+              "price": 6
+            },
+            {
+              "name": "Ajami (عجمي)",
+              "price": 8
+            },
+            {
+              "name": "Ras Boumli (راس بوملي)",
+              "price": 10
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Wine",
+          "items": [
+            {
+              "name": "IXIR Altitude Rose",
+              "bottle": 30,
+              "note": "Ask for price"
+            },
+            {
+              "name": "IXIR Grand Reserve Rose",
+              "bottle": 40,
+              "note": "Ask for price"
+            },
+            {
+              "name": "IXIR Altitude White",
+              "bottle": 30,
+              "note": "Ask for price"
+            },
+            {
+              "name": "IXIR Grand Reserve White",
+              "bottle": 40,
+              "note": "Ask for price"
+            },
+            {
+              "name": "IXIR Altitude Red",
+              "bottle": 30,
+              "note": "Ask for price"
+            },
+            {
+              "name": "IXIR Grand Reserve Red",
+              "bottle": 45,
+              "note": "Ask for price"
+            },
+            {
+              "name": "KSARA Sunset",
+              "bottle": 20,
+              "glass": 5,
+              "note": "Ask for price"
+            },
+            {
+              "name": "KSARA Blanc de Blanc",
+              "bottle": 20,
+              "glass": 5,
+              "note": "Ask for price"
+            },
+            {
+              "name": "KSARA Reserve Du Couvent",
+              "bottle": 25,
+              "glass": 5,
+              "note": "Ask for price"
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Whiskey",
+          "items": [
+            {
+              "name": "Red Label",
+              "bottle": 40,
+              "glass": 5,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Black Label",
+              "bottle": 60,
+              "glass": 7,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Chivas 12",
+              "bottle": 60,
+              "glass": 7,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Jameson",
+              "bottle": 45,
+              "glass": 6,
+              "note": "Ask for price"
+            },
+            {
+              "name": "J&B",
+              "bottle": 30,
+              "glass": 5,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Jim Beam",
+              "bottle": 40,
+              "glass": 5,
+              "note": "Ask for price"
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Vodka",
+          "items": [
+            {
+              "name": "Stoli Red",
+              "bottle": 18,
+              "glass": 3,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Russian Standard",
+              "bottle": 20,
+              "glass": 3.5,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Titos",
+              "bottle": 50,
+              "glass": 7,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Grey Goose",
+              "bottle": 65,
+              "glass": 8,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Belvedere",
+              "bottle": 90,
+              "glass": 5,
+              "note": "Ask for price"
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Gin",
+          "items": [
+            {
+              "name": "Gordon's",
+              "bottle": 25,
+              "glass": 3.5,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Hendrick's",
+              "bottle": 70,
+              "glass": 7,
+              "note": "Ask for price"
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Tequila",
+          "items": [
+            {
+              "name": "Jose Cuervo Silver",
+              "bottle": 30,
+              "glass": 4,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Jose Cuervo Gold",
+              "bottle": 35,
+              "glass": 5,
+              "note": "Ask for price"
+            },
+            {
+              "name": "1800 Silver",
+              "bottle": 65,
+              "glass": 7,
+              "note": "Ask for price"
+            },
+            {
+              "name": "1800 Reposado",
+              "bottle": 75,
+              "glass": 8,
+              "note": "Ask for price"
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Prosecco",
+          "items": [
+            {
+              "name": "Astoria Rose",
+              "bottle": 35,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Astoria White",
+              "bottle": 30,
+              "note": "Ask for price"
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Rum",
+          "items": [
+            {
+              "name": "Captain Morgan White",
+              "bottle": 30,
+              "glass": 4,
+              "note": "Ask for price"
+            },
+            {
+              "name": "Captain Morgan Spiced",
+              "bottle": 35,
+              "glass": 5,
+              "note": "Ask for price"
+            }
+          ]
+        },
+        {
+          "name": "Cocktails",
+          "items": [
+            {
+              "name": "Mojito",
+              "price": 6
+            },
+            {
+              "name": "Marguarita",
+              "price": 6
+            },
+            {
+              "name": "Gin Basil",
+              "price": 6
+            },
+            {
+              "name": "Daiquiry",
+              "price": 6
+            },
+            {
+              "name": "Passion Fruit Martini",
+              "price": 7
+            },
+            {
+              "name": "Old Fashioned",
+              "price": 7
+            },
+            {
+              "name": "Espresso Martini",
+              "price": 7
+            },
+            {
+              "name": "Mules (Moscow, London, Mexican)",
+              "price": 6
+            },
+            {
+              "name": "Negroni",
+              "price": 7
+            },
+            {
+              "name": "Cosmopolitan",
+              "price": 6
+            },
+            {
+              "name": "Cuba Libre",
+              "price": 7
+            },
+            {
+              "name": "Midro Sour",
+              "price": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mayel",
+      "name": "Mayel Restaurant",
+      "tagline": "Order - Eat - Repeat",
+      "logo": "mayel-logo.jpg",
+      "source_url": "mayelrestaurant.weebly.com",
+      "categories": [
+        {
+          "name": "Starters",
+          "items": [
+            {
+              "name": "French Fries",
+              "price": 2.5
+            },
+            {
+              "name": "Cheesy Chicken Fries",
+              "price": 7
+            }
+          ]
+        },
+        {
+          "name": "Salads",
+          "items": [
+            {
+              "name": "Chicken Caesar",
+              "description": "Lettuce, parmesan, croutons, chicken, caesar sauce",
+              "price": 6
+            },
+            {
+              "name": "Crab Salad",
+              "description": "Iceberg, corn, crab, mustard sauce",
+              "price": 5.5
+            },
+            {
+              "name": "Green Salad",
+              "price": 4
+            },
+            {
+              "name": "Fetta Salad",
+              "price": 5.5
+            },
+            {
+              "name": "Nacho Salad",
+              "price": 7.5
+            },
+            {
+              "name": "Crispy Chicken Caesar",
+              "price": 6.5
+            }
+          ]
+        },
+        {
+          "name": "Kaaek",
+          "items": [
+            {
+              "name": "Mayel",
+              "description": "Mozzarella, cheddar, fried chicken, iceberg, mayo, BBQ",
+              "price": 5
+            },
+            {
+              "name": "Picon",
+              "price": 3
+            },
+            {
+              "name": "Akkawi",
+              "price": 3.5
+            },
+            {
+              "name": "Akkawi + Mozzarella",
+              "price": 4
+            },
+            {
+              "name": "Mozarella",
+              "price": 3.5
+            },
+            {
+              "name": "Ham & Cheese",
+              "price": 4
+            },
+            {
+              "name": "Submarine",
+              "description": "Mozzarella, salami, ham, iceberg, tomato, mayo, mustard",
+              "price": 5
+            },
+            {
+              "name": "3 Cheeses + Chips",
+              "description": "Picon, cheddar, mozzarella, chips",
+              "price": 4.5
+            },
+            {
+              "name": "Pizza",
+              "description": "Mozzarella, ham, salami, pizza sauce, olives",
+              "price": 5
+            },
+            {
+              "name": "Soujouk",
+              "description": "Mozzarella, soujouk, tomato, pickles, mayo",
+              "price": 5.5
+            }
+          ]
+        },
+        {
+          "name": "Sandwiches",
+          "items": [
+            {
+              "name": "BBQ Philly Chicken",
+              "description": "Chicken, pepper, onion, BBQ, mozzarella, pickles, mayo, iceberg",
+              "price": 6.5
+            },
+            {
+              "name": "Spicy Philly Chicken",
+              "description": "Chicken, pepper, onion, spicy, mozzarella, pickles, mayo, iceberg",
+              "price": 6.5
+            },
+            {
+              "name": "Chicken Light",
+              "description": "Chicken, rocca, pickles, tomato, light mayo",
+              "price": 6.5
+            },
+            {
+              "name": "Turkey and Cheese",
+              "description": "Smoked turkey, mozzarella, iceberg, tomato, pickles, light mayo, mustard",
+              "price": 5.5
+            },
+            {
+              "name": "Crab Sandwich",
+              "description": "Crab, iceberg, pickles, corn, mustard, mayo",
+              "price": 5.5
+            },
+            {
+              "name": "Philly Steak Sandwich",
+              "description": "Steak, mozzarella, onions, pepper, pickles, iceberg, mayo",
+              "price": 8.5
+            },
+            {
+              "name": "Chicken Sub",
+              "description": "Chicken, lettuce, pickles, cheese, garlic, mayo",
+              "price": 6.5
+            },
+            {
+              "name": "Honey Mustard Cheddar Crunch",
+              "description": "Crispy chicken, coleslaw, cheddar, pickles, honey mustard sauce",
+              "price": 6.5
+            },
+            {
+              "name": "Tawouk Bel Khebez",
+              "description": "Chicken, coleslaw, pickles, garlic, fries",
+              "price": 6
+            },
+            {
+              "name": "Chicken Bomb",
+              "description": "Chicken, pepper, onion, corn, fresh mushrooms, mozzarella, special sauce",
+              "price": 6.5
+            },
+            {
+              "name": "San Francisco",
+              "description": "Chicken, coleslaw, pickles, cheddar, tomato, soy sauce",
+              "price": 6.5
+            },
+            {
+              "name": "Buffalo Crispy Ranch",
+              "description": "Buffalo crispy, iceberg, tomato, pickles, ranch sauce",
+              "price": 6.5
+            },
+            {
+              "name": "BBQ Crunch Melt",
+              "description": "Crispy, pickles, coleslaw, mayo, cheddar sauce, BBQ sauce",
+              "price": 6.5
+            },
+            {
+              "name": "B-Truffle",
+              "description": "Steak, mozzarella, pickles, truffle sauce, onion, mushroom",
+              "price": 8.5
+            }
+          ]
+        },
+        {
+          "name": "Burgers",
+          "items": [
+            {
+              "name": "Hamburger",
+              "description": "Patty, pickles, tomato, iceberg, mayo, ketchup",
+              "price": 5.5
+            },
+            {
+              "name": "Cheese Burger",
+              "description": "Patty, cheddar, pickles, tomato, iceberg, mayo, ketchup",
+              "price": 6
+            },
+            {
+              "name": "Chicken Burger",
+              "description": "Chicken, pickles, iceberg, mayo, garlic",
+              "price": 5.5
+            },
+            {
+              "name": "Crispy Burger",
+              "description": "Crispy chicken, pickles, iceberg, mayo, cocktail sauce",
+              "price": 5.5
+            }
+          ]
+        },
+        {
+          "name": "Wraps",
+          "items": [
+            {
+              "name": "Barbecue Crispy Wrap",
+              "description": "Crispy chicken, iceberg, pickles, chips, mayo, BBQ",
+              "price": 6
+            },
+            {
+              "name": "Spicy Crispy Wrap",
+              "description": "Crispy chicken, iceberg, pickles, chips, mayo, spicy",
+              "price": 6
+            },
+            {
+              "name": "Honey Mustard Crispy Wrap",
+              "description": "Crispy chicken, iceberg, pickles, chips, mayo, honey mustard",
+              "price": 6
+            },
+            {
+              "name": "Submarine Bl Aajin",
+              "description": "Mozzarella, salami, ham, iceberg, tomato, mayo, mustard",
+              "price": 6
+            },
+            {
+              "name": "Djej w Jebne Bl Aajin",
+              "description": "Chicken, mozzarella, garlic, pickles, iceberg, mayo",
+              "price": 6.5
+            },
+            {
+              "name": "Chicken Quesadillas",
+              "description": "Chicken, mozarella, cheddar, pepper, onion, corn (served with French Fries)",
+              "price": 8.5
+            }
+          ]
+        },
+        {
+          "name": "Platters",
+          "items": [
+            {
+              "name": "Grilled Chicken Breast",
+              "description": "4 pieces chicken breast, French fries, coleslaw or green salad",
+              "price": 9.5
+            },
+            {
+              "name": "Hamburger Platter",
+              "description": "2 patties, French fries, coleslaw or green salad",
+              "price": 9.5
+            },
+            {
+              "name": "Cheese Burger Platter",
+              "description": "2 patties, cheddar cheese, French fries, coleslaw or green salad",
+              "price": 10
+            },
+            {
+              "name": "Chicken Burger Platter",
+              "description": "2 chicken slices, French fries, coleslaw or green salad",
+              "price": 9.5
+            },
+            {
+              "name": "Crispy Platter",
+              "description": "Crispy chicken, French fries, coleslaw",
+              "price": 9
+            }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            {
+              "name": "Nutella Crêpe",
+              "price": 4
+            },
+            {
+              "name": "Nutella Kaake",
+              "price": 4
+            }
+          ],
+          "add_ons": [
+            {
+              "name": "Kinder",
+              "price": 1.5
+            },
+            {
+              "name": "Lotus",
+              "price": 1
+            },
+            {
+              "name": "Oreo",
+              "price": 1
+            },
+            {
+              "name": "Banana",
+              "price": 0.5
+            },
+            {
+              "name": "Strawberry",
+              "price": 1
+            }
+          ]
+        },
+        {
+          "name": "Drinks",
+          "items": [
+            {
+              "name": "Soft Drinks",
+              "price": 1.5
+            },
+            {
+              "name": "Beer",
+              "price": 3
+            },
+            {
+              "name": "Water",
+              "price": 0.5
+            },
+            {
+              "name": "Sparkling Water",
+              "price": 1.5
+            }
+          ]
+        },
+        {
+          "name": "Arguile",
+          "items": [
+            {
+              "name": "Arguile",
+              "price": 6
+            },
+            {
+              "name": "Arguile Ras Jabale",
+              "price": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "machewe-express",
+      "name": "Machewe Express",
+      "name_ar": "مشاوي اكسبرس",
+      "logo": "machewe-express-logo.jpg",
+      "source_url": "menu.omegasoftware.ca",
+      "currency": "LBP",
+      "currency_note": "Prices in Lebanese Pounds (LBP)",
+      "branches": [
+        "Batroun",
+        "Jbeil",
+        "Kfaraaka",
+        "Anfeh"
+      ],
+      "categories": [
+        {
+          "name": "Mezza (مازة)",
+          "items": [
+            {
+              "name": "Fattouch",
+              "price_lbp": 600000
+            },
+            {
+              "name": "Tabbouleh",
+              "price_lbp": 600000
+            },
+            {
+              "name": "Hommus",
+              "price_lbp": 400000
+            },
+            {
+              "name": "Moutabal",
+              "price_lbp": 400000
+            },
+            {
+              "name": "Warak Enab",
+              "price_lbp": 450000
+            },
+            {
+              "name": "Fries Box",
+              "price_lbp": 275000
+            },
+            {
+              "name": "Fries Platter",
+              "price_lbp": 400000
+            },
+            {
+              "name": "Grilled Potatoes",
+              "price_lbp": 450000
+            }
+          ]
+        },
+        {
+          "name": "Mouajanet (معجنات)",
+          "items": [
+            {
+              "name": "Sambusek (4 pcs)",
+              "price_lbp": 450000
+            },
+            {
+              "name": "Cheese Rkakat (4 pcs)",
+              "price_lbp": 400000
+            },
+            {
+              "name": "Fried Stuffed Kebbeh (4 pcs)",
+              "price_lbp": 550000
+            },
+            {
+              "name": "Mix Mouajanet (6 pcs)",
+              "price_lbp": 675000
+            }
+          ]
+        },
+        {
+          "name": "Franje (فرنجي)",
+          "items": [
+            {
+              "name": "Francisco",
+              "price_lbp": 540000
+            },
+            {
+              "name": "Soujouk",
+              "price_lbp": 585000
+            },
+            {
+              "name": "Makanek",
+              "price_lbp": 585000
+            },
+            {
+              "name": "Roast Beef",
+              "price_lbp": 650000
+            },
+            {
+              "name": "Chicken Liver",
+              "price_lbp": 500000
+            },
+            {
+              "name": "Chicken Sub",
+              "price_lbp": 500000,
+              "is_new": true
+            },
+            {
+              "name": "Tandouri Chicken",
+              "price_lbp": 500000,
+              "is_new": true
+            },
+            {
+              "name": "Chicken Msahab",
+              "price_lbp": 500000
+            }
+          ]
+        },
+        {
+          "name": "Burgers (برغر)",
+          "items": [
+            {
+              "name": "Lebanese Beef Burger",
+              "price_lbp": 550000
+            },
+            {
+              "name": "Lebanese Chicken Breast Burger",
+              "price_lbp": 550000
+            },
+            {
+              "name": "Lebanese Chicken Escalope Burger",
+              "price_lbp": 550000
+            }
+          ]
+        },
+        {
+          "name": "BBQ Sandwiches (سندويشات مشاوي) - Large",
+          "items": [
+            {
+              "name": "Classic Taouk",
+              "price_lbp": 540000
+            },
+            {
+              "name": "Lebanese Taouk",
+              "price_lbp": 585000
+            },
+            {
+              "name": "Kabab",
+              "price_lbp": 540000
+            },
+            {
+              "name": "Kabab Pistachio",
+              "price_lbp": 585000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Orfali (spicy)",
+              "price_lbp": 585000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Intabli (spicy)",
+              "price_lbp": 585000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Eggplant",
+              "price_lbp": 585000,
+              "is_new": true
+            },
+            {
+              "name": "Deboned Grilled Chicken",
+              "price_lbp": 585000
+            },
+            {
+              "name": "Imported Veal Filet",
+              "price_lbp": 855000
+            },
+            {
+              "name": "Local Beef Filet",
+              "price_lbp": 650000
+            }
+          ]
+        },
+        {
+          "name": "Platters (أطباق)",
+          "note": "Served with fries & dips",
+          "items": [
+            {
+              "name": "Shish Taouk (280g)",
+              "price_lbp": 1035000
+            },
+            {
+              "name": "Kabab (240g)",
+              "price_lbp": 1080000
+            },
+            {
+              "name": "Kabab Pistachio (240g)",
+              "price_lbp": 1215000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Orfali (240g, spicy)",
+              "price_lbp": 1170000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Intabli (240g, spicy)",
+              "price_lbp": 1170000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Eggplant (240g)",
+              "price_lbp": 1170000,
+              "is_new": true
+            },
+            {
+              "name": "Imported Veal Filet (240g)",
+              "price_lbp": 1800000
+            },
+            {
+              "name": "Local Beef Filet (240g)",
+              "price_lbp": 1350000
+            },
+            {
+              "name": "Mix Grill Beef (380g)",
+              "price_lbp": 1620000
+            },
+            {
+              "name": "Mix Grill Veal (380g)",
+              "price_lbp": 1890000
+            },
+            {
+              "name": "Chicken Escalope (240g)",
+              "price_lbp": 900000
+            },
+            {
+              "name": "Chicken Breast (300g)",
+              "price_lbp": 1250000
+            }
+          ]
+        },
+        {
+          "name": "BBQ Half KG (نصف كيلو)",
+          "note": "Served with fries & dips",
+          "items": [
+            {
+              "name": "Shish Taouk",
+              "price_lbp": 1800000
+            },
+            {
+              "name": "Kabab",
+              "price_lbp": 1800000
+            },
+            {
+              "name": "Kabab Pistachio",
+              "price_lbp": 2025000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Orfali",
+              "price_lbp": 1980000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Intabli",
+              "price_lbp": 1980000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Eggplant",
+              "price_lbp": 1980000,
+              "is_new": true
+            },
+            {
+              "name": "Grilled Veal Filet",
+              "price_lbp": 3600000
+            },
+            {
+              "name": "Grilled Beef Filet",
+              "price_lbp": 2520000
+            },
+            {
+              "name": "Mix Grill Beef",
+              "price_lbp": 2430000
+            },
+            {
+              "name": "Mix Grill Veal",
+              "price_lbp": 2610000
+            }
+          ]
+        },
+        {
+          "name": "BBQ KG (كيلو)",
+          "note": "Served with fries & dips",
+          "items": [
+            {
+              "name": "Shish Taouk",
+              "price_lbp": 2700000
+            },
+            {
+              "name": "Kabab",
+              "price_lbp": 3150000
+            },
+            {
+              "name": "Kabab Pistachio",
+              "price_lbp": 3420000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Orfali",
+              "price_lbp": 3240000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Intabli",
+              "price_lbp": 3240000,
+              "is_new": true
+            },
+            {
+              "name": "Kabab Eggplant",
+              "price_lbp": 3240000,
+              "is_new": true
+            },
+            {
+              "name": "Grilled Veal Filet",
+              "price_lbp": 5850000
+            },
+            {
+              "name": "Grilled Beef Filet",
+              "price_lbp": 4500000
+            },
+            {
+              "name": "Mix Grill Beef",
+              "price_lbp": 3600000
+            },
+            {
+              "name": "Mix Grill Veal",
+              "price_lbp": 4050000
+            }
+          ]
+        },
+        {
+          "name": "Grilled Chicken (دجاج مشوي)",
+          "items": [
+            {
+              "name": "Half Grilled Chicken",
+              "price_lbp": 950000
+            },
+            {
+              "name": "Grilled Chicken",
+              "price_lbp": 1500000
+            },
+            {
+              "name": "Half Chicken Boneless",
+              "price_lbp": 950000
+            },
+            {
+              "name": "Chicken Boneless",
+              "price_lbp": 1500000
+            },
+            {
+              "name": "Grilled Chicken Wings (8 pcs)",
+              "price_lbp": 800000
+            }
+          ]
+        },
+        {
+          "name": "Combo (كمبو)",
+          "note": "Served with fries, coleslaw & dips",
+          "items": [
+            {
+              "name": "Kabab",
+              "price_lbp": 810000
+            },
+            {
+              "name": "Shish Taouk",
+              "price_lbp": 810000
+            },
+            {
+              "name": "Shawarma Chicken",
+              "price_lbp": 810000
+            },
+            {
+              "name": "Shawarma Beef",
+              "price_lbp": 1080000
+            },
+            {
+              "name": "Deboned Chicken Sandwich",
+              "price_lbp": 810000
+            },
+            {
+              "name": "Grilled Local Beef Filet",
+              "price_lbp": 900000
+            }
+          ]
+        },
+        {
+          "name": "Shawarma Sandwiches (شاورما)",
+          "items": [
+            {
+              "name": "Shawarma Chicken - Small",
+              "price_lbp": 400000
+            },
+            {
+              "name": "Shawarma Chicken - Medium",
+              "price_lbp": 500000
+            },
+            {
+              "name": "Shawarma Chicken - Large",
+              "price_lbp": 650000
+            },
+            {
+              "name": "Shawarma Beef - Small",
+              "price_lbp": 500000
+            },
+            {
+              "name": "Shawarma Beef - Medium",
+              "price_lbp": 600000
+            },
+            {
+              "name": "Shawarma Beef - Large",
+              "price_lbp": 750000
+            }
+          ]
+        },
+        {
+          "name": "Shawarma Platters (شاورما)",
+          "items": [
+            {
+              "name": "Shawarma Chicken - Platter",
+              "price_lbp": 900000
+            },
+            {
+              "name": "Shawarma Chicken - Half Kilo",
+              "price_lbp": 1800000
+            },
+            {
+              "name": "Shawarma Chicken - Kilo",
+              "price_lbp": 3240000
+            },
+            {
+              "name": "Shawarma Beef - Platter",
+              "price_lbp": 1350000
+            },
+            {
+              "name": "Shawarma Beef - Half Kilo",
+              "price_lbp": 2700000
+            },
+            {
+              "name": "Shawarma Beef - Kilo",
+              "price_lbp": 4950000
+            },
+            {
+              "name": "Shawarma Mix - Platter",
+              "price_lbp": 1305000
+            },
+            {
+              "name": "Shawarma Mix - Half Kilo",
+              "price_lbp": 2340000
+            },
+            {
+              "name": "Shawarma Mix - Kilo",
+              "price_lbp": 4050000
+            }
+          ]
+        },
+        {
+          "name": "Drinks (مشروبات)",
+          "items": [
+            {
+              "name": "Soft Drinks",
+              "price_lbp": 135000
+            },
+            {
+              "name": "Ice Tea",
+              "price_lbp": 150000
+            },
+            {
+              "name": "Laban Iran",
+              "price_lbp": 100000
+            },
+            {
+              "name": "Mineral Water",
+              "price_lbp": 50000
+            },
+            {
+              "name": "Sparkling Water",
+              "price_lbp": 150000
+            },
+            {
+              "name": "Almaza",
+              "price_lbp": 270000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "al-tayeb",
+      "name": "Al Tayeb (ع الطيب)",
+      "name_ar": "ع الطيب",
+      "tagline": "كعكتنا ميرتنا قعدتنا بقهوتنا",
+      "logo": "al-tayeb-logo.jpg",
+      "source_url": "aaltayeb.v8softwares.com",
+      "location": "Sahet Anfeh, Anfeh el Koura",
+      "phone": "81116532",
+      "categories": [
+        {
+          "name": "Kaakeh",
+          "items": [
+            {
+              "name": "Plain",
+              "price": 0.5
+            },
+            {
+              "name": "Zaatar",
+              "price": 1
+            },
+            {
+              "name": "Picon",
+              "price": 2.2
+            },
+            {
+              "name": "Akkaweh",
+              "price": 2
+            },
+            {
+              "name": "Labneh",
+              "price": 2.2
+            },
+            {
+              "name": "Halloumi",
+              "price": 3
+            },
+            {
+              "name": "Halloumi Pesto",
+              "price": 4.5
+            },
+            {
+              "name": "Turkey Cheese",
+              "price": 4
+            },
+            {
+              "name": "Ham & Cheese",
+              "price": 4
+            },
+            {
+              "name": "Submarine",
+              "price": 4.5
+            }
+          ]
+        },
+        {
+          "name": "Kaakeh Sweets",
+          "items": [
+            {
+              "name": "Nutella (Nuts & Banana)",
+              "price": 2.5
+            },
+            {
+              "name": "Halawi",
+              "price": 3
+            },
+            {
+              "name": "Halawi & Nutella",
+              "price": 4.5
+            },
+            {
+              "name": "Jam & Nutella",
+              "price": 4
+            },
+            {
+              "name": "Knefe Kezebe",
+              "price": 3
+            }
+          ]
+        },
+        {
+          "name": "Kaakeh Pizza",
+          "items": [
+            {
+              "name": "Regular",
+              "price": 5
+            },
+            {
+              "name": "Marguritta",
+              "price": 3.5
+            },
+            {
+              "name": "Pepperoni",
+              "price": 4
+            }
+          ]
+        },
+        {
+          "name": "Saj",
+          "items": [
+            {
+              "name": "Zaatar",
+              "price": 0.7
+            },
+            {
+              "name": "Zaatar & Khodra",
+              "price": 1.66
+            },
+            {
+              "name": "Labneh & Khodra",
+              "price": 1.5
+            },
+            {
+              "name": "Cheese",
+              "price": 2
+            },
+            {
+              "name": "Cheese & Khodra",
+              "price": 2.5
+            },
+            {
+              "name": "Turkey & Cheese",
+              "price": 3.5
+            },
+            {
+              "name": "Ham & Cheese",
+              "price": 3.5
+            },
+            {
+              "name": "Submarine",
+              "price": 4
+            }
+          ]
+        },
+        {
+          "name": "Oat",
+          "items": [
+            {
+              "name": "Zaatar",
+              "price": 1.1
+            },
+            {
+              "name": "Cheese",
+              "price": 2.77
+            },
+            {
+              "name": "Turkey & Cheese",
+              "price": 3.8
+            },
+            {
+              "name": "Submarine",
+              "price": 4.5
+            }
+          ]
+        },
+        {
+          "name": "Croissant",
+          "items": [
+            {
+              "name": "Turkey & Cheese",
+              "price": 3
+            },
+            {
+              "name": "Zaatar",
+              "price": 2
+            },
+            {
+              "name": "Cheese",
+              "price": 2
+            },
+            {
+              "name": "Chocolate",
+              "price": 2
+            }
+          ]
+        },
+        {
+          "name": "Hot Drinks",
+          "items": [
+            {
+              "name": "Hot Chocolate",
+              "price": 2.25
+            },
+            {
+              "name": "Vanilla Latte",
+              "price": 3
+            },
+            {
+              "name": "Mocha Latte",
+              "price": 3.5
+            },
+            {
+              "name": "Latte",
+              "price": 2.5
+            },
+            {
+              "name": "Cappucino",
+              "price": 2.2
+            },
+            {
+              "name": "Americano",
+              "price": 2.25
+            },
+            {
+              "name": "American Coffee",
+              "price": 2.25
+            },
+            {
+              "name": "Espresso",
+              "price": 1
+            },
+            {
+              "name": "Nescafe 3 in 1",
+              "price": 0.8
+            },
+            {
+              "name": "Nescafe 2 in 1",
+              "price": 0.8
+            },
+            {
+              "name": "Tea",
+              "price": 0.8
+            }
+          ]
+        },
+        {
+          "name": "Iced Drinks",
+          "items": [
+            {
+              "name": "Iced Mocha",
+              "price": 3.5
+            },
+            {
+              "name": "Iced Vanilla",
+              "price": 3.5
+            },
+            {
+              "name": "Iced Chocolate",
+              "price": 3.5
+            },
+            {
+              "name": "Iced Latte",
+              "price": 3.5
+            },
+            {
+              "name": "Chocolate Shake",
+              "price": 3.5
+            },
+            {
+              "name": "Cold Brew",
+              "price": 2.5
+            }
+          ]
+        },
+        {
+          "name": "Salads",
+          "items": [
+            {
+              "name": "Chicken Caesar",
+              "price": 5.6
+            },
+            {
+              "name": "Tuna - Pasta",
+              "price": 5.6
+            },
+            {
+              "name": "Crab",
+              "price": 5.6
+            },
+            {
+              "name": "Rocka",
+              "price": 5.6
+            }
+          ]
+        },
+        {
+          "name": "Sandwich",
+          "items": [
+            {
+              "name": "Tuna",
+              "price": 4
+            },
+            {
+              "name": "Turkey & Cheese",
+              "price": 4
+            },
+            {
+              "name": "Italian",
+              "price": 4
+            }
+          ]
+        },
+        {
+          "name": "Terwia'a",
+          "items": [
+            {
+              "name": "2 persons / Salle Lebanese",
+              "price": 10
+            },
+            {
+              "name": "3 persons / 3 Plates",
+              "price": 15
+            }
+          ]
+        },
+        {
+          "name": "Dessert",
+          "items": [
+            {
+              "name": "Be Light",
+              "price": 2.25
+            },
+            {
+              "name": "Shami",
+              "price": 2.25
+            },
+            {
+              "name": "Daisy's jars",
+              "price": 5
+            },
+            {
+              "name": "Mama Carole [Home Made]",
+              "price": 2
+            },
+            {
+              "name": "Cakes Of The Day",
+              "price": 3
+            }
+          ]
+        },
+        {
+          "name": "Crepes",
+          "items": [
+            {
+              "name": "Antonella",
+              "description": "Nutella, strawberries, dark chocolate syrup",
+              "price": 3.3
+            },
+            {
+              "name": "Jane",
+              "description": "Nutella, chocolate syrup",
+              "price": 2.8
+            },
+            {
+              "name": "Jayden",
+              "description": "Nutella, strawberries, white chocolate syrup, white chocolate flakes",
+              "price": 3.9
+            },
+            {
+              "name": "Liana",
+              "description": "Nutella, strawberries, strawberry syrup",
+              "price": 3.9
+            },
+            {
+              "name": "Bassouma",
+              "description": "Nutella, smarties, oreo crumbles",
+              "price": 3.9
+            },
+            {
+              "name": "Natalia",
+              "description": "Nutella, smarties, oreo crumbles, scoop ice cream, white chocolate syrup",
+              "price": 5
+            },
+            {
+              "name": "Sacha",
+              "description": "Nutella, strawberries, white chocolate flakes, milk chocolate",
+              "price": 3.9
+            },
+            {
+              "name": "Louane",
+              "description": "Nutella, oreo crumbles, strawberry syrup",
+              "price": 3.9
+            },
+            {
+              "name": "Sophie (Overdose Crepe)",
+              "description": "Nutella, smarties, oreo crumbles, lotus crumbles, milk chocolate syrup, white chocolate syrup, strawberry syrup, chocolate flakes",
+              "price": 5
+            }
+          ]
+        },
+        {
+          "name": "Gelato Ice Cream",
+          "items": [
+            {
+              "name": "1 cone",
+              "price": 3.4
+            }
+          ]
+        },
+        {
+          "name": "Others",
+          "items": [
+            {
+              "name": "Balkis",
+              "price": 1.7
+            },
+            {
+              "name": "Fresh Juice",
+              "price": 1.65
+            },
+            {
+              "name": "Ayran",
+              "price": 1
+            },
+            {
+              "name": "Top Juice",
+              "price": 0.35
+            },
+            {
+              "name": "Soft Drinks",
+              "price": 1
+            },
+            {
+              "name": "Perrier",
+              "price": 1.5
+            },
+            {
+              "name": "Arguile",
+              "price": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diwen-by-the-bay",
+      "name": "Diwen by the Bay",
+      "logo": "diwen-by-the-bay-logo.jpg",
+      "source_url": "diwenbythebay.com",
+      "description": "Experience authentic Lebanese cuisine at Diwen by the Bay, where traditional dishes like Zghrarta Kebbeh 2ras come alive near the beautiful shores of Anfeh.",
+      "categories": [
+        {
+          "name": "Cold Mezze (مازة باردة)",
+          "items": [
+            {
+              "name": "Hommos (حمص)",
+              "price": 5
+            },
+            {
+              "name": "Labne (لبنة)",
+              "price": 5
+            },
+            {
+              "name": "Moutabbal (متبل)",
+              "price": 5
+            },
+            {
+              "name": "Waraa Eenab (ورق عنب)",
+              "price": 5
+            },
+            {
+              "name": "Jebneh (جبنة)",
+              "price": 5
+            },
+            {
+              "name": "Chanklich (شنكليش)",
+              "price": 5
+            }
+          ]
+        },
+        {
+          "name": "Salads (السلطات)",
+          "items": [
+            {
+              "name": "Tabboule (تبولة) - Medium",
+              "price": 8
+            },
+            {
+              "name": "Tabboule (تبولة) - Large",
+              "price": 10
+            },
+            {
+              "name": "Fattouch (فتوش) - Medium",
+              "price": 7
+            },
+            {
+              "name": "Fattouch (فتوش) - Large",
+              "price": 9
+            },
+            {
+              "name": "Green Salad (حشايش) - Medium",
+              "price": 8
+            }
+          ]
+        },
+        {
+          "name": "Cold Meat (نية)",
+          "items": [
+            {
+              "name": "Lawha Naye (لوحة نية) - Large",
+              "price": 20
+            },
+            {
+              "name": "Lahme Nayye (لحمة نية) - Small",
+              "price": 7
+            },
+            {
+              "name": "Sawda Nayye (سودة نية) - Small",
+              "price": 7
+            },
+            {
+              "name": "Kebbe Nayye (كبة نية) - Small",
+              "price": 7
+            },
+            {
+              "name": "Kebbe Nayye (كبة نية) - Medium",
+              "price": 12
+            },
+            {
+              "name": "Kebbe Nayye (كبة نية) - Large",
+              "price": 15
+            },
+            {
+              "name": "Teble (تابلة نية) - Small",
+              "price": 7
+            },
+            {
+              "name": "Teble (تابلة نية) - Medium",
+              "price": 12
+            },
+            {
+              "name": "Teble (تابلة نية) - Large",
+              "price": 15
+            },
+            {
+              "name": "Habra Nayye (هبرة نية) - Small",
+              "price": 7
+            },
+            {
+              "name": "Habra Nayye (هبرة نية) - Medium",
+              "price": 12
+            },
+            {
+              "name": "Habra Nayye (هبرة نية) - Large",
+              "price": 15
+            }
+          ]
+        },
+        {
+          "name": "Sandwiches",
+          "items": [
+            {
+              "name": "Taouk Sandwich (سندويش طاووق)",
+              "price": 6
+            },
+            {
+              "name": "Kabab Sandwich (سندويش كباب)",
+              "price": 6
+            },
+            {
+              "name": "Meat Sandwich (سندويش لحمة)",
+              "price": 7
+            }
+          ]
+        },
+        {
+          "name": "Hot Mezze (مازة ساخنة)",
+          "items": [
+            {
+              "name": "French Fries (بطاطا مقلية) - Medium",
+              "price": 6
+            },
+            {
+              "name": "French Fries (بطاطا مقلية) - Large",
+              "price": 8
+            },
+            {
+              "name": "Mix Mouajanet 8 pcs (معجنات مشكلة) - Medium",
+              "price": 8
+            },
+            {
+              "name": "Mix Mouajanet 8 pcs (معجنات مشكلة) - Large",
+              "price": 10
+            },
+            {
+              "name": "Fried Kebbeh (كبة مقلية) - Medium",
+              "price": 8
+            },
+            {
+              "name": "Fried Kebbeh (كبة مقلية) - Large",
+              "price": 10
+            },
+            {
+              "name": "Meat Sambusek (سمبوسك لحمة) - Medium",
+              "price": 6
+            },
+            {
+              "name": "Meat Sambusek (سمبوسك لحمة) - Large",
+              "price": 8
+            },
+            {
+              "name": "Cheese Rakakat (رقاقات جبنة) - Medium",
+              "price": 6
+            },
+            {
+              "name": "Cheese Rakakat (رقاقات جبنة) - Large",
+              "price": 8
+            },
+            {
+              "name": "Makanek (مقانق)",
+              "price": 8
+            },
+            {
+              "name": "Sojok (سجق)",
+              "price": 8
+            },
+            {
+              "name": "Sawda (سودة)",
+              "price": 8
+            },
+            {
+              "name": "Hommos Bl Lahme (حمص بالحمة)",
+              "price": 10
+            },
+            {
+              "name": "Ras 3asfour (راس عصفور) - Small",
+              "price": 12
+            },
+            {
+              "name": "Fried Meat (لحمة مقلية) - Small",
+              "price": 12
+            }
+          ]
+        },
+        {
+          "name": "Machewe (مشاوي)",
+          "note": "S: Plate, M: 1/2 KG, L: 1KG",
+          "items": [
+            {
+              "name": "Mixed Grill Platter (مشاوي مشكلة) - Small",
+              "price": 12
+            },
+            {
+              "name": "Mixed Grill Platter - Medium",
+              "price": 21
+            },
+            {
+              "name": "Mixed Grill Platter - Large",
+              "price": 40
+            },
+            {
+              "name": "Lahme (لحم مشوي غنم) - Small",
+              "price": 13
+            },
+            {
+              "name": "Lahme - Medium",
+              "price": 26
+            },
+            {
+              "name": "Lahme - Large",
+              "price": 50
+            },
+            {
+              "name": "Kafta (كفتة مشوية) - Small",
+              "price": 10
+            },
+            {
+              "name": "Kafta - Medium",
+              "price": 21
+            },
+            {
+              "name": "Kafta - Large",
+              "price": 40
+            },
+            {
+              "name": "Kabab Halabi (كباب حلبي) - Small",
+              "price": 10
+            },
+            {
+              "name": "Kabab Halabi - Medium",
+              "price": 21
+            },
+            {
+              "name": "Kabab Halabi - Large",
+              "price": 40
+            },
+            {
+              "name": "Tawook (طاووق مشوي) - Small",
+              "price": 10
+            },
+            {
+              "name": "Tawook - Medium",
+              "price": 21
+            },
+            {
+              "name": "Tawook - Large",
+              "price": 40
+            },
+            {
+              "name": "Grilled Chicken (دجاج مشوي)",
+              "price": 10
+            },
+            {
+              "name": "Grilled Chicken - Large",
+              "price": 18
+            },
+            {
+              "name": "Keres Bl Chahme (قرص بالشحمة) - Small",
+              "price": 7
+            },
+            {
+              "name": "Keres Bl Lahme (قرص باللحمة) - Small",
+              "price": 9
+            },
+            {
+              "name": "Meat Arayes (عرايس) - Small",
+              "price": 10
+            }
+          ]
+        },
+        {
+          "name": "Cold Beverages (مشروب)",
+          "items": [
+            {
+              "name": "Water",
+              "price": 2
+            },
+            {
+              "name": "Pepsi",
+              "price": 3
+            },
+            {
+              "name": "Miranda",
+              "price": 3
+            },
+            {
+              "name": "Seven Up",
+              "price": 3
+            },
+            {
+              "name": "Beer Almaza",
+              "price": 3
+            },
+            {
+              "name": "Beer Light",
+              "price": 3.5
+            },
+            {
+              "name": "Mexican Beer",
+              "price": 3.5
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Whisky",
+          "items": [
+            {
+              "name": "Whisky Regular - Cup",
+              "price": 5
+            },
+            {
+              "name": "Whisky Regular - 1/4 Bottle",
+              "price": 15
+            },
+            {
+              "name": "Whisky Regular - 1/2 Bottle",
+              "price": 25
+            },
+            {
+              "name": "Whisky Regular - Bottle",
+              "price": 40
+            },
+            {
+              "name": "Whisky Premium - Cup",
+              "price": 7
+            },
+            {
+              "name": "Whisky Premium - 1/4 Bottle",
+              "price": 25
+            },
+            {
+              "name": "Whisky Premium - 1/2 Bottle",
+              "price": 40
+            },
+            {
+              "name": "Whisky Premium - Bottle",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Vodka",
+          "items": [
+            {
+              "name": "Vodka Regular - Cup",
+              "price": 4
+            },
+            {
+              "name": "Vodka Premium - Cup",
+              "price": 6
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Arak",
+          "items": [
+            {
+              "name": "Arak Baladi - Cup",
+              "price": 4
+            },
+            {
+              "name": "Arak Baladi - 1/4 Bottle",
+              "price": 10
+            },
+            {
+              "name": "Arak Baladi - 1/2 Bottle",
+              "price": 17
+            },
+            {
+              "name": "Arak Baladi - Bottle",
+              "price": 25
+            },
+            {
+              "name": "Arak Ksara - Cup",
+              "price": 4
+            },
+            {
+              "name": "Arak Ksara - 1/4 Bottle",
+              "price": 8
+            },
+            {
+              "name": "Arak Ksara - 1/2 Bottle",
+              "price": 14
+            },
+            {
+              "name": "Arak Ksara - Bottle",
+              "price": 20
+            }
+          ]
+        },
+        {
+          "name": "Alcohol - Wine",
+          "items": [
+            {
+              "name": "Wine Red - Cup",
+              "price": 4
+            },
+            {
+              "name": "Wine Red - 1/2 Bottle",
+              "price": 12
+            },
+            {
+              "name": "Wine Red - Bottle",
+              "price": 18
+            },
+            {
+              "name": "Wine Rose - Cup",
+              "price": 4
+            },
+            {
+              "name": "Wine Rose - 1/2 Bottle",
+              "price": 12
+            },
+            {
+              "name": "Wine Rose - Bottle",
+              "price": 18
+            },
+            {
+              "name": "Wine White - Cup",
+              "price": 4
+            },
+            {
+              "name": "Wine White - 1/2 Bottle",
+              "price": 12
+            },
+            {
+              "name": "Wine White - Bottle",
+              "price": 18
+            }
+          ]
+        },
+        {
+          "name": "Cocktails",
+          "items": [
+            {
+              "name": "Martini",
+              "note": "Ask for price"
+            },
+            {
+              "name": "Mojito",
+              "note": "Ask for price"
+            },
+            {
+              "name": "Margarita",
+              "note": "Ask for price"
+            },
+            {
+              "name": "Bloody Mary",
+              "note": "Ask for price"
+            },
+            {
+              "name": "Gin Basil",
+              "note": "Ask for price"
+            }
+          ]
+        },
+        {
+          "name": "Shisha",
+          "items": [
+            {
+              "name": "Mouassal (معسل)",
+              "price": 6
+            },
+            {
+              "name": "Ajami (عجمي)",
+              "price": 10
+            },
+            {
+              "name": "Extra (اكسترا)",
+              "price": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "macros-kitchen",
+      "name": "Macro's Kitchen",
+      "tagline": "Catering",
+      "logo": "macros-kitchen-logo.jpg",
+      "source_url": "macrokitchen.v8softwares.com",
+      "phone": "+961 79 164 160",
+      "location": "Anfeh el Koura",
+      "categories": [
+        {
+          "name": "Plat du Jour",
+          "items": [
+            {
+              "name": "Monday - Yakhnit batata w lahme",
+              "price": 10
+            },
+            {
+              "name": "Tuesday - Chicken cashew",
+              "price": 11
+            },
+            {
+              "name": "Wednesday - Nouille with Salad",
+              "price": 11
+            },
+            {
+              "name": "Thursday - Chicken Stroganoff",
+              "price": 11
+            },
+            {
+              "name": "Friday - Kebbet ya2tin",
+              "price": 7
+            },
+            {
+              "name": "Friday - Kebbet rahib",
+              "price": 7
+            },
+            {
+              "name": "Saturday - Mloukhiye",
+              "price": 11
+            }
+          ]
+        },
+        {
+          "name": "Chicken Strips",
+          "items": [
+            {
+              "name": "Kids Meal",
+              "description": "3 pcs chicken strips, fries, bun, sauce, ketchup",
+              "price": 8
+            },
+            {
+              "name": "5 pcs Combo",
+              "description": "5 pcs chicken strips, coleslaw, fries, bun, sauce, ketchup",
+              "price": 13
+            },
+            {
+              "name": "Bucket Combo",
+              "description": "12 pcs chicken strips, 3 coleslaw, fries, 3 buns, sauce, ketchup",
+              "price": 29
+            }
+          ],
+          "add_ons": [
+            {
+              "name": "Add Pieces",
+              "price_per_pc": 1.8
+            },
+            {
+              "name": "Macro's Sauce",
+              "price": 1
+            },
+            {
+              "name": "Cheddar Cheese Sauce",
+              "price": 1.5
+            },
+            {
+              "name": "Honey Mustard Sauce",
+              "price": 1
+            }
+          ]
+        },
+        {
+          "name": "Burgers, Wraps & Sides",
+          "items": [
+            {
+              "name": "Crispy Chicken Burger",
+              "description": "Soft bun with chicken strips, lettuce, pickles, cheddar, Macro's sauce, and BBQ/ketchup sauce",
+              "price": 6.5
+            },
+            {
+              "name": "Crispy Chicken Wrap",
+              "description": "Soft tortilla bread with chicken strips, lettuce, pickles, mayo garlic sauce",
+              "price": 5
+            },
+            {
+              "name": "Mozzarella Sticks",
+              "description": "5 pcs mozzarella sticks with Macro's sauce",
+              "price": 6
+            },
+            {
+              "name": "Jalapeño Bites",
+              "description": "5 pcs jalapeño bites with Macro's sauce",
+              "price": 8
+            }
+          ],
+          "add_ons": [
+            {
+              "name": "Add Chicken to Wrap",
+              "price_per_pc": 1.8
+            },
+            {
+              "name": "Add Cheddar Sauce",
+              "price": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Broasted Chicken",
+          "items": [
+            {
+              "name": "Mini Combo",
+              "description": "4 pcs broasted chicken, coleslaw, fries, bun, garlic, ketchup",
+              "price": 11
+            },
+            {
+              "name": "6 pcs Combo",
+              "description": "6 pcs broasted chicken, coleslaw, fries, bun, garlic, ketchup",
+              "price": 16
+            },
+            {
+              "name": "Bucket Combo",
+              "description": "1 full broasted chicken, coleslaw, fries, buns, garlic, ketchup",
+              "price": 27
+            },
+            {
+              "name": "Wings Combo",
+              "description": "6 pcs wings with buffalo and BBQ sauce",
+              "price": 7
+            }
+          ],
+          "add_ons": [
+            {
+              "name": "Extra Wings",
+              "price_per_pc": 1.8
+            },
+            {
+              "name": "Extra Thighs",
+              "price_per_pc": 1.8
+            },
+            {
+              "name": "Extra Breast",
+              "price_per_pc": 2.5
+            },
+            {
+              "name": "Fries Small",
+              "price": 2
+            },
+            {
+              "name": "Fries Large",
+              "price": 3.5
+            },
+            {
+              "name": "Coleslaw",
+              "price": 1.5
+            },
+            {
+              "name": "Extra Ketchup",
+              "price": 0.5
+            },
+            {
+              "name": "Buffalo Sauce",
+              "price": 0.5
+            },
+            {
+              "name": "BBQ Sauce",
+              "price": 0.5
+            },
+            {
+              "name": "Soft Drink",
+              "price": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tunnel-xtc",
+      "name": "Tunnel XTC Restaurant",
+      "logo": "tunnel-xtc-logo.jpg",
+      "source_url": "shark-accounting.com",
+      "currency": "LBP",
+      "currency_note": "Prices in Lebanese Pounds (LBP)",
+      "categories": [
+        {
+          "name": "Appetizers",
+          "items": [
+            {
+              "name": "Cheese Nachos",
+              "price_lbp": 400000
+            },
+            {
+              "name": "Cheese Garlic Bread",
+              "price_lbp": 400000
+            },
+            {
+              "name": "French Fries",
+              "price_lbp": 300000
+            },
+            {
+              "name": "Fries and Cheese",
+              "price_lbp": 400000
+            },
+            {
+              "name": "Crispy Fries",
+              "price_lbp": 300000
+            },
+            {
+              "name": "Potato Wedges",
+              "price_lbp": 300000
+            },
+            {
+              "name": "Twister Fries",
+              "note": "Ask for price"
+            }
+          ]
+        },
+        {
+          "name": "Sandwiches",
+          "items": [
+            {
+              "name": "Tunnel Special",
+              "description": "Chicken, cheese, mushroom, green pepper, corn, tomato, pickles, coleslaw",
+              "price_lbp": 650000
+            },
+            {
+              "name": "Shish Taouk",
+              "description": "Chicken, garlic, fries, pickles, coleslaw",
+              "price_lbp": 500000
+            },
+            {
+              "name": "Chicken Curry",
+              "description": "Chicken, curry, garlic, fries, pickles, coleslaw",
+              "price_lbp": 550000
+            },
+            {
+              "name": "Mexi Chicken",
+              "description": "Chicken, hot mexican sauce, onion, green pepper, pickles, iceberg, mayo",
+              "price_lbp": 600000
+            },
+            {
+              "name": "San Francisco",
+              "description": "Chicken, cheddar cheese, tomato, pickles, coleslaw",
+              "price_lbp": 600000
+            },
+            {
+              "name": "Chicken Sub",
+              "description": "Chicken, cheese, garlic, fries, pickles, iceberg",
+              "price_lbp": 650000
+            },
+            {
+              "name": "Fajita",
+              "description": "Chicken, mushroom, onion, green pepper, cheese",
+              "price_lbp": 650000
+            },
+            {
+              "name": "Crispy Chicken",
+              "description": "Fried chicken, fries, thousand island, pickles, iceberg",
+              "price_lbp": 600000
+            },
+            {
+              "name": "Philly Steak",
+              "description": "Steak, mushroom, onion, green pepper, cheese",
+              "price_lbp": 700000
+            },
+            {
+              "name": "Hotdog",
+              "description": "Grilled hotdogs, chips, pickles, coleslaw, mustard, ketchup",
+              "note": "Ask for price"
+            }
+          ]
+        },
+        {
+          "name": "Plates",
+          "items": [
+            {
+              "name": "Chicken Breast platter",
+              "description": "Grilled chicken breast 3 slices, coleslaw, pickles, garlic, french fries",
+              "price_lbp": 800000
+            },
+            {
+              "name": "Chicken Burger platter",
+              "description": "2 pcs steak chicken, coleslaw or green salad, pickles, tomato, french fries",
+              "price_lbp": 650000
+            },
+            {
+              "name": "Chicken Cheese Burger platter",
+              "description": "2 pcs, cheese, coleslaw, pickles, tomato, french fries",
+              "price_lbp": 750000
+            },
+            {
+              "name": "Hamburger platter",
+              "description": "2 pcs, coleslaw, pickles, tomato, french fries",
+              "price_lbp": 1000000
+            },
+            {
+              "name": "Cheese Burger platter",
+              "description": "2 pcs, cheese, coleslaw, pickles, tomato, french fries",
+              "price_lbp": 1100000
+            },
+            {
+              "name": "Cordon Bleu platter",
+              "description": "2 pcs, coleslaw, pickles, tomato, french fries",
+              "note": "Ask for price"
+            },
+            {
+              "name": "Crispy Chicken platter",
+              "description": "200 grm, coleslaw, pickles, tomato, french fries",
+              "price_lbp": 900000
+            },
+            {
+              "name": "Calamari",
+              "description": "9 pcs, coleslaw, pickles, tomato, french fries",
+              "note": "Ask for price"
+            },
+            {
+              "name": "Nuggets",
+              "description": "5 nuggets, coleslaw, pickles, french fries",
+              "price_lbp": 550000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doze-coffee-shop",
+      "name": "Doze Coffee Shop",
+      "logo": "doze-logo.jpg",
+      "price_format_note": "Two prices = Warm / Iced",
+      "categories": [
+        {
+          "name": "Coffee / Tea",
+          "items": [
+            {
+              "name": "Espresso",
+              "price": 2
+            },
+            {
+              "name": "Lungo",
+              "price": 2
+            },
+            {
+              "name": "American Coffee",
+              "warm_price": 3.5,
+              "iced_price": 4.5,
+              "price": 3.5,
+              "description": "Small $3.5 / Large $4.5"
+            },
+            {
+              "name": "Americano (Warm/Iced)",
+              "warm_price": 3.5,
+              "iced_price": 4.5,
+              "price": 3.5,
+              "description": "Small $3.5 / Large $4.5"
+            },
+            {
+              "name": "Cold Brew",
+              "warm_price": 3.5,
+              "iced_price": 4.5,
+              "price": 3
+            },
+            {
+              "name": "Tea",
+              "price": 3
+            }
+          ]
+        },
+        {
+          "name": "Latte",
+          "items": [
+            {
+              "name": "Latte (Warm/Iced)",
+              "warm_price": 3.5,
+              "iced_price": 4.5,
+              "price": 3.5,
+              "description": "Small $3.5 / Large $4.5"
+            },
+            {
+              "name": "Spanish Latte (Warm/Iced)",
+              "warm_price": 4.5,
+              "iced_price": 5.5,
+              "price": 4.5,
+              "description": "Small $4.5 / Large $5.5"
+            },
+            {
+              "name": "Mocha Warm",
+              "price": 5.5
+            },
+            {
+              "name": "Mocha Iced",
+              "price": 6.5
+            },
+            {
+              "name": "White Mocha Warm",
+              "price": 5.5
+            },
+            {
+              "name": "White Mocha Warm (Large)",
+              "price": 6.5
+            },
+            {
+              "name": "White Mocha Iced",
+              "price": 4.5
+            },
+            {
+              "name": "White Mocha Iced (Large)",
+              "price": 5.5
+            },
+            {
+              "name": "Flat White",
+              "price": 4
+            },
+            {
+              "name": "Cappuccino",
+              "price": 4
+            },
+            {
+              "name": "Doze Tiramisu Latte (Warm/Iced)",
+              "warm_price": 4.5,
+              "iced_price": 5.5,
+              "price": 4.5,
+              "description": "Small $4.5 / Large $5.5"
+            },
+            {
+              "name": "Doze Lavender Latte (Warm)",
+              "price": 4.5
+            },
+            {
+              "name": "Doze Lavender Latte (Iced)",
+              "price": 5.5
+            },
+            {
+              "name": "Doze Salted Caramel Latte (Warm/Iced)",
+              "warm_price": 4.5,
+              "iced_price": 5.5,
+              "price": 3.5,
+              "description": "Warm $3.5 / Iced $5.5"
+            },
+            {
+              "name": "Hot Chocolate",
+              "price": 3.5
+            }
+          ]
+        },
+        {
+          "name": "Matcha",
+          "items": [
+            {
+              "name": "Matcha Latte (Warm/Iced)",
+              "price": 5
+            },
+            {
+              "name": "Iced Strawberry Matcha Latte",
+              "price": 6.5
+            },
+            {
+              "name": "Iced Mango Matcha Latte",
+              "price": 6.5
+            }
+          ]
+        },
+        {
+          "name": "Frappe",
+          "items": [
+            {
+              "name": "Mocha Frappe",
+              "warm_price": 4.5,
+              "iced_price": 6,
+              "price": 4.5,
+              "description": "Small $4.5 / Large $6"
+            },
+            {
+              "name": "Caramel Frappe",
+              "warm_price": 4.5,
+              "iced_price": 6,
+              "price": 4.5,
+              "description": "Small $4.5 / Large $6"
+            },
+            {
+              "name": "Vanilla Frappe",
+              "warm_price": 4.5,
+              "iced_price": 6,
+              "price": 4.5,
+              "description": "Small $4.5 / Large $6"
+            },
+            {
+              "name": "Doze Frappe",
+              "warm_price": 4.5,
+              "iced_price": 6,
+              "price": 4.5,
+              "description": "Small $4.5 / Large $6"
+            }
+          ],
+          "note": "Two prices = Warm / Iced"
+        },
+        {
+          "name": "Protein Shakes",
+          "items": [
+            {
+              "name": "Protein Bomb",
+              "price": 7
+            },
+            {
+              "name": "Brewed Protein",
+              "price": 7
+            }
+          ]
+        },
+        {
+          "name": "Milkshake",
+          "items": [
+            {
+              "name": "Nutella",
+              "small_price": 4.5,
+              "large_price": 5.5,
+              "price": 4.5,
+              "description": "Small $4.5 / Large $5.5"
+            },
+            {
+              "name": "Pistachio",
+              "small_price": 5,
+              "large_price": 6,
+              "price": 5,
+              "description": "Small $5 / Large $6"
+            },
+            {
+              "name": "Cookies and Cream",
+              "small_price": 4.5,
+              "large_price": 5.5,
+              "price": 4.5,
+              "description": "Small $4.5 / Large $5.5"
+            },
+            {
+              "name": "Strawberry and Vanilla",
+              "small_price": 4.5,
+              "large_price": 5.5,
+              "price": 4.5,
+              "description": "Small $4.5 / Large $5.5"
+            }
+          ]
+        },
+        {
+          "name": "Sandwiches",
+          "items": [
+            {
+              "name": "Tuna Avocado",
+              "price": 6.5
+            },
+            {
+              "name": "Turkey and Cheese",
+              "price": 5.5
+            },
+            {
+              "name": "Pesto Halloumi",
+              "price": 6
+            },
+            {
+              "name": "Labneh",
+              "price": 5
+            }
+          ]
+        },
+        {
+          "name": "Refreshment",
+          "items": [
+            {
+              "name": "Passion Mojito",
+              "price": 5
+            },
+            {
+              "name": "Strawberry Lime Fizz",
+              "price": 5
+            },
+            {
+              "name": "Peach Cucumber Fizz",
+              "price": 5
+            }
+          ]
+        },
+        {
+          "name": "Smoothies",
+          "note": "Mix and Match — Small $4 / Large $5",
+          "items": [
+            {
+              "name": "Strawberry",
+              "price": 4,
+              "description": "Small $4 / Large $5"
+            },
+            {
+              "name": "Pineapple",
+              "price": 4,
+              "description": "Small $4 / Large $5"
+            },
+            {
+              "name": "Kiwi",
+              "price": 4,
+              "description": "Small $4 / Large $5"
+            },
+            {
+              "name": "Blueberry",
+              "price": 4,
+              "description": "Small $4 / Large $5"
+            },
+            {
+              "name": "Mango",
+              "price": 4,
+              "description": "Small $4 / Large $5"
+            },
+            {
+              "name": "Peach",
+              "price": 4,
+              "description": "Small $4 / Large $5"
+            },
+            {
+              "name": "Lychee",
+              "price": 4,
+              "description": "Small $4 / Large $5"
+            },
+            {
+              "name": "Passion Fruit",
+              "price": 4,
+              "description": "Small $4 / Large $5"
+            },
+            {
+              "name": "Berries",
+              "price": 4,
+              "description": "Small $4 / Large $5"
+            }
+          ]
+        }
+      ],
+      "extras": [
+        {
+          "name": "Extra Shot",
+          "price": 1
+        },
+        {
+          "name": "Add Flavor (Caramel, Hazelnut, Vanilla - sugar-free available)",
+          "price": 1
+        },
+        {
+          "name": "Skimmed and Lactose-Free Milk Available",
+          "note": "no extra charge"
+        },
+        {
+          "name": "Almond, Coconut, Oat Milk",
+          "price": 1
+        },
+        {
+          "name": "Decaf Available Upon Request",
+          "note": "no extra charge"
+        }
+      ]
+    },
+    {
+      "id": "janet-zahr-el-loz",
+      "name": "Janet Zahr El Loz",
+      "name_ar": "زهر اللوز",
+      "logo": "janet-zahr-el-loz-logo.jpg",
+      "note": "Logo only - menu not provided"
+    }
+  ]
+}
