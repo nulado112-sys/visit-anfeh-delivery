@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useCart } from "../../context/cart";
 import { showToast } from "../../components/Toast";
+import { useLang, t } from "../../context/language";
 
 type Item = {
   name: string;
@@ -84,6 +85,8 @@ function AddButton({ item, restaurantId, restaurantName }: { item: Item; restaur
 }
 
 export default function MenuTabs({ restaurantId, restaurantName, categories, currencyNote }: Props) {
+  const { lang } = useLang();
+  const T = t[lang];
   const validCategories = categories.filter(c => c.items && c.items.length > 0);
   const [active, setActive] = useState(validCategories[0]?.name ?? "");
   const activeCategory = categories.find(c => c.name === active);
@@ -91,7 +94,7 @@ export default function MenuTabs({ restaurantId, restaurantName, categories, cur
   if (categories.length === 0) {
     return (
       <div className="rounded-2xl border border-[#1AABBD]/15 bg-white p-12 text-center">
-        <p className="text-slate-400">Menu coming soon.</p>
+        <p className="text-slate-400">{T.menu_coming_soon}</p>
       </div>
     );
   }
@@ -101,7 +104,7 @@ export default function MenuTabs({ restaurantId, restaurantName, categories, cur
       {/* Sticky sidebar — desktop */}
       <aside className="hidden w-52 shrink-0 lg:block">
         <div className="sticky top-24">
-          <p className="mb-3 text-xs font-bold tracking-widest text-slate-400 uppercase">Menu</p>
+          <p className="mb-3 text-xs font-bold tracking-widest text-slate-400 uppercase">{T.menu_label}</p>
           <nav className="space-y-0.5">
             {categories.map((cat) => (
               <button
@@ -169,7 +172,7 @@ export default function MenuTabs({ restaurantId, restaurantName, categories, cur
                       <div className="flex flex-wrap items-center gap-2">
                         <h4 className="font-bold leading-tight text-[#0C2B35]">{item.name}</h4>
                         {item.is_new && (
-                          <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs font-bold text-green-700">New</span>
+                          <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs font-bold text-green-700">{T.menu_new}</span>
                         )}
                       </div>
                       {item.description && (
@@ -180,7 +183,7 @@ export default function MenuTabs({ restaurantId, restaurantName, categories, cur
                       )}
                       <p className="mt-2 text-base font-extrabold text-[#1AABBD]">
                         {item.note === "Ask for price" ? (
-                          <span className="text-sm font-semibold text-slate-400 italic">Ask for price</span>
+                          <span className="text-sm font-semibold text-slate-400 italic">{T.menu_ask_price}</span>
                         ) : (
                           formatPrice(item)
                         )}
@@ -196,12 +199,12 @@ export default function MenuTabs({ restaurantId, restaurantName, categories, cur
                 ))}
               </div>
             ) : (
-              <p className="text-sm italic text-slate-400">No items listed yet.</p>
+              <p className="text-sm italic text-slate-400">{T.menu_no_items}</p>
             )}
 
             {activeCategory.add_ons && activeCategory.add_ons.length > 0 && (
               <div className="mt-6 rounded-2xl border border-[#1AABBD]/20 bg-[#EBF8FA] p-5">
-                <p className="mb-3 text-sm font-bold text-[#0C2B35]">Available Add-ons</p>
+                <p className="mb-3 text-sm font-bold text-[#0C2B35]">{T.menu_addons}</p>
                 <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                   {activeCategory.add_ons.map((addon, i) => (
                     <div key={i} className="flex items-center justify-between rounded-lg bg-white/70 px-3 py-2 text-sm">

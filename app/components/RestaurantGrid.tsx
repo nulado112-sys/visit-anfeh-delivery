@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import LogoImage from "./LogoImage";
+import { useLang, t } from "../context/language";
 
 type Restaurant = {
   id: string;
@@ -19,6 +20,8 @@ export default function RestaurantGrid({
 }: {
   restaurants: Restaurant[];
 }) {
+  const { lang } = useLang();
+  const T = t[lang];
   const [query, setQuery] = useState("");
 
   const filtered = restaurants.filter((r) =>
@@ -36,7 +39,7 @@ export default function RestaurantGrid({
         {/* Header + search */}
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-2xl font-black tracking-tight text-[#0C2B35]">
-            Restaurants
+            {T.grid_title}
           </h2>
 
           <div className="relative w-full sm:w-64">
@@ -49,7 +52,7 @@ export default function RestaurantGrid({
             </svg>
             <input
               type="text"
-              placeholder="Search a restaurant…"
+              placeholder={T.grid_search}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="w-full rounded-2xl border border-[#1AABBD]/20 bg-white py-2.5 pl-10 pr-10 text-sm text-[#0C2B35] shadow-sm outline-none transition placeholder:text-slate-400 focus:border-[#1AABBD] focus:ring-2 focus:ring-[#1AABBD]/15"
@@ -70,7 +73,7 @@ export default function RestaurantGrid({
         {filtered.length === 0 && (
           <div className="flex flex-col items-center justify-center gap-3 py-20 text-center">
             <span className="text-4xl">🔍</span>
-            <p className="font-bold text-slate-500">No restaurants found</p>
+            <p className="font-bold text-slate-500">{T.grid_empty}</p>
           </div>
         )}
 
@@ -101,7 +104,7 @@ export default function RestaurantGrid({
                   )}
 
                   <div className="absolute top-3 right-3 rounded-full bg-white px-2.5 py-1 text-xs font-bold text-[#1AABBD] shadow-sm border border-[#1AABBD]/15">
-                    {itemCount} items
+                    {itemCount} {T.grid_items}
                   </div>
                 </div>
 
@@ -115,13 +118,13 @@ export default function RestaurantGrid({
                   )}
                   <div className="mt-3 flex items-center gap-1.5 text-xs text-slate-400">
                     <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-                    Open now · {(restaurant.categories ?? []).length} categories
+                    {T.grid_open} · {(restaurant.categories ?? []).length} {T.grid_categories}
                   </div>
                 </div>
 
                 {/* CTA */}
                 <div className="flex items-center justify-between border-t border-[#1AABBD]/10 px-5 py-3.5">
-                  <span className="text-sm font-bold text-[#1AABBD]">View Menu</span>
+                  <span className="text-sm font-bold text-[#1AABBD]">{T.grid_view}</span>
                   <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1AABBD] text-white transition-all group-hover:bg-[#0C2B35] group-hover:translate-x-0.5">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M5 12h14M12 5l7 7-7 7" />
