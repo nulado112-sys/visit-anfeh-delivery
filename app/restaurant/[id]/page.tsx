@@ -24,7 +24,7 @@ export default async function RestaurantPage({ params }: Props) {
   return (
     <main>
       {/* Header */}
-      <section className="border-b border-slate-200 bg-white">
+      <section className="border-b border-[#1AABBD]/15 bg-white">
         <div className="mx-auto max-w-7xl px-5 py-8">
           <Link
             href="/"
@@ -37,7 +37,7 @@ export default async function RestaurantPage({ params }: Props) {
           </Link>
 
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-[#1AABBD]/15 bg-[#EBF8FA]">
               <LogoImage
                 src={`/logos/${restaurant.logo}`}
                 alt={restaurant.name}

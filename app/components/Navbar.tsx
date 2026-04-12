@@ -19,7 +19,7 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-30 transition-all duration-300 ${
         scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white"
-      } border-b border-[#1AABBD]/10`}
+      } border-b border-[#1AABBD]/15`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
         {/* Logo */}

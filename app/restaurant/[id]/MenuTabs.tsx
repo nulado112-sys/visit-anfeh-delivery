@@ -88,7 +88,7 @@ export default function MenuTabs({ restaurantId, restaurantName, categories, cur
 
   if (categories.length === 0) {
     return (
-      <div className="rounded-2xl border border-slate-200 bg-white p-12 text-center">
+      <div className="rounded-2xl border border-[#1AABBD]/15 bg-white p-12 text-center">
         <p className="text-slate-400">Menu coming soon.</p>
       </div>
     );
@@ -161,7 +161,7 @@ export default function MenuTabs({ restaurantId, restaurantName, categories, cur
                 {activeCategory.items.map((item, i) => (
                   <div
                     key={i}
-                    className="group flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition hover:border-[#1AABBD]/20 hover:shadow-md"
+                    className="group flex items-start gap-4 rounded-2xl border border-[#1AABBD]/10 bg-white p-4 shadow-sm transition hover:border-[#1AABBD]/30 hover:shadow-md"
                   >
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-2">

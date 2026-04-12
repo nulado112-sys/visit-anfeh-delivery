@@ -24,12 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="bg-[#FFF8F0] font-sans antialiased">
+      <body className="bg-[#F4FAFB] font-sans antialiased">
         <CartProvider>
           <Navbar />
           <CartDrawer />
           {children}
-          <footer className="mt-16 border-t border-slate-200 bg-white py-10 text-center">
+          <footer className="mt-16 border-t border-[#1AABBD]/15 bg-white py-10 text-center">
             <p className="text-sm font-bold text-[#0C2B35]">
               Visit Anfeh Delivery
             </p>
