@@ -27,7 +27,7 @@ export default async function RestaurantPage({ params }: Props) {
       <section className="border-b border-[#1AABBD]/15 bg-white">
         <div className="mx-auto max-w-7xl px-5 py-8">
           <Link
-            href="/"
+            href="/#restaurants"
             className="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 transition hover:text-[#1AABBD]"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
