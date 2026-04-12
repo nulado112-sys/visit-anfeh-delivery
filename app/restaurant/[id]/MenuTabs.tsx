@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useCart } from "../../context/cart";
+import { showToast } from "../../components/Toast";
 
 type Item = {
   name: string;
@@ -43,6 +44,7 @@ function AddButton({ item, restaurantId, restaurantName }: { item: Item; restaur
 
   function handleAdd() {
     addItem({ restaurantId, restaurantName, name: item.name, price: item.price ?? null, priceLbp: item.price_lbp ?? null });
+    showToast(item.name);
   }
 
   if (qty === 0) {

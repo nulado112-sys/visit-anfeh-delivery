@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { CartProvider } from "./context/cart";
 import Navbar from "./components/Navbar";
 import CartDrawer from "./components/CartDrawer";
+import Toast from "./components/Toast";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,6 +29,7 @@ export default function RootLayout({
         <CartProvider>
           <Navbar />
           <CartDrawer />
+          <Toast />
           {children}
           <footer className="mt-16 border-t border-[#1AABBD]/15 bg-white py-10 text-center">
             <p className="text-sm font-bold text-[#0C2B35]">
