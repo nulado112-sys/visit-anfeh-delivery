@@ -24,16 +24,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="bg-[#FAFAF8] font-sans antialiased">
+      <body className="bg-[#FFF8F0] font-sans antialiased">
         <CartProvider>
           <Navbar />
           <CartDrawer />
           {children}
-          <footer className="mt-24 border-t border-slate-200 bg-[#0C2B35] py-10 text-center">
-            <p className="text-sm font-semibold text-[#1AABBD]">
+          <footer className="mt-16 border-t border-slate-200 bg-white py-10 text-center">
+            <p className="text-sm font-bold text-[#0C2B35]">
               Visit Anfeh Delivery
             </p>
-            <p className="mt-1 text-xs text-slate-500">
+            <p className="mt-1 text-xs text-slate-400">
               Anfeh, Lebanon · Your trusted delivery partner · 81-526075
             </p>
           </footer>
