@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { CartProvider } from "./context/cart";
 import Navbar from "./components/Navbar";
 import CartDrawer from "./components/CartDrawer";
@@ -40,6 +41,7 @@ export default function RootLayout({
             </p>
           </footer>
         </CartProvider>
+        <Analytics />
       </body>
     </html>
   );
