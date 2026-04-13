@@ -124,7 +124,7 @@ export default function CartDrawer() {
     // Save order to Supabase
     await supabase.from("orders").insert({
       order_number: orderNum,
-      user_id: user?.id ?? null,
+      user_id: user!.id,
       customer_name: customer.name.trim(),
       customer_phone: customer.phone.trim(),
       zone: customer.zone,
