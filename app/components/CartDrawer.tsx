@@ -31,71 +31,82 @@ function buildWhatsAppMessage(
     grouped[item.restaurantName].push(item);
   }
 
-  let msg = "🍽️ *Visit Anfeh Delivery — New Order*\n";
+  let msg = "🛒 *New Order — Visit Anfeh Delivery*\n";
   msg += "━━━━━━━━━━━━━━━━━━━━\n\n";
 
-  msg += `👤 *Customer:* ${customer.name}\n`;
-  msg += `📞 *Phone:* +961${customer.phone}\n`;
-  msg += `📍 *Area:* ${customer.zone}\n`;
-  msg += `🏠 *Address:* ${customer.location}\n\n`;
-
   for (const [restaurant, restaurantItems] of Object.entries(grouped)) {
-    msg += `🏪 *${restaurant}*\n`;
+    msg += `🏪 *Restaurant:* ${restaurant}\n\n`;
+    msg += `*Items:*\n`;
     for (const item of restaurantItems) {
-      const priceStr =
-        item.price !== null
-          ? `$${(item.price * item.quantity).toFixed(2)}`
-          : `LBP price`;
-      msg += `  • ${item.name} ×${item.quantity} — ${priceStr}\n`;
+      const priceStr = item.price !== null ? `$${item.price}` : `LBP`;
+      msg += `- ${item.name} ×${item.quantity} (${priceStr})\n`;
     }
     msg += "\n";
   }
 
-  if (customer.notes.trim()) {
-    msg += `📝 *Special Instructions:*\n${customer.notes.trim()}\n\n`;
-  }
-
   msg += "━━━━━━━━━━━━━━━━━━━━\n";
   const hasLbp = items.some((i) => i.price === null);
-  msg += `📦 Subtotal: $${subtotal.toFixed(2)}\n`;
-  msg += `🚚 Delivery (${customer.zone}): +$${deliveryFee.toFixed(2)}\n`;
-  msg += `💰 *Total: $${(subtotal + deliveryFee).toFixed(2)}*`;
+  msg += `Subtotal: $${subtotal.toFixed(2)}\n`;
+  msg += `Delivery (${customer.zone}): $${deliveryFee.toFixed(2)}\n`;
+  msg += `*Total: $${(subtotal + deliveryFee).toFixed(2)}*`;
   if (hasLbp) msg += ` *(+ LBP items)*`;
+  msg += "\n\n";
+
+  msg += "━━━━━━━━━━━━━━━━━━━━\n";
+  msg += `👤 *Customer:*\n`;
+  msg += `Name: ${customer.name}\n`;
+  msg += `Phone: +961${customer.phone}\n\n`;
+  msg += `📍 *Address (${customer.zone}):*\n${customer.location}\n`;
+
+  if (customer.notes.trim()) {
+    msg += `\n📝 *Notes:*\n${customer.notes.trim()}`;
+  }
+
+  msg += "\n\n💵 *Payment: Cash on delivery*";
   msg += "\n\nPlease confirm my order. Thank you! 🙏";
 
   return msg;
 }
 
 export default function CartDrawer() {
-  const { items, isOpen, closeCart, updateQty, clearCart, subtotal, itemCount } =
-    useCart();
+  const { items, isOpen, closeCart, updateQty, clearCart, subtotal, itemCount } = useCart();
   const { lang } = useLang();
   const T = t[lang];
 
   const [customer, setCustomer] = useState<CustomerInfo>({
-    name: "",
-    phone: "",
-    zone: DELIVERY_ZONES[0].label,
-    location: "",
-    notes: "",
+    name: "", phone: "", zone: DELIVERY_ZONES[0].label, location: "", notes: "",
   });
   const [errors, setErrors] = useState({ name: false, phone: false, location: false });
+  const [loading, setLoading] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const deliveryFee = DELIVERY_ZONES.find((z) => z.label === customer.zone)?.fee ?? 1;
-
   const total = subtotal + deliveryFee;
 
-  function handleOrder() {
-    const hasName = customer.name.trim().length > 0;
-    const hasPhone = customer.phone.trim().length > 0;
-    const hasLocation = customer.location.trim().length > 0;
-    if (!hasName || !hasPhone || !hasLocation) {
-      setErrors({ name: !hasName, phone: !hasPhone, location: !hasLocation });
-      return;
-    }
+  function validate() {
+    const e = {
+      name: customer.name.trim().length === 0,
+      phone: customer.phone.trim().length === 0,
+      location: customer.location.trim().length === 0,
+    };
+    setErrors(e);
+    return !e.name && !e.phone && !e.location;
+  }
+
+  function handleOrderClick() {
+    if (!validate()) return;
+    setShowConfirm(true);
+  }
+
+  function handleConfirm() {
+    setShowConfirm(false);
+    setLoading(true);
     const msg = buildWhatsAppMessage(items, subtotal, customer, deliveryFee);
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank");
+    setTimeout(() => {
+      window.open(url, "_blank");
+      setLoading(false);
+    }, 600);
   }
 
   function handleClear() {
@@ -113,6 +124,47 @@ export default function CartDrawer() {
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
+
+      {/* Confirmation popup */}
+      {showConfirm && (
+        <div className="fixed inset-0 z-[70] flex items-center justify-center px-5">
+          <div className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-2xl">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EBF8FA] text-2xl">
+              💬
+            </div>
+            <h3 className="text-lg font-black text-[#0C2B35]">
+              {lang === "ar" ? "تأكيد الطلب" : "Confirm your order?"}
+            </h3>
+            <p className="mt-2 text-sm text-slate-500">
+              {lang === "ar"
+                ? "سيتم تحويلك إلى واتساب لإتمام طلبك."
+                : "You will be redirected to WhatsApp to confirm your order."}
+            </p>
+            <div className="mt-2 rounded-xl bg-[#F4FAFB] px-4 py-2 text-sm">
+              <span className="font-bold text-[#0C2B35]">
+                {lang === "ar" ? "المجموع:" : "Total:"} ${total.toFixed(2)}
+              </span>
+              <span className="ml-2 text-slate-400">
+                · {lang === "ar" ? "دفع عند الاستلام" : "Cash on delivery"}
+              </span>
+            </div>
+            <div className="mt-5 flex gap-3">
+              <button
+                onClick={() => setShowConfirm(false)}
+                className="flex-1 rounded-2xl border border-slate-200 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-50"
+              >
+                {lang === "ar" ? "رجوع" : "Go back"}
+              </button>
+              <button
+                onClick={handleConfirm}
+                className="flex-1 rounded-2xl bg-[#25D366] py-3 text-sm font-bold text-white transition hover:bg-[#1ebe5c]"
+              >
+                {lang === "ar" ? "تأكيد ✓" : "Confirm ✓"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Drawer */}
       <aside
@@ -147,7 +199,20 @@ export default function CartDrawer() {
               <p className="text-sm text-slate-500">{T.cart_empty_sub}</p>
             </div>
           ) : (
-            <div className="space-y-6 px-6 py-5">
+            <div className="space-y-5 px-6 py-5">
+
+              {/* ── Estimated time + cash on delivery ── */}
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                  </svg>
+                  {lang === "ar" ? "٢٥–٣٥ دقيقة" : "25–35 min"}
+                </div>
+                <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300">
+                  💵 {lang === "ar" ? "دفع عند الاستلام" : "Cash on delivery"}
+                </div>
+              </div>
 
               {/* ── Order Items ── */}
               <div>
@@ -156,14 +221,11 @@ export default function CartDrawer() {
                 </p>
                 <div className="space-y-4">
                   {Object.entries(
-                    items.reduce<Record<string, typeof items>>(
-                      (acc, item) => {
-                        if (!acc[item.restaurantName]) acc[item.restaurantName] = [];
-                        acc[item.restaurantName].push(item);
-                        return acc;
-                      },
-                      {},
-                    ),
+                    items.reduce<Record<string, typeof items>>((acc, item) => {
+                      if (!acc[item.restaurantName]) acc[item.restaurantName] = [];
+                      acc[item.restaurantName].push(item);
+                      return acc;
+                    }, {}),
                   ).map(([restaurant, restaurantItems]) => (
                     <div key={restaurant}>
                       <p className="mb-2 text-xs font-semibold tracking-widest text-[#1AABBD] uppercase">
@@ -176,14 +238,11 @@ export default function CartDrawer() {
                             className="flex items-center gap-3 rounded-xl bg-white/5 p-3"
                           >
                             <div className="flex-1 min-w-0">
-                              <p className="truncate text-sm font-medium text-white">
-                                {item.name}
-                              </p>
+                              <p className="truncate text-sm font-medium text-white">{item.name}</p>
                               <p className="text-xs text-slate-400">
-                                {item.price !== null ? `$${item.price} each` : "LBP price"}
+                                {item.price !== null ? `$${item.price} ${T.cart_each}` : "LBP price"}
                               </p>
                             </div>
-
                             <div className="flex items-center gap-1.5">
                               <button
                                 onClick={() => updateQty(item.restaurantId, item.name, item.quantity - 1)}
@@ -199,7 +258,6 @@ export default function CartDrawer() {
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 5v14M5 12h14"/></svg>
                               </button>
                             </div>
-
                             <p className="w-14 text-right text-sm font-bold text-white">
                               {item.price !== null ? `$${(item.price * item.quantity).toFixed(2)}` : "—"}
                             </p>
@@ -228,24 +286,14 @@ export default function CartDrawer() {
                     </label>
                     <input
                       type="text"
-                      placeholder=""
                       value={customer.name}
-                      onChange={(e) => {
-                        setCustomer((p) => ({ ...p, name: e.target.value }));
-                        if (errors.name) setErrors((p) => ({ ...p, name: false }));
-                      }}
-                      className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:bg-white/10 ${
-                        errors.name
-                          ? "border-red-500 focus:border-red-400"
-                          : "border-white/10 focus:border-[#1AABBD]"
-                      }`}
+                      onChange={(e) => { setCustomer((p) => ({ ...p, name: e.target.value })); if (errors.name) setErrors((p) => ({ ...p, name: false })); }}
+                      className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:bg-white/10 ${errors.name ? "border-red-500" : "border-white/10 focus:border-[#1AABBD]"}`}
                     />
-                    {errors.name && (
-                      <p className="mt-1 text-xs text-red-400">{T.cart_err_name}</p>
-                    )}
+                    {errors.name && <p className="mt-1 text-xs text-red-400">{T.cart_err_name}</p>}
                   </div>
 
-                  {/* Phone Number */}
+                  {/* Phone */}
                   <div>
                     <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-slate-300">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -254,31 +302,18 @@ export default function CartDrawer() {
                       {T.cart_phone} <span className="text-[#1AABBD]">*</span>
                     </label>
                     <div className="flex gap-2">
-                      <div className="flex items-center rounded-xl border border-white/10 bg-white/5 px-3 text-sm font-semibold text-slate-300 select-none">
-                        +961
-                      </div>
+                      <div className="flex items-center rounded-xl border border-white/10 bg-white/5 px-3 text-sm font-semibold text-slate-300 select-none">+961</div>
                       <input
                         type="tel"
-                        placeholder=""
                         value={customer.phone}
-                        onChange={(e) => {
-                          const val = e.target.value.replace(/\D/g, "").slice(0, 8);
-                          setCustomer((p) => ({ ...p, phone: val }));
-                          if (errors.phone) setErrors((p) => ({ ...p, phone: false }));
-                        }}
-                        className={`flex-1 rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:bg-white/10 ${
-                          errors.phone
-                            ? "border-red-500 focus:border-red-400"
-                            : "border-white/10 focus:border-[#1AABBD]"
-                        }`}
+                        onChange={(e) => { const v = e.target.value.replace(/\D/g, "").slice(0, 8); setCustomer((p) => ({ ...p, phone: v })); if (errors.phone) setErrors((p) => ({ ...p, phone: false })); }}
+                        className={`flex-1 rounded-xl border bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:bg-white/10 ${errors.phone ? "border-red-500" : "border-white/10 focus:border-[#1AABBD]"}`}
                       />
                     </div>
-                    {errors.phone && (
-                      <p className="mt-1 text-xs text-red-400">{T.cart_err_phone}</p>
-                    )}
+                    {errors.phone && <p className="mt-1 text-xs text-red-400">{T.cart_err_phone}</p>}
                   </div>
 
-                  {/* Delivery Zone */}
+                  {/* Zone picker */}
                   <div>
                     <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-slate-300">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -307,7 +342,7 @@ export default function CartDrawer() {
                     </div>
                   </div>
 
-                  {/* Location */}
+                  {/* Address */}
                   <div>
                     <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-slate-300">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -317,35 +352,25 @@ export default function CartDrawer() {
                     </label>
                     <input
                       type="text"
-                      placeholder=""
+                      placeholder={lang === "ar" ? "الشارع، المبنى، بالقرب من..." : "Street, building, near landmark…"}
                       value={customer.location}
-                      onChange={(e) => {
-                        setCustomer((p) => ({ ...p, location: e.target.value }));
-                        if (errors.location) setErrors((p) => ({ ...p, location: false }));
-                      }}
-                      className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:bg-white/10 ${
-                        errors.location
-                          ? "border-red-500 focus:border-red-400"
-                          : "border-white/10 focus:border-[#1AABBD]"
-                      }`}
+                      onChange={(e) => { setCustomer((p) => ({ ...p, location: e.target.value })); if (errors.location) setErrors((p) => ({ ...p, location: false })); }}
+                      className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:bg-white/10 ${errors.location ? "border-red-500" : "border-white/10 focus:border-[#1AABBD]"}`}
                     />
-                    {errors.location && (
-                      <p className="mt-1 text-xs text-red-400">{T.cart_err_address}</p>
-                    )}
+                    {errors.location && <p className="mt-1 text-xs text-red-400">{T.cart_err_address}</p>}
                   </div>
 
-                  {/* Special Instructions */}
+                  {/* Notes */}
                   <div>
                     <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-slate-300">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
                       </svg>
-                      {T.cart_notes}
-                      <span className="ml-1 font-normal text-slate-500">{T.cart_optional}</span>
+                      {T.cart_notes} <span className="ml-1 font-normal text-slate-500">{T.cart_optional}</span>
                     </label>
                     <textarea
-                      rows={3}
-                      placeholder=""
+                      rows={2}
+                      placeholder={lang === "ar" ? "أي طلبات خاصة؟" : "Any special requests?"}
                       value={customer.notes}
                       onChange={(e) => setCustomer((p) => ({ ...p, notes: e.target.value }))}
                       className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:border-[#1AABBD] focus:bg-white/10"
@@ -355,7 +380,7 @@ export default function CartDrawer() {
               </div>
 
               {/* ── Price Summary ── */}
-              <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-2 text-sm">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2 text-sm">
                 <div className="flex justify-between text-slate-400">
                   <span>{T.cart_subtotal}</span>
                   <span>${subtotal.toFixed(2)}</span>
@@ -364,10 +389,13 @@ export default function CartDrawer() {
                   <span>{T.cart_delivery} ({customer.zone})</span>
                   <span>+${deliveryFee}.00</span>
                 </div>
-                <div className="flex justify-between border-t border-white/10 pt-2 text-base font-bold text-white">
+                <div className="flex justify-between border-t border-white/10 pt-3 text-lg font-black text-white">
                   <span>{T.cart_total}</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span className="text-[#F9B233]">${total.toFixed(2)}</span>
                 </div>
+                <p className="text-center text-xs text-slate-500 pt-1">
+                  💵 {lang === "ar" ? "الدفع عند الاستلام" : "Cash on delivery"}
+                </p>
               </div>
 
             </div>
@@ -377,20 +405,33 @@ export default function CartDrawer() {
         {/* Footer CTA */}
         {items.length > 0 && (
           <div className="border-t border-white/10 px-6 py-5 space-y-3">
+            <p className="text-center text-xs text-slate-500">
+              {lang === "ar"
+                ? "سيتم تحويلك إلى واتساب لإتمام طلبك"
+                : "You will be redirected to WhatsApp to confirm your order"}
+            </p>
             <button
-              onClick={handleOrder}
-              className="flex w-full items-center justify-center gap-3 rounded-xl bg-[#25D366] py-4 text-base font-bold text-white shadow-lg shadow-[#25D366]/20 transition hover:bg-[#1ebe5c] active:scale-[0.98]"
+              onClick={handleOrderClick}
+              disabled={loading}
+              className="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#25D366] py-4 text-base font-bold text-white shadow-lg shadow-[#25D366]/20 transition hover:bg-[#1ebe5c] active:scale-[0.98] disabled:opacity-70"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              {T.cart_btn}
+              {loading ? (
+                <>
+                  <svg className="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                  </svg>
+                  {lang === "ar" ? "جارٍ المعالجة..." : "Processing..."}
+                </>
+              ) : (
+                <>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  {lang === "ar" ? "اطلب الآن 🚀" : "Order Now 🚀"}
+                </>
+              )}
             </button>
-
-            <button
-              onClick={handleClear}
-              className="w-full text-center text-xs text-slate-600 transition hover:text-slate-400"
-            >
+            <button onClick={handleClear} className="w-full text-center text-xs text-slate-600 transition hover:text-slate-400">
               {T.cart_clear}
             </button>
           </div>

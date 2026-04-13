@@ -5,6 +5,8 @@ import { LanguageProvider } from "./context/language";
 import Navbar from "./components/Navbar";
 import CartDrawer from "./components/CartDrawer";
 import Toast from "./components/Toast";
+import StickyCartBar from "./components/StickyCartBar";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import "./globals.css";
 
 const inter = Inter({
@@ -32,6 +34,8 @@ export default function RootLayout({
           <Navbar />
           <CartDrawer />
           <Toast />
+          <StickyCartBar />
+          <FloatingWhatsApp />
           {children}
           <footer className="mt-16 border-t border-[#1AABBD]/15 bg-white py-10 text-center">
             <p className="text-sm font-bold text-[#0C2B35]">
