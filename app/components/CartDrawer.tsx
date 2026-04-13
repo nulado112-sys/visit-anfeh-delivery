@@ -106,6 +106,11 @@ export default function CartDrawer() {
   }
 
   function handleOrderClick() {
+    if (!user) {
+      closeCart();
+      window.location.href = "/auth/login";
+      return;
+    }
     if (!validate()) return;
     setShowConfirm(true);
   }
@@ -496,11 +501,23 @@ export default function CartDrawer() {
         {/* Footer CTA */}
         {items.length > 0 && (
           <div className="border-t border-white/10 px-6 py-5 space-y-3">
-            <p className="text-center text-xs text-slate-500">
-              {lang === "ar"
-                ? "سيتم تحويلك إلى واتساب لإتمام طلبك"
-                : "You will be redirected to WhatsApp to confirm your order"}
-            </p>
+            {!user && (
+              <div className="rounded-xl bg-[#F9B233]/10 border border-[#F9B233]/30 px-4 py-2.5 text-center">
+                <p className="text-xs font-semibold text-[#F9B233]">
+                  {lang === "ar" ? "يجب تسجيل الدخول للطلب" : "You must be signed in to order"}
+                </p>
+                <a href="/auth/login" onClick={closeCart} className="mt-1 block text-xs text-white underline">
+                  {lang === "ar" ? "تسجيل الدخول ←" : "Sign in →"}
+                </a>
+              </div>
+            )}
+            {user && (
+              <p className="text-center text-xs text-slate-500">
+                {lang === "ar"
+                  ? "سيتم تحويلك إلى واتساب لإتمام طلبك"
+                  : "You will be redirected to WhatsApp to confirm your order"}
+              </p>
+            )}
             <button
               onClick={handleOrderClick}
               disabled={loading}
