@@ -120,9 +120,15 @@ export default function CartDrawer() {
     setLoading(true);
 
     const orderNum = generateOrderNumber();
+    const trackUrl = `${window.location.origin}/track/${orderNum}`;
+    const msg = buildWhatsAppMessage(items, subtotal, customer, deliveryFee, orderNum, trackUrl);
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
-    // Save order to Supabase
-    const { error: insertError } = await supabase.from("orders").insert({
+    // Open WhatsApp immediately (must be in user-interaction context to avoid popup block)
+    window.open(waUrl, "_blank");
+
+    // Save order to Supabase in background
+    const orderData = {
       order_number: orderNum,
       user_id: user?.id ?? null,
       customer_name: customer.name.trim(),
@@ -141,22 +147,13 @@ export default function CartDrawer() {
       delivery_fee: deliveryFee,
       total: subtotal + deliveryFee,
       status: "pending",
+    };
+
+    supabase.from("orders").insert(orderData).then(({ error }) => {
+      if (error) console.error("Order save failed:", error.message);
     });
 
-    if (insertError) {
-      console.error("Order save failed:", insertError.message);
-      alert("Failed to save your order. Please try again.");
-      setLoading(false);
-      return;
-    }
-
     setOrderNumber(orderNum);
-
-    const trackUrl = `${window.location.origin}/track/${orderNum}`;
-    const msg = buildWhatsAppMessage(items, subtotal, customer, deliveryFee, orderNum, trackUrl);
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-
-    window.open(url, "_blank");
     clearCart();
     setCustomer({ name: "", phone: "", zone: DELIVERY_ZONES[0].label, location: "", notes: "" });
     setLoading(false);
