@@ -5,6 +5,32 @@ import { supabase, STATUS_LABELS, type Order } from "../lib/supabase";
 
 const DRIVER_PASS = process.env.NEXT_PUBLIC_DRIVER_PASS || "driver2024";
 
+function requestNotificationPermission() {
+  if (typeof Notification !== "undefined" && Notification.permission === "default") {
+    Notification.requestPermission();
+  }
+}
+
+function notifyDriver(order: Order) {
+  // Vibrate: 3 strong pulses
+  if (navigator.vibrate) {
+    navigator.vibrate([400, 150, 400, 150, 400]);
+  }
+
+  // Browser notification
+  if (typeof Notification !== "undefined" && Notification.permission === "granted") {
+    const n = new Notification("🛵 New Delivery!", {
+      body: `Order ${order.order_number} — ${order.customer_name} · ${order.zone}`,
+      icon: "/logos/visit-anfeh-delivery-logo.jpg",
+      badge: "/logos/visit-anfeh-delivery-logo.jpg",
+      tag: order.id,          // prevents duplicate notifications for same order
+      requireInteraction: true, // stays on screen until dismissed
+    });
+    // Tap on notification focuses the driver tab
+    n.onclick = () => { window.focus(); n.close(); };
+  }
+}
+
 export default function DriverPage() {
   const [authed, setAuthed] = useState(false);
   const [pass, setPass] = useState("");
@@ -16,7 +42,8 @@ export default function DriverPage() {
   const [locationError, setLocationError] = useState("");
   const [updating, setUpdating] = useState<string | null>(null);
   const [newOrderAlert, setNewOrderAlert] = useState(false);
-  const prevOrderCount = useRef(0);
+  const [notifPermission, setNotifPermission] = useState<NotificationPermission>("default");
+  const prevOrderIds = useRef<Set<string>>(new Set());
   const watchRef = useRef<number | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const pingRef = useRef<NodeJS.Timeout | null>(null);
@@ -26,6 +53,9 @@ export default function DriverPage() {
       setAuthed(true);
       const saved = localStorage.getItem("driver_name");
       if (saved) { setDriverName(saved); setNameSet(true); }
+    }
+    if (typeof Notification !== "undefined") {
+      setNotifPermission(Notification.permission);
     }
   }, []);
 
@@ -38,7 +68,6 @@ export default function DriverPage() {
       .on("postgres_changes", { event: "*", schema: "public", table: "orders" }, () => fetchOrders())
       .subscribe();
 
-    // Ping presence every 30s so admin sees driver as online
     pingPresence();
     pingRef.current = setInterval(pingPresence, 30000);
 
@@ -50,7 +79,7 @@ export default function DriverPage() {
   }, [authed, nameSet]);
 
   async function pingPresence() {
-    const name = driverName || sessionStorage.getItem("driver_name") || "";
+    const name = localStorage.getItem("driver_name") || driverName;
     if (!name) return;
     await supabase.from("drivers").upsert(
       { name, active: true, last_seen: new Date().toISOString() },
@@ -59,7 +88,7 @@ export default function DriverPage() {
   }
 
   async function fetchOrders() {
-    const name = driverName || sessionStorage.getItem("driver_name") || "";
+    const name = localStorage.getItem("driver_name") || driverName;
     const { data } = await supabase
       .from("orders")
       .select("*")
@@ -68,15 +97,27 @@ export default function DriverPage() {
       .order("created_at", { ascending: false });
     const fetched = (data as Order[]) ?? [];
 
-    // Alert driver if a new order just appeared
-    if (prevOrderCount.current > 0 && fetched.length > prevOrderCount.current) {
+    // Find brand-new orders (ids not seen before)
+    const newOrders = fetched.filter(o => !prevOrderIds.current.has(o.id));
+
+    if (prevOrderIds.current.size > 0 && newOrders.length > 0) {
+      // Notify for each new order
+      newOrders.forEach(o => notifyDriver(o));
       setNewOrderAlert(true);
-      setTimeout(() => setNewOrderAlert(false), 6000);
+      setTimeout(() => setNewOrderAlert(false), 8000);
     }
-    prevOrderCount.current = fetched.length;
+
+    // Update tracked ids
+    prevOrderIds.current = new Set(fetched.map(o => o.id));
 
     setOrders(fetched);
     setLoading(false);
+  }
+
+  async function askNotificationPermission() {
+    if (typeof Notification === "undefined") return;
+    const result = await Notification.requestPermission();
+    setNotifPermission(result);
   }
 
   function startSharing() {
@@ -140,6 +181,7 @@ export default function DriverPage() {
     if (pass === DRIVER_PASS) {
       localStorage.setItem("driver_authed", "1");
       setAuthed(true);
+      requestNotificationPermission();
     } else {
       alert("Wrong password");
     }
@@ -151,16 +193,16 @@ export default function DriverPage() {
     const trimmed = driverName.trim();
     localStorage.setItem("driver_name", trimmed);
     setDriverName(trimmed);
-    // Register as active driver immediately
     await supabase.from("drivers").upsert(
       { name: trimmed, active: true, last_seen: new Date().toISOString() },
       { onConflict: "name" }
     );
+    requestNotificationPermission();
     setNameSet(true);
   }
 
   async function endShift() {
-    const name = driverName || sessionStorage.getItem("driver_name") || "";
+    const name = localStorage.getItem("driver_name") || driverName;
     if (name) {
       await supabase.from("drivers").update({ active: false }).eq("name", name);
     }
@@ -218,10 +260,12 @@ export default function DriverPage() {
 
   return (
     <main className="min-h-screen bg-[#0C2B35] text-white">
+
       {/* New order alert banner */}
       {newOrderAlert && (
-        <div className="sticky top-0 z-50 flex items-center justify-center gap-2 bg-green-500 px-5 py-3 text-sm font-bold text-white animate-pulse">
-          🔔 New order assigned to you!
+        <div className="sticky top-0 z-50 flex items-center justify-center gap-2 bg-green-500 px-5 py-4 text-sm font-bold text-white">
+          <span className="animate-bounce text-xl">🔔</span>
+          New order assigned to you!
         </div>
       )}
 
@@ -242,6 +286,28 @@ export default function DriverPage() {
       </div>
 
       <div className="mx-auto max-w-lg px-5 py-6 space-y-5">
+
+        {/* Notification permission banner */}
+        {notifPermission !== "granted" && (
+          <div className="rounded-2xl border border-yellow-500/30 bg-yellow-500/10 p-4">
+            <p className="text-sm font-bold text-yellow-300">🔔 Enable Notifications</p>
+            <p className="mt-1 text-xs text-yellow-200/70">
+              Allow notifications so your phone rings when a new order is assigned to you.
+            </p>
+            {notifPermission === "denied" ? (
+              <p className="mt-2 text-xs text-red-300">
+                Notifications blocked. Go to your browser settings and allow notifications for this site.
+              </p>
+            ) : (
+              <button
+                onClick={askNotificationPermission}
+                className="mt-3 rounded-xl bg-yellow-500 px-4 py-2 text-xs font-bold text-white hover:bg-yellow-400"
+              >
+                Allow Notifications
+              </button>
+            )}
+          </div>
+        )}
 
         {/* GPS Share toggle */}
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
