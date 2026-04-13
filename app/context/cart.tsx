@@ -93,6 +93,7 @@ type CartContextType = {
   closeCart: () => void;
   itemCount: number;
   subtotal: number;
+  subtotalLbp: number;
 };
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -123,6 +124,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     (s, i) => s + (i.price ?? 0) * i.quantity,
     0,
   );
+  const subtotalLbp = state.items.reduce(
+    (s, i) => s + (i.priceLbp ?? 0) * i.quantity,
+    0,
+  );
 
   return (
     <CartContext.Provider
@@ -137,6 +142,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         closeCart: () => dispatch({ type: "CLOSE" }),
         itemCount,
         subtotal,
+        subtotalLbp,
       }}
     >
       {children}

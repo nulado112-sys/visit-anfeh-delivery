@@ -38,7 +38,11 @@ function buildWhatsAppMessage(
     msg += `🏪 *Restaurant:* ${restaurant}\n\n`;
     msg += `*Items:*\n`;
     for (const item of restaurantItems) {
-      const priceStr = item.price !== null ? `$${item.price}` : `LBP`;
+      const priceStr = item.price !== null
+        ? `$${item.price}`
+        : item.priceLbp !== null
+          ? `${(item.priceLbp / 1_000_000).toFixed(2)}M LBP`
+          : `LBP`;
       msg += `- ${item.name} ×${item.quantity} (${priceStr})\n`;
     }
     msg += "\n";
@@ -69,7 +73,7 @@ function buildWhatsAppMessage(
 }
 
 export default function CartDrawer() {
-  const { items, isOpen, closeCart, updateQty, clearCart, subtotal, itemCount } = useCart();
+  const { items, isOpen, closeCart, updateQty, clearCart, subtotal, subtotalLbp, itemCount } = useCart();
   const { lang } = useLang();
   const T = t[lang];
 
@@ -258,8 +262,12 @@ export default function CartDrawer() {
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 5v14M5 12h14"/></svg>
                               </button>
                             </div>
-                            <p className="w-14 text-right text-sm font-bold text-white">
-                              {item.price !== null ? `$${(item.price * item.quantity).toFixed(2)}` : "—"}
+                            <p className="text-right text-sm font-bold text-white">
+                              {item.price !== null
+                                ? `$${(item.price * item.quantity).toFixed(2)}`
+                                : item.priceLbp !== null
+                                  ? `${((item.priceLbp * item.quantity) / 1_000_000).toFixed(2)}M LBP`
+                                  : "—"}
                             </p>
                           </div>
                         ))}
@@ -381,17 +389,44 @@ export default function CartDrawer() {
 
               {/* ── Price Summary ── */}
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2 text-sm">
-                <div className="flex justify-between text-slate-400">
-                  <span>{T.cart_subtotal}</span>
-                  <span>${subtotal.toFixed(2)}</span>
-                </div>
+                {subtotal > 0 && (
+                  <div className="flex justify-between text-slate-400">
+                    <span>{T.cart_subtotal} (USD)</span>
+                    <span>${subtotal.toFixed(2)}</span>
+                  </div>
+                )}
+                {subtotalLbp > 0 && (
+                  <div className="flex justify-between text-slate-400">
+                    <span>{T.cart_subtotal} (LBP)</span>
+                    <span>
+                      {subtotalLbp >= 1_000_000
+                        ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP`
+                        : `${subtotalLbp.toLocaleString()} LBP`}
+                    </span>
+                  </div>
+                )}
                 <div className="flex justify-between text-slate-400">
                   <span>{T.cart_delivery} ({customer.zone})</span>
                   <span>+${deliveryFee}.00</span>
                 </div>
-                <div className="flex justify-between border-t border-white/10 pt-3 text-lg font-black text-white">
-                  <span>{T.cart_total}</span>
-                  <span className="text-[#F9B233]">${total.toFixed(2)}</span>
+                <div className="flex flex-col gap-1 border-t border-white/10 pt-3">
+                  {subtotal > 0 && (
+                    <div className="flex justify-between text-lg font-black text-white">
+                      <span>{T.cart_total}</span>
+                      <span className="text-[#F9B233]">${total.toFixed(2)}</span>
+                    </div>
+                  )}
+                  {subtotalLbp > 0 && (
+                    <div className="flex justify-between text-base font-black text-white">
+                      {subtotal === 0 && <span>{T.cart_total}</span>}
+                      {subtotal > 0 && <span className="text-sm text-slate-400">+ LBP items</span>}
+                      <span className="text-[#F9B233]">
+                        {subtotalLbp >= 1_000_000
+                          ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP`
+                          : `${subtotalLbp.toLocaleString()} LBP`}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <p className="text-center text-xs text-slate-500 pt-1">
                   💵 {lang === "ar" ? "الدفع عند الاستلام" : "Cash on delivery"}
