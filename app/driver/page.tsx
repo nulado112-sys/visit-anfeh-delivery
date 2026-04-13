@@ -16,6 +16,7 @@ export default function DriverPage() {
   const [locationError, setLocationError] = useState("");
   const [updating, setUpdating] = useState<string | null>(null);
   const watchRef = useRef<number | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (sessionStorage.getItem("driver_authed") === "1") {
@@ -41,11 +42,12 @@ export default function DriverPage() {
   }, [authed, nameSet]);
 
   async function fetchOrders() {
+    const name = driverName || sessionStorage.getItem("driver_name") || "";
     const { data } = await supabase
       .from("orders")
       .select("*")
-      .eq("driver_name", driverName || sessionStorage.getItem("driver_name") || "")
-      .in("status", ["out_for_delivery"])
+      .eq("driver_name", name)
+      .eq("status", "out_for_delivery")
       .order("created_at", { ascending: false });
     setOrders((data as Order[]) ?? []);
     setLoading(false);
@@ -59,28 +61,42 @@ export default function DriverPage() {
     setLocationError("");
     setSharing(true);
 
+    let lastLat: number | null = null;
+    let lastLng: number | null = null;
+
+    const sendLocation = async (lat: number, lng: number) => {
+      lastLat = lat;
+      lastLng = lng;
+      await supabase
+        .from("orders")
+        .update({ driver_lat: lat, driver_lng: lng, driver_updated_at: new Date().toISOString() })
+        .eq("driver_name", driverName)
+        .eq("status", "out_for_delivery");
+    };
+
     watchRef.current = navigator.geolocation.watchPosition(
-      async (pos) => {
-        const { latitude, longitude } = pos.coords;
-        // Update all active deliveries for this driver
-        await supabase
-          .from("orders")
-          .update({ driver_lat: latitude, driver_lng: longitude, driver_updated_at: new Date().toISOString() })
-          .eq("driver_name", driverName)
-          .eq("status", "out_for_delivery");
-      },
-      (err) => {
+      (pos) => sendLocation(pos.coords.latitude, pos.coords.longitude),
+      () => {
         setLocationError("Location access denied. Please allow location in browser settings.");
         setSharing(false);
       },
-      { enableHighAccuracy: true, maximumAge: 5000 }
+      { enableHighAccuracy: true, maximumAge: 3000, timeout: 10000 }
     );
+
+    // Also push every 5 seconds to ensure real-time updates
+    intervalRef.current = setInterval(() => {
+      if (lastLat && lastLng) sendLocation(lastLat, lastLng);
+    }, 5000);
   }
 
   function stopSharing() {
     if (watchRef.current !== null) {
       navigator.geolocation.clearWatch(watchRef.current);
       watchRef.current = null;
+    }
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
     }
     setSharing(false);
   }
