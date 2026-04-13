@@ -3,7 +3,6 @@
 import { useEffect, useState, useRef } from "react";
 import { supabase, STATUS_LABELS, type Order } from "../lib/supabase";
 
-const DRIVER_PASS = process.env.NEXT_PUBLIC_DRIVER_PASS || "driver2024";
 
 function requestNotificationPermission() {
   if (typeof Notification !== "undefined" && Notification.permission === "default") {
@@ -33,7 +32,10 @@ function notifyDriver(order: Order) {
 
 export default function DriverPage() {
   const [authed, setAuthed] = useState(false);
+  const [loginName, setLoginName] = useState("");
   const [pass, setPass] = useState("");
+  const [loginError, setLoginError] = useState("");
+  const [loginLoading, setLoginLoading] = useState(false);
   const [driverName, setDriverName] = useState("");
   const [nameSet, setNameSet] = useState(false);
   const [orders, setOrders] = useState<Order[]>([]);
@@ -176,15 +178,26 @@ export default function DriverPage() {
     setUpdating(null);
   }
 
-  function login(e: React.FormEvent) {
+  async function login(e: React.FormEvent) {
     e.preventDefault();
-    if (pass === DRIVER_PASS) {
-      localStorage.setItem("driver_authed", "1");
-      setAuthed(true);
-      requestNotificationPermission();
-    } else {
-      alert("Wrong password");
+    setLoginError("");
+    setLoginLoading(true);
+    const { data } = await supabase
+      .from("drivers")
+      .select("name, password")
+      .eq("name", loginName.trim())
+      .single();
+    setLoginLoading(false);
+    if (!data || data.password !== pass) {
+      setLoginError("Wrong name or password. Ask the admin for your credentials.");
+      return;
     }
+    localStorage.setItem("driver_authed", "1");
+    localStorage.setItem("driver_name", data.name);
+    setDriverName(data.name);
+    setAuthed(true);
+    setNameSet(true); // name already known from DB
+    requestNotificationPermission();
   }
 
   async function saveName(e: React.FormEvent) {
@@ -219,44 +232,38 @@ export default function DriverPage() {
       <form onSubmit={login} className="w-full max-w-xs space-y-4">
         <div className="text-center">
           <span className="text-5xl">🛵</span>
-          <h1 className="mt-3 text-2xl font-black text-white">Driver Access</h1>
+          <h1 className="mt-3 text-2xl font-black text-white">Driver Login</h1>
           <p className="mt-1 text-sm text-slate-400">Visit Anfeh Delivery</p>
         </div>
         <input
+          type="text"
+          placeholder="Your name (e.g. Ahmad)"
+          value={loginName}
+          onChange={e => setLoginName(e.target.value)}
+          autoCapitalize="words"
+          className="w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-white outline-none focus:border-[#1AABBD]"
+        />
+        <input
           type="password"
-          placeholder="Driver password"
+          placeholder="Password"
           value={pass}
           onChange={e => setPass(e.target.value)}
           className="w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-white outline-none focus:border-[#1AABBD]"
         />
-        <button type="submit" className="w-full rounded-2xl bg-[#1AABBD] py-3 font-bold text-white">
-          Enter
+        {loginError && (
+          <p className="rounded-xl bg-red-500/20 px-4 py-2 text-xs text-red-300">{loginError}</p>
+        )}
+        <button
+          type="submit"
+          disabled={loginLoading || !loginName || !pass}
+          className="w-full rounded-2xl bg-[#1AABBD] py-3 font-bold text-white disabled:opacity-50"
+        >
+          {loginLoading ? "Checking..." : "Start Shift"}
         </button>
       </form>
     </main>
   );
 
-  if (!nameSet) return (
-    <main className="flex min-h-screen items-center justify-center bg-[#0C2B35] px-5">
-      <form onSubmit={saveName} className="w-full max-w-xs space-y-4">
-        <div className="text-center">
-          <span className="text-5xl">👤</span>
-          <h1 className="mt-3 text-2xl font-black text-white">Your Name</h1>
-          <p className="mt-1 text-sm text-slate-400">So the admin knows you're online</p>
-        </div>
-        <input
-          type="text"
-          placeholder="e.g. Ahmad"
-          value={driverName}
-          onChange={e => setDriverName(e.target.value)}
-          className="w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-white outline-none focus:border-[#1AABBD]"
-        />
-        <button type="submit" className="w-full rounded-2xl bg-[#1AABBD] py-3 font-bold text-white">
-          Start Shift
-        </button>
-      </form>
-    </main>
-  );
 
   return (
     <main className="min-h-screen bg-[#0C2B35] text-white">
