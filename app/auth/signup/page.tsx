@@ -22,24 +22,28 @@ export default function SignupPage() {
     setError("");
 
     try {
-      const { data, error } = await supabase.auth.signUp({
+      const { error: signUpError } = await supabase.auth.signUp({
         email: email.trim(),
         password,
         options: { data: { full_name: name.trim() } },
       });
 
-      if (error) {
-        setError(error.message);
+      if (signUpError) {
+        setError(signUpError.message);
         setLoading(false);
         return;
       }
 
-      if (data.session) {
-        // Signed up and auto-logged in
+      // Always sign in immediately after signup — no need to re-enter credentials
+      const { data: loginData, error: loginError } = await supabase.auth.signInWithPassword({
+        email: email.trim(),
+        password,
+      });
+
+      if (loginData.session) {
         window.location.replace("/");
       } else {
-        // Email confirmation required
-        setError("Check your email to confirm your account, then sign in.");
+        setError(loginError?.message || "Account created! Please sign in.");
         setLoading(false);
       }
     } catch {
