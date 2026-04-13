@@ -3037,7 +3037,8 @@
               "name": "Cold Brew",
               "warm_price": 3.5,
               "iced_price": 4.5,
-              "price": 3
+              "price": 3.5,
+              "description": "Small $3.5 / Large $4.5"
             },
             {
               "name": "Tea",
