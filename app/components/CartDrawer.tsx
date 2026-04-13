@@ -2,6 +2,8 @@
 
 import { useCart } from "../context/cart";
 import { useLang, t } from "../context/language";
+import { useAuth } from "../context/auth";
+import { supabase, generateOrderNumber } from "../lib/supabase";
 import { useState } from "react";
 
 const WHATSAPP_NUMBER = "96181526075";
@@ -24,6 +26,8 @@ function buildWhatsAppMessage(
   subtotal: number,
   customer: CustomerInfo,
   deliveryFee: number,
+  orderNumber: string,
+  trackUrl: string,
 ) {
   const grouped: Record<string, typeof items> = {};
   for (const item of items) {
@@ -31,7 +35,8 @@ function buildWhatsAppMessage(
     grouped[item.restaurantName].push(item);
   }
 
-  let msg = "🛒 *New Order — Visit Anfeh Delivery*\n";
+  let msg = `🛒 *New Order — Visit Anfeh Delivery*\n`;
+  msg += `📋 *Order: ${orderNumber}*\n`;
   msg += "━━━━━━━━━━━━━━━━━━━━\n\n";
 
   for (const [restaurant, restaurantItems] of Object.entries(grouped)) {
@@ -67,6 +72,7 @@ function buildWhatsAppMessage(
   }
 
   msg += "\n\n💵 *Payment: Cash on delivery*";
+  msg += `\n\n🔗 *Track order:* ${trackUrl}`;
   msg += "\n\nPlease confirm my order. Thank you! 🙏";
 
   return msg;
@@ -75,6 +81,7 @@ function buildWhatsAppMessage(
 export default function CartDrawer() {
   const { items, isOpen, closeCart, updateQty, clearCart, subtotal, subtotalLbp, itemCount } = useCart();
   const { lang } = useLang();
+  const { user } = useAuth();
   const T = t[lang];
 
   const [customer, setCustomer] = useState<CustomerInfo>({
@@ -83,6 +90,7 @@ export default function CartDrawer() {
   const [errors, setErrors] = useState({ name: false, phone: false, location: false });
   const [loading, setLoading] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [orderNumber, setOrderNumber] = useState<string | null>(null);
 
   const deliveryFee = DELIVERY_ZONES.find((z) => z.label === customer.zone)?.fee ?? 1;
   const total = subtotal + deliveryFee;
@@ -102,15 +110,45 @@ export default function CartDrawer() {
     setShowConfirm(true);
   }
 
-  function handleConfirm() {
+  async function handleConfirm() {
     setShowConfirm(false);
     setLoading(true);
-    const msg = buildWhatsAppMessage(items, subtotal, customer, deliveryFee);
+
+    const orderNum = generateOrderNumber();
+
+    // Save order to Supabase
+    await supabase.from("orders").insert({
+      order_number: orderNum,
+      user_id: user?.id ?? null,
+      customer_name: customer.name.trim(),
+      customer_phone: customer.phone.trim(),
+      zone: customer.zone,
+      address: customer.location.trim(),
+      notes: customer.notes.trim(),
+      items: items.map(i => ({
+        name: i.name,
+        quantity: i.quantity,
+        price: i.price,
+        priceLbp: i.priceLbp ?? null,
+      })),
+      subtotal,
+      subtotal_lbp: subtotalLbp,
+      delivery_fee: deliveryFee,
+      total: subtotal + deliveryFee,
+      status: "pending",
+    });
+
+    setOrderNumber(orderNum);
+
+    const trackUrl = `${window.location.origin}/track/${orderNum}`;
+    const msg = buildWhatsAppMessage(items, subtotal, customer, deliveryFee, orderNum, trackUrl);
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-    setTimeout(() => {
-      window.open(url, "_blank");
-      setLoading(false);
-    }, 600);
+
+    window.open(url, "_blank");
+    clearCart();
+    setCustomer({ name: "", phone: "", zone: DELIVERY_ZONES[0].label, location: "", notes: "" });
+    setLoading(false);
+    // orderNumber state remains set — shows success banner
   }
 
   function handleClear() {
@@ -196,7 +234,25 @@ export default function CartDrawer() {
 
         {/* Scrollable content */}
         <div className="flex-1 overflow-y-auto">
-          {items.length === 0 ? (
+          {items.length === 0 && orderNumber ? (
+            <div className="flex h-full flex-col items-center justify-center gap-4 px-6 text-center">
+              <span className="text-5xl">✅</span>
+              <div>
+                <p className="text-lg font-black text-white">Order Placed!</p>
+                <p className="mt-1 text-sm text-slate-400">Your order <span className="font-bold text-[#1AABBD]">{orderNumber}</span> is being processed</p>
+              </div>
+              <a
+                href={`/track/${orderNumber}`}
+                onClick={closeCart}
+                className="rounded-2xl bg-[#1AABBD] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#168fa0]"
+              >
+                Track Your Order →
+              </a>
+              <button onClick={() => setOrderNumber(null)} className="text-xs text-slate-600 hover:text-slate-400">
+                Close
+              </button>
+            </div>
+          ) : items.length === 0 ? (
             <div className="flex h-full flex-col items-center justify-center gap-3 px-6 text-center">
               <span className="text-5xl">🛒</span>
               <p className="text-lg font-semibold text-slate-300">{T.cart_empty}</p>

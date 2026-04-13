@@ -4,11 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "../context/cart";
 import { useLang, t } from "../context/language";
+import { useAuth } from "../context/auth";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const { openCart, itemCount } = useCart();
   const { lang, setLang } = useLang();
+  const { user } = useAuth();
   const T = t[lang];
   const [scrolled, setScrolled] = useState(false);
 
@@ -50,6 +52,29 @@ export default function Navbar() {
           >
             {lang === "en" ? "🇱🇧 عربي" : "🇬🇧 English"}
           </button>
+
+          {/* Account */}
+          {user ? (
+            <Link
+              href="/profile"
+              className="flex items-center gap-2 rounded-xl border border-[#1AABBD]/20 bg-[#F4FAFB] px-3 py-2 text-sm font-bold text-[#0C2B35] transition hover:border-[#1AABBD]/50 hover:bg-[#EBF8FA]"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+              <span className="hidden sm:inline">{lang === "ar" ? "حسابي" : "My Orders"}</span>
+            </Link>
+          ) : (
+            <Link
+              href="/auth/login"
+              className="flex items-center gap-2 rounded-xl border border-[#1AABBD]/20 bg-[#F4FAFB] px-3 py-2 text-sm font-bold text-[#0C2B35] transition hover:border-[#1AABBD]/50 hover:bg-[#EBF8FA]"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/>
+              </svg>
+              <span className="hidden sm:inline">{lang === "ar" ? "تسجيل الدخول" : "Sign In"}</span>
+            </Link>
+          )}
 
           {/* Cart */}
           <button

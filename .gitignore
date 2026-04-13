@@ -4,3 +4,4 @@ node_modules/
 *.png
 !public/**/*.png
 next-env.d.ts
+.env.local
