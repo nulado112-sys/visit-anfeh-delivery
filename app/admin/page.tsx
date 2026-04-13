@@ -67,6 +67,11 @@ export default function AdminPage() {
     setDriverName(p => ({ ...p, [order.id]: "" }));
   }
 
+  async function deleteOrder(order: Order) {
+    if (!confirm(`Delete order ${order.order_number}?`)) return;
+    await supabase.from("orders").delete().eq("id", order.id);
+  }
+
   function login(e: React.FormEvent) {
     e.preventDefault();
     if (pass === ADMIN_PASS) {
@@ -160,9 +165,17 @@ export default function AdminPage() {
                       <p className="mt-2 text-lg font-black">{order.order_number}</p>
                       <p className="text-xs text-slate-400">{new Date(order.created_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })} · {new Date(order.created_at).toLocaleDateString("en-GB")}</p>
                     </div>
-                    <Link href={`/track/${order.order_number}`} target="_blank" className="rounded-lg bg-white/10 px-2.5 py-1.5 text-xs hover:bg-white/20">
-                      Track 🔗
-                    </Link>
+                    <div className="flex gap-2">
+                      <Link href={`/track/${order.order_number}`} target="_blank" className="rounded-lg bg-white/10 px-2.5 py-1.5 text-xs hover:bg-white/20">
+                        Track 🔗
+                      </Link>
+                      <button
+                        onClick={() => deleteOrder(order)}
+                        className="rounded-lg bg-red-500/20 px-2.5 py-1.5 text-xs text-red-400 hover:bg-red-500/40"
+                      >
+                        🗑️
+                      </button>
+                    </div>
                   </div>
 
                   {/* Customer */}
