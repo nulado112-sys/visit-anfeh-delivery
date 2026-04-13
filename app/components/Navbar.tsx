@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   const { openCart, itemCount } = useCart();
   const { lang, setLang } = useLang();
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const T = t[lang];
   const [scrolled, setScrolled] = useState(false);
 
@@ -54,7 +54,7 @@ export default function Navbar() {
           </button>
 
           {/* Account */}
-          {user ? (
+          {!authLoading && (user ? (
             <Link
               href="/profile"
               className="flex items-center gap-2 rounded-xl border border-[#1AABBD]/20 bg-[#F4FAFB] px-3 py-2 text-sm font-bold text-[#0C2B35] transition hover:border-[#1AABBD]/50 hover:bg-[#EBF8FA]"
@@ -74,7 +74,7 @@ export default function Navbar() {
               </svg>
               <span className="hidden sm:inline">{lang === "ar" ? "تسجيل الدخول" : "Sign In"}</span>
             </Link>
-          )}
+          ))}
 
           {/* Cart */}
           <button

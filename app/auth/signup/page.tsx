@@ -19,16 +19,25 @@ export default function SignupPage() {
     if (password.length < 6) { setError("Password must be at least 6 characters"); return; }
     setLoading(true);
     setError("");
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: { data: { full_name: name } },
-    });
-    if (error) {
-      setError(error.message);
+
+    const timeout = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error("Connection timed out. Please try again.")), 12000)
+    );
+
+    try {
+      const { error } = await Promise.race([
+        supabase.auth.signUp({ email, password, options: { data: { full_name: name } } }),
+        timeout,
+      ]);
+      if (error) {
+        setError(error.message);
+        setLoading(false);
+      } else {
+        router.push("/profile");
+      }
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setLoading(false);
-    } else {
-      router.push("/profile");
     }
   }
 
