@@ -122,9 +122,9 @@ export default function CartDrawer() {
     const orderNum = generateOrderNumber();
 
     // Save order to Supabase
-    await supabase.from("orders").insert({
+    const { error: insertError } = await supabase.from("orders").insert({
       order_number: orderNum,
-      user_id: user!.id,
+      user_id: user?.id ?? null,
       customer_name: customer.name.trim(),
       customer_phone: customer.phone.trim(),
       zone: customer.zone,
@@ -143,6 +143,13 @@ export default function CartDrawer() {
       status: "pending",
     });
 
+    if (insertError) {
+      console.error("Order save failed:", insertError.message);
+      alert("Failed to save your order. Please try again.");
+      setLoading(false);
+      return;
+    }
+
     setOrderNumber(orderNum);
 
     const trackUrl = `${window.location.origin}/track/${orderNum}`;
@@ -153,7 +160,6 @@ export default function CartDrawer() {
     clearCart();
     setCustomer({ name: "", phone: "", zone: DELIVERY_ZONES[0].label, location: "", notes: "" });
     setLoading(false);
-    // orderNumber state remains set — shows success banner
   }
 
   function handleClear() {
