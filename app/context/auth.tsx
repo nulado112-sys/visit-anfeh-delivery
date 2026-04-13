@@ -12,6 +12,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Pre-warm Supabase connection immediately on page load
+    supabase.from("orders").select("id").limit(1).then(() => {});
+
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
       setLoading(false);
