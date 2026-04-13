@@ -21,6 +21,8 @@ const NEXT_LABEL: Record<OrderStatus, string> = {
   delivered: "",
 };
 
+type Driver = { name: string; last_seen: string };
+
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
   const [pass, setPass] = useState("");
@@ -28,7 +30,8 @@ export default function AdminPage() {
   const [filter, setFilter] = useState<OrderStatus | "all">("all");
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState<string | null>(null);
-  const [driverName, setDriverName] = useState<Record<string, string>>({});
+  const [selectedDriver, setSelectedDriver] = useState<Record<string, string>>({});
+  const [activeDrivers, setActiveDrivers] = useState<Driver[]>([]);
 
   useEffect(() => {
     if (sessionStorage.getItem("admin_authed") === "1") setAuthed(true);
@@ -37,14 +40,35 @@ export default function AdminPage() {
   useEffect(() => {
     if (!authed) return;
     fetchOrders();
+    fetchDrivers();
 
-    const channel = supabase
+    const ordersChannel = supabase
       .channel("admin-orders")
       .on("postgres_changes", { event: "*", schema: "public", table: "orders" }, () => fetchOrders())
       .subscribe();
 
-    return () => { supabase.removeChannel(channel); };
+    const driversChannel = supabase
+      .channel("admin-drivers")
+      .on("postgres_changes", { event: "*", schema: "public", table: "drivers" }, () => fetchDrivers())
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(ordersChannel);
+      supabase.removeChannel(driversChannel);
+    };
   }, [authed]);
+
+  async function fetchDrivers() {
+    // Active = active flag true AND last seen within last 2 minutes
+    const cutoff = new Date(Date.now() - 2 * 60 * 1000).toISOString();
+    const { data } = await supabase
+      .from("drivers")
+      .select("name, last_seen")
+      .eq("active", true)
+      .gte("last_seen", cutoff)
+      .order("name");
+    setActiveDrivers((data as Driver[]) ?? []);
+  }
 
   async function fetchOrders() {
     const { data } = await supabase.from("orders").select("*").order("created_at", { ascending: false });
@@ -61,10 +85,10 @@ export default function AdminPage() {
   }
 
   async function assignDriver(order: Order) {
-    const name = driverName[order.id];
+    const name = selectedDriver[order.id];
     if (!name?.trim()) return;
     await supabase.from("orders").update({ driver_name: name.trim(), status: "out_for_delivery" }).eq("id", order.id);
-    setDriverName(p => ({ ...p, [order.id]: "" }));
+    setSelectedDriver(p => ({ ...p, [order.id]: "" }));
   }
 
   async function deleteOrder(order: Order) {
@@ -204,22 +228,66 @@ export default function AdminPage() {
                     </div>
                   </div>
 
+                  {/* Live GPS map — admin only */}
+                  {order.status === "out_for_delivery" && (
+                    <div className="mt-3 overflow-hidden rounded-2xl border border-white/10">
+                      <div className="flex items-center gap-2 px-3 py-2 text-xs font-bold text-slate-300">
+                        <span className="h-2 w-2 animate-ping rounded-full bg-green-400" />
+                        Driver GPS — Live
+                        {order.driver_updated_at && (
+                          <span className="ml-auto font-normal text-slate-500">
+                            {Math.floor((Date.now() - new Date(order.driver_updated_at).getTime()) / 1000)}s ago
+                          </span>
+                        )}
+                      </div>
+                      {order.driver_lat && order.driver_lng ? (
+                        <iframe
+                          key={`${order.driver_lat.toFixed(5)}-${order.driver_lng.toFixed(5)}`}
+                          src={`https://www.openstreetmap.org/export/embed.html?bbox=${order.driver_lng - 0.008},${order.driver_lat - 0.008},${order.driver_lng + 0.008},${order.driver_lat + 0.008}&layer=mapnik&marker=${order.driver_lat},${order.driver_lng}`}
+                          width="100%"
+                          height="200"
+                          className="border-0"
+                          title="Driver location"
+                        />
+                      ) : (
+                        <div className="py-6 text-center text-xs text-slate-500">
+                          🛵 Waiting for driver to share GPS...
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   {/* Driver assign */}
                   {order.status === "preparing" && (
-                    <div className="mt-3 flex gap-2">
-                      <input
-                        type="text"
-                        placeholder="Driver name"
-                        value={driverName[order.id] ?? ""}
-                        onChange={e => setDriverName(p => ({ ...p, [order.id]: e.target.value }))}
-                        className="flex-1 rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-sm outline-none focus:border-[#1AABBD]"
-                      />
-                      <button
-                        onClick={() => assignDriver(order)}
-                        className="rounded-xl bg-purple-500 px-3 py-2 text-xs font-bold hover:bg-purple-600"
-                      >
-                        Assign 🛵
-                      </button>
+                    <div className="mt-3 space-y-2">
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Assign Driver</p>
+                      {activeDrivers.length === 0 ? (
+                        <p className="rounded-xl bg-white/5 px-3 py-2.5 text-xs text-slate-500">
+                          No drivers online right now. Ask a driver to open the driver page and start their shift.
+                        </p>
+                      ) : (
+                        <div className="flex gap-2">
+                          <select
+                            value={selectedDriver[order.id] ?? ""}
+                            onChange={e => setSelectedDriver(p => ({ ...p, [order.id]: e.target.value }))}
+                            className="flex-1 rounded-xl border border-white/20 bg-[#0C2B35] px-3 py-2 text-sm text-white outline-none focus:border-[#1AABBD]"
+                          >
+                            <option value="">— Pick a driver —</option>
+                            {activeDrivers.map(d => (
+                              <option key={d.name} value={d.name}>
+                                🛵 {d.name}
+                              </option>
+                            ))}
+                          </select>
+                          <button
+                            onClick={() => assignDriver(order)}
+                            disabled={!selectedDriver[order.id]}
+                            className="rounded-xl bg-purple-500 px-3 py-2 text-xs font-bold hover:bg-purple-600 disabled:opacity-40"
+                          >
+                            Send 🛵
+                          </button>
+                        </div>
+                      )}
                     </div>
                   )}
 

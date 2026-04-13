@@ -15,8 +15,11 @@ export default function DriverPage() {
   const [sharing, setSharing] = useState(false);
   const [locationError, setLocationError] = useState("");
   const [updating, setUpdating] = useState<string | null>(null);
+  const [newOrderAlert, setNewOrderAlert] = useState(false);
+  const prevOrderCount = useRef(0);
   const watchRef = useRef<number | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const pingRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (sessionStorage.getItem("driver_authed") === "1") {
@@ -35,11 +38,25 @@ export default function DriverPage() {
       .on("postgres_changes", { event: "*", schema: "public", table: "orders" }, () => fetchOrders())
       .subscribe();
 
+    // Ping presence every 30s so admin sees driver as online
+    pingPresence();
+    pingRef.current = setInterval(pingPresence, 30000);
+
     return () => {
       supabase.removeChannel(channel);
       stopSharing();
+      if (pingRef.current) clearInterval(pingRef.current);
     };
   }, [authed, nameSet]);
+
+  async function pingPresence() {
+    const name = driverName || sessionStorage.getItem("driver_name") || "";
+    if (!name) return;
+    await supabase.from("drivers").upsert(
+      { name, active: true, last_seen: new Date().toISOString() },
+      { onConflict: "name" }
+    );
+  }
 
   async function fetchOrders() {
     const name = driverName || sessionStorage.getItem("driver_name") || "";
@@ -49,7 +66,16 @@ export default function DriverPage() {
       .eq("driver_name", name)
       .eq("status", "out_for_delivery")
       .order("created_at", { ascending: false });
-    setOrders((data as Order[]) ?? []);
+    const fetched = (data as Order[]) ?? [];
+
+    // Alert driver if a new order just appeared
+    if (prevOrderCount.current > 0 && fetched.length > prevOrderCount.current) {
+      setNewOrderAlert(true);
+      setTimeout(() => setNewOrderAlert(false), 6000);
+    }
+    prevOrderCount.current = fetched.length;
+
+    setOrders(fetched);
     setLoading(false);
   }
 
@@ -83,7 +109,6 @@ export default function DriverPage() {
       { enableHighAccuracy: true, maximumAge: 3000, timeout: 10000 }
     );
 
-    // Also push every 5 seconds to ensure real-time updates
     intervalRef.current = setInterval(() => {
       if (lastLat && lastLng) sendLocation(lastLat, lastLng);
     }, 5000);
@@ -120,12 +145,31 @@ export default function DriverPage() {
     }
   }
 
-  function saveName(e: React.FormEvent) {
+  async function saveName(e: React.FormEvent) {
     e.preventDefault();
     if (!driverName.trim()) return;
-    sessionStorage.setItem("driver_name", driverName.trim());
-    setDriverName(driverName.trim());
+    const trimmed = driverName.trim();
+    sessionStorage.setItem("driver_name", trimmed);
+    setDriverName(trimmed);
+    // Register as active driver immediately
+    await supabase.from("drivers").upsert(
+      { name: trimmed, active: true, last_seen: new Date().toISOString() },
+      { onConflict: "name" }
+    );
     setNameSet(true);
+  }
+
+  async function endShift() {
+    const name = driverName || sessionStorage.getItem("driver_name") || "";
+    if (name) {
+      await supabase.from("drivers").update({ active: false }).eq("name", name);
+    }
+    stopSharing();
+    if (pingRef.current) clearInterval(pingRef.current);
+    sessionStorage.removeItem("driver_authed");
+    sessionStorage.removeItem("driver_name");
+    setAuthed(false);
+    setNameSet(false);
   }
 
   if (!authed) return (
@@ -156,7 +200,7 @@ export default function DriverPage() {
         <div className="text-center">
           <span className="text-5xl">👤</span>
           <h1 className="mt-3 text-2xl font-black text-white">Your Name</h1>
-          <p className="mt-1 text-sm text-slate-400">So customers know who's delivering</p>
+          <p className="mt-1 text-sm text-slate-400">So the admin knows you're online</p>
         </div>
         <input
           type="text"
@@ -174,6 +218,13 @@ export default function DriverPage() {
 
   return (
     <main className="min-h-screen bg-[#0C2B35] text-white">
+      {/* New order alert banner */}
+      {newOrderAlert && (
+        <div className="sticky top-0 z-50 flex items-center justify-center gap-2 bg-green-500 px-5 py-3 text-sm font-bold text-white animate-pulse">
+          🔔 New order assigned to you!
+        </div>
+      )}
+
       {/* Header */}
       <div className="border-b border-white/10 px-5 py-4">
         <div className="mx-auto flex max-w-lg items-center justify-between">
@@ -182,7 +233,7 @@ export default function DriverPage() {
             <p className="text-xs text-slate-400">{orders.length} active {orders.length === 1 ? "delivery" : "deliveries"}</p>
           </div>
           <button
-            onClick={() => { sessionStorage.removeItem("driver_authed"); sessionStorage.removeItem("driver_name"); setAuthed(false); setNameSet(false); stopSharing(); }}
+            onClick={endShift}
             className="rounded-xl bg-white/10 px-3 py-2 text-xs font-semibold hover:bg-white/20"
           >
             End Shift
@@ -198,7 +249,7 @@ export default function DriverPage() {
             <div>
               <p className="font-bold text-sm">Live GPS Sharing</p>
               <p className="text-xs text-slate-400 mt-0.5">
-                {sharing ? "Your location is visible to customers" : "Customers cannot see your location"}
+                {sharing ? "Your location is visible to admin" : "Admin cannot see your location"}
               </p>
             </div>
             <button
@@ -231,7 +282,7 @@ export default function DriverPage() {
             <div className="rounded-2xl border border-white/10 bg-white/5 py-12 text-center">
               <p className="text-3xl mb-2">📦</p>
               <p className="text-slate-400 text-sm">No active deliveries assigned to you</p>
-              <p className="text-slate-600 text-xs mt-1">Ask admin to assign you to an order</p>
+              <p className="text-slate-600 text-xs mt-1">The admin will assign you an order when ready</p>
             </div>
           ) : (
             <div className="space-y-4">

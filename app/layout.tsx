@@ -44,6 +44,17 @@ export default function RootLayout({
             <p className="mt-1 text-xs text-slate-400">
               Anfeh, Lebanon · Your trusted delivery partner · 81-526075
             </p>
+            <p className="mt-3 text-xs text-slate-400">
+              Created by{" "}
+              <a
+                href="https://www.instagram.com/marketingleadsss"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#1AABBD] hover:underline"
+              >
+                Marketing Leads
+              </a>
+            </p>
           </footer>
         </CartProvider>
         </LanguageProvider>

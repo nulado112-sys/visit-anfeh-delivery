@@ -116,37 +116,6 @@ export default function TrackPage() {
           </div>
         </div>
 
-        {/* Live map — only when out for delivery */}
-        {order.status === "out_for_delivery" && (
-          <div className="rounded-3xl border border-[#1AABBD]/15 bg-white overflow-hidden shadow-sm">
-            <div className="px-5 py-3 border-b border-slate-100 flex items-center gap-2">
-              <span className="h-2 w-2 animate-ping rounded-full bg-green-400" />
-              <p className="text-sm font-bold text-[#0C2B35]">Driver Location — Live</p>
-              {order.driver_updated_at && (
-                <span className="ml-auto text-xs text-slate-400">
-                  Updated {Math.floor((Date.now() - new Date(order.driver_updated_at).getTime()) / 1000)}s ago
-                </span>
-              )}
-            </div>
-            {order.driver_lat && order.driver_lng ? (
-              <iframe
-                key={`${order.driver_lat.toFixed(5)}-${order.driver_lng.toFixed(5)}`}
-                src={`https://www.openstreetmap.org/export/embed.html?bbox=${order.driver_lng - 0.008},${order.driver_lat - 0.008},${order.driver_lng + 0.008},${order.driver_lat + 0.008}&layer=mapnik&marker=${order.driver_lat},${order.driver_lng}`}
-                width="100%"
-                height="280"
-                className="border-0"
-                title="Driver location"
-              />
-            ) : (
-              <div className="flex flex-col items-center justify-center py-10 text-center">
-                <span className="text-3xl mb-2">🛵</span>
-                <p className="text-sm font-semibold text-slate-500">Driver is on the way</p>
-                <p className="text-xs text-slate-400 mt-1">Location will appear when driver shares GPS</p>
-              </div>
-            )}
-          </div>
-        )}
-
         {/* Order summary */}
         <div className="rounded-3xl border border-[#1AABBD]/15 bg-white p-5">
           <p className="mb-3 text-xs font-bold tracking-widest text-slate-400 uppercase">Your Order</p>

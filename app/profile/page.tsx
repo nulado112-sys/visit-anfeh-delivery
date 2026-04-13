@@ -36,7 +36,13 @@ export default function ProfilePage() {
     router.push("/");
   }
 
-  if (loading || !user) return null;
+  if (loading) return (
+    <main className="flex min-h-screen items-center justify-center bg-[#F4FAFB]">
+      <div className="h-10 w-10 animate-spin rounded-full border-4 border-[#1AABBD] border-t-transparent" />
+    </main>
+  );
+
+  if (!user) return null;
 
   return (
     <main className="min-h-screen bg-[#F4FAFB]">

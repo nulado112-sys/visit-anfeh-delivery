@@ -4,10 +4,8 @@ import { useState } from "react";
 import { supabase } from "../../lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 export default function SignupPage() {
-  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,27 +14,36 @@ export default function SignupPage() {
 
   async function handleSignup(e: React.FormEvent) {
     e.preventDefault();
-    if (password.length < 6) { setError("Password must be at least 6 characters"); return; }
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
+    }
     setLoading(true);
     setError("");
 
-    const timeout = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error("Connection timed out. Please try again.")), 12000)
-    );
-
     try {
-      const { error } = await Promise.race([
-        supabase.auth.signUp({ email, password, options: { data: { full_name: name } } }),
-        timeout,
-      ]);
+      const { data, error } = await supabase.auth.signUp({
+        email: email.trim(),
+        password,
+        options: { data: { full_name: name.trim() } },
+      });
+
       if (error) {
         setError(error.message);
         setLoading(false);
-      } else {
-        router.push("/profile");
+        return;
       }
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+
+      if (data.session) {
+        // Signed up and auto-logged in
+        window.location.replace("/");
+      } else {
+        // Email confirmation required
+        setError("Check your email to confirm your account, then sign in.");
+        setLoading(false);
+      }
+    } catch {
+      setError("Connection error. Check your internet and try again.");
       setLoading(false);
     }
   }
@@ -45,20 +52,28 @@ export default function SignupPage() {
     <main className="min-h-screen bg-[#F4FAFB] flex items-center justify-center px-5">
       <div className="w-full max-w-sm">
         <div className="mb-8 flex flex-col items-center">
-          <Image src="/logos/visit-anfeh-delivery-logo.jpg" alt="Visit Anfeh Delivery" width={72} height={72} className="rounded-2xl shadow-md" />
+          <Image
+            src="/logos/visit-anfeh-delivery-logo.jpg"
+            alt="Visit Anfeh Delivery"
+            width={72}
+            height={72}
+            className="rounded-2xl shadow-md"
+          />
           <h1 className="mt-4 text-2xl font-black text-[#0C2B35]">Create account</h1>
           <p className="mt-1 text-sm text-slate-500">Track your orders in real time</p>
         </div>
 
-        <form onSubmit={handleSignup} className="space-y-4">
+        <form onSubmit={handleSignup} className="space-y-4" noValidate>
           <div>
             <label className="mb-1.5 block text-xs font-semibold text-slate-600">Full Name</label>
             <input
               type="text"
               required
+              autoComplete="name"
               value={name}
               onChange={e => setName(e.target.value)}
-              className="w-full rounded-2xl border border-[#1AABBD]/20 bg-white px-4 py-3 text-sm text-[#0C2B35] outline-none transition focus:border-[#1AABBD] focus:ring-2 focus:ring-[#1AABBD]/15"
+              disabled={loading}
+              className="w-full rounded-2xl border border-[#1AABBD]/20 bg-white px-4 py-3 text-sm text-[#0C2B35] outline-none transition focus:border-[#1AABBD] focus:ring-2 focus:ring-[#1AABBD]/15 disabled:opacity-60"
             />
           </div>
           <div>
@@ -66,9 +81,13 @@ export default function SignupPage() {
             <input
               type="email"
               required
+              autoComplete="email"
+              autoCapitalize="none"
+              inputMode="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className="w-full rounded-2xl border border-[#1AABBD]/20 bg-white px-4 py-3 text-sm text-[#0C2B35] outline-none transition focus:border-[#1AABBD] focus:ring-2 focus:ring-[#1AABBD]/15"
+              disabled={loading}
+              className="w-full rounded-2xl border border-[#1AABBD]/20 bg-white px-4 py-3 text-sm text-[#0C2B35] outline-none transition focus:border-[#1AABBD] focus:ring-2 focus:ring-[#1AABBD]/15 disabled:opacity-60"
             />
           </div>
           <div>
@@ -76,20 +95,35 @@ export default function SignupPage() {
             <input
               type="password"
               required
+              autoComplete="new-password"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              className="w-full rounded-2xl border border-[#1AABBD]/20 bg-white px-4 py-3 text-sm text-[#0C2B35] outline-none transition focus:border-[#1AABBD] focus:ring-2 focus:ring-[#1AABBD]/15"
+              disabled={loading}
+              className="w-full rounded-2xl border border-[#1AABBD]/20 bg-white px-4 py-3 text-sm text-[#0C2B35] outline-none transition focus:border-[#1AABBD] focus:ring-2 focus:ring-[#1AABBD]/15 disabled:opacity-60"
             />
+            <p className="mt-1 text-xs text-slate-400">At least 6 characters</p>
           </div>
 
-          {error && <p className="rounded-xl bg-red-50 px-4 py-2 text-xs text-red-500">{error}</p>}
+          {error && (
+            <div className="flex items-start gap-2 rounded-2xl border border-red-100 bg-red-50 px-4 py-3">
+              <span className="mt-0.5 text-red-500">⚠️</span>
+              <p className="text-xs font-medium text-red-600">{error}</p>
+            </div>
+          )}
 
           <button
             type="submit"
-            disabled={loading}
-            className="w-full rounded-2xl bg-[#1AABBD] py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1AABBD]/25 transition hover:bg-[#168fa0] disabled:opacity-60"
+            disabled={loading || !name || !email || !password}
+            className="w-full rounded-2xl bg-[#1AABBD] py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1AABBD]/25 transition hover:bg-[#168fa0] disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? "Creating account..." : "Create Account"}
+            {loading ? (
+              <span className="flex items-center justify-center gap-2">
+                <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                Creating account...
+              </span>
+            ) : (
+              "Create Account"
+            )}
           </button>
         </form>
 
@@ -100,7 +134,9 @@ export default function SignupPage() {
           </Link>
         </p>
         <p className="mt-3 text-center">
-          <Link href="/" className="text-xs text-slate-400 hover:text-slate-600">← Back to restaurants</Link>
+          <Link href="/" className="text-xs text-slate-400 hover:text-slate-600">
+            ← Back to restaurants
+          </Link>
         </p>
       </div>
     </main>
