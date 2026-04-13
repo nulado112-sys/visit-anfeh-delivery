@@ -36,14 +36,14 @@ export default function RestaurantHeader({ name, name_ar, logo, logo_bg, logo_fi
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
           <div
             className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-[#1AABBD]/15"
-            style={{ backgroundColor: logo_bg || "#EBF8FA" }}
+            style={{ backgroundColor: logo_fit === "contain" ? "#ffffff" : (logo_bg || "#EBF8FA") }}
           >
             <LogoImage
               src={`/logos/${logo}`}
               alt={name}
               fill
               fallback={name[0]}
-              className={logo_fit === "contain" ? "object-contain p-2" : "object-contain p-2"}
+              className={logo_fit === "contain" ? "object-contain p-1" : "object-contain p-2"}
             />
           </div>
 

@@ -90,7 +90,7 @@ export default function RestaurantGrid({
                 {/* Logo area — full cover */}
                 <div
                   className="relative h-44 overflow-hidden"
-                  style={{ backgroundColor: (restaurant.logo_bg as string) || "#EBF8FA" }}
+                  style={{ backgroundColor: restaurant.logo_fit === "contain" ? "#ffffff" : "#EBF8FA" }}
                 >
                   {restaurant.logo ? (
                     <LogoImage
@@ -98,7 +98,7 @@ export default function RestaurantGrid({
                       alt={restaurant.name}
                       fill
                       fallback={restaurant.name[0]}
-                      className={`transition-transform duration-500 group-hover:scale-105 ${restaurant.logo_fit === "contain" ? "object-contain p-6" : "object-cover"}`}
+                      className={`transition-transform duration-500 group-hover:scale-105 ${restaurant.logo_fit === "contain" ? "object-contain p-4" : "object-cover"}`}
                     />
                   ) : (
                     <div className="flex h-full items-center justify-center bg-[#1AABBD] text-4xl font-black text-white">
