@@ -19,12 +19,15 @@ export default function Toast() {
 
   useEffect(() => {
     const handler = (msg: ToastMessage) => {
-      setToasts((prev) => [...prev, msg]);
+      setToasts((prev) => {
+        if (prev.find((t) => t.id === msg.id)) return prev;
+        return [...prev, msg];
+      });
       setTimeout(() => {
         setToasts((prev) => prev.filter((t) => t.id !== msg.id));
       }, 2500);
     };
-    listeners.push(handler);
+    if (!listeners.includes(handler)) listeners.push(handler);
     return () => { listeners = listeners.filter((l) => l !== handler); };
   }, []);
 
