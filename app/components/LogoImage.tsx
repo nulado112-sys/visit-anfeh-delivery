@@ -6,12 +6,13 @@ import { useState } from "react";
 type Props = {
   src: string;
   alt: string;
-  fallback: string; // first letter or emoji
+  fallback: string;
   className?: string;
   fill?: boolean;
+  blendMultiply?: boolean;
 };
 
-export default function LogoImage({ src, alt, fallback, className, fill }: Props) {
+export default function LogoImage({ src, alt, fallback, className, fill, blendMultiply }: Props) {
   const [error, setError] = useState(false);
 
   if (error) {
@@ -28,6 +29,7 @@ export default function LogoImage({ src, alt, fallback, className, fill }: Props
       alt={alt}
       fill={fill}
       className={className ?? "object-contain p-2"}
+      style={blendMultiply ? { mixBlendMode: "multiply" } : undefined}
       onError={() => setError(true)}
     />
   );
