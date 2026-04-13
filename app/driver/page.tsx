@@ -22,9 +22,9 @@ export default function DriverPage() {
   const pingRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    if (sessionStorage.getItem("driver_authed") === "1") {
+    if (localStorage.getItem("driver_authed") === "1") {
       setAuthed(true);
-      const saved = sessionStorage.getItem("driver_name");
+      const saved = localStorage.getItem("driver_name");
       if (saved) { setDriverName(saved); setNameSet(true); }
     }
   }, []);
@@ -138,7 +138,7 @@ export default function DriverPage() {
   function login(e: React.FormEvent) {
     e.preventDefault();
     if (pass === DRIVER_PASS) {
-      sessionStorage.setItem("driver_authed", "1");
+      localStorage.setItem("driver_authed", "1");
       setAuthed(true);
     } else {
       alert("Wrong password");
@@ -149,7 +149,7 @@ export default function DriverPage() {
     e.preventDefault();
     if (!driverName.trim()) return;
     const trimmed = driverName.trim();
-    sessionStorage.setItem("driver_name", trimmed);
+    localStorage.setItem("driver_name", trimmed);
     setDriverName(trimmed);
     // Register as active driver immediately
     await supabase.from("drivers").upsert(
@@ -166,8 +166,8 @@ export default function DriverPage() {
     }
     stopSharing();
     if (pingRef.current) clearInterval(pingRef.current);
-    sessionStorage.removeItem("driver_authed");
-    sessionStorage.removeItem("driver_name");
+    localStorage.removeItem("driver_authed");
+    localStorage.removeItem("driver_name");
     setAuthed(false);
     setNameSet(false);
   }
