@@ -41,10 +41,6 @@ export default function Navbar() {
 
         {/* Right */}
         <div className="flex items-center gap-3">
-          <span className="hidden text-sm font-medium text-[#1AABBD] md:block">
-            {T.nav_location}
-          </span>
-
           {/* Language toggle */}
           <button
             onClick={() => setLang(lang === "en" ? "ar" : "en")}
