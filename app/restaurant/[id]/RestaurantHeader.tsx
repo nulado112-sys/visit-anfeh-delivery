@@ -8,12 +8,14 @@ type Props = {
   name: string;
   name_ar?: string;
   logo?: string;
+  logo_bg?: string;
+  logo_fit?: string;
   phone?: string;
   categoriesCount: number;
   totalItems: number;
 };
 
-export default function RestaurantHeader({ name, name_ar, logo, phone, categoriesCount, totalItems }: Props) {
+export default function RestaurantHeader({ name, name_ar, logo, logo_bg, logo_fit, phone, categoriesCount, totalItems }: Props) {
   const { lang } = useLang();
   const T = t[lang];
 
@@ -32,13 +34,16 @@ export default function RestaurantHeader({ name, name_ar, logo, phone, categorie
         </Link>
 
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-          <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-[#1AABBD]/15 bg-[#EBF8FA]">
+          <div
+            className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-[#1AABBD]/15"
+            style={{ backgroundColor: logo_bg || "#EBF8FA" }}
+          >
             <LogoImage
               src={`/logos/${logo}`}
               alt={name}
               fill
               fallback={name[0]}
-              className="object-contain p-2"
+              className={logo_fit === "contain" ? "object-contain p-2" : "object-contain p-2"}
             />
           </div>
 

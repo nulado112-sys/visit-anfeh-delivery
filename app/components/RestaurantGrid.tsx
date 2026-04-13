@@ -88,14 +88,17 @@ export default function RestaurantGrid({
                 className="group flex flex-col overflow-hidden rounded-3xl border border-[#1AABBD]/15 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#1AABBD]/40 hover:shadow-lg hover:shadow-[#1AABBD]/10"
               >
                 {/* Logo area — full cover */}
-                <div className="relative h-44 overflow-hidden bg-[#EBF8FA]">
+                <div
+                  className="relative h-44 overflow-hidden"
+                  style={{ backgroundColor: (restaurant.logo_bg as string) || "#EBF8FA" }}
+                >
                   {restaurant.logo ? (
                     <LogoImage
                       src={`/logos/${restaurant.logo}`}
                       alt={restaurant.name}
                       fill
                       fallback={restaurant.name[0]}
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className={`transition-transform duration-500 group-hover:scale-105 ${restaurant.logo_fit === "contain" ? "object-contain p-6" : "object-cover"}`}
                     />
                   ) : (
                     <div className="flex h-full items-center justify-center bg-[#1AABBD] text-4xl font-black text-white">

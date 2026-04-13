@@ -26,6 +26,8 @@ export default async function RestaurantPage({ params }: Props) {
         name={restaurant.name}
         name_ar={"name_ar" in restaurant ? restaurant.name_ar as string : undefined}
         logo={restaurant.logo}
+        logo_bg={"logo_bg" in restaurant ? restaurant.logo_bg as string : undefined}
+        logo_fit={"logo_fit" in restaurant ? restaurant.logo_fit as string : undefined}
         phone={"phone" in restaurant ? restaurant.phone as string : undefined}
         categoriesCount={categories.length}
         totalItems={totalItems}

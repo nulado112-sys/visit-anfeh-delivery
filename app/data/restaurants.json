@@ -3345,6 +3345,8 @@
       "name": "Farouj Al Ein",
       "name_ar": "فرّوج العين",
       "logo": "farouj-al-ein-logo.jpg",
+      "logo_bg": "#1a0505",
+      "logo_fit": "contain",
       "phone": "03921321",
       "categories": [
         {
