@@ -38,7 +38,7 @@ export default function RestaurantGrid({
 
         {/* Header + search */}
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="font-display text-2xl font-black tracking-tight text-[#0C2B35]">
+          <h2 className="text-2xl font-black tracking-tight text-[#0C2B35]">
             {T.grid_title}
           </h2>
 
@@ -77,7 +77,7 @@ export default function RestaurantGrid({
           </div>
         )}
 
-        <div className="stagger grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((restaurant) => {
             const itemCount = countItems(restaurant);
 
@@ -85,7 +85,7 @@ export default function RestaurantGrid({
               <Link
                 key={restaurant.id}
                 href={`/restaurant/${restaurant.id}`}
-                className="card-lift group flex flex-col overflow-hidden rounded-3xl border border-[#1AABBD]/15 bg-white shadow-sm hover:border-[#1AABBD]/40"
+                className="group flex flex-col overflow-hidden rounded-3xl border border-[#1AABBD]/15 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#1AABBD]/40 hover:shadow-lg hover:shadow-[#1AABBD]/10"
               >
                 {/* Logo area — full cover */}
                 <div className="relative h-44 overflow-hidden bg-[#EBF8FA]">
@@ -110,7 +110,7 @@ export default function RestaurantGrid({
 
                 {/* Info */}
                 <div className="flex flex-1 flex-col p-5">
-                  <h3 className="font-display font-black leading-tight text-[#0C2B35] transition-colors group-hover:text-[#1AABBD]">
+                  <h3 className="font-extrabold leading-tight text-[#0C2B35] transition-colors group-hover:text-[#1AABBD]">
                     {restaurant.name}
                   </h3>
                   {restaurant.name_ar && (

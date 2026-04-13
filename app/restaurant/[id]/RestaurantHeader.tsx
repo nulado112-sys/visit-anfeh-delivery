@@ -43,7 +43,7 @@ export default function RestaurantHeader({ name, name_ar, logo, phone, categorie
           </div>
 
           <div className="flex-1">
-            <h1 className="font-display text-3xl font-black tracking-tight text-[#0C2B35] md:text-4xl">
+            <h1 className="text-3xl font-black tracking-tight text-[#0C2B35] md:text-4xl">
               {name}
             </h1>
             {name_ar && <p className="mt-1 text-lg text-slate-400">{name_ar}</p>}
