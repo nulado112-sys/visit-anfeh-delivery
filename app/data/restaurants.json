@@ -3339,6 +3339,105 @@
       "name_ar": "زهر اللوز",
       "logo": "janet-zahr-el-loz-logo.jpg",
       "note": "Logo only - menu not provided"
+    },
+    {
+      "id": "farouj-al-ein",
+      "name": "Farouj Al Ein",
+      "name_ar": "فرّوج العين",
+      "logo": "farouj-al-ein-logo.jpg",
+      "phone": "03921321",
+      "categories": [
+        {
+          "name": "Appetizers",
+          "items": [
+            { "name": "French Fries (Small)", "price_lbp": 300000 },
+            { "name": "French Fries (Large)", "price_lbp": 600000 },
+            { "name": "Fattoush (Small)", "price_lbp": 300000 },
+            { "name": "Fattoush (Large)", "price_lbp": 600000 },
+            { "name": "Homus (Small)", "price_lbp": 300000 },
+            { "name": "Homus (Large)", "price_lbp": 600000 }
+          ]
+        },
+        {
+          "name": "Manakish",
+          "items": [
+            { "name": "Zaatar (Small)", "price_lbp": 40000 },
+            { "name": "Zaatar (Large)", "price_lbp": 80000 },
+            { "name": "Zaatar Extra (Small)", "price_lbp": 50000 },
+            { "name": "Zaatar Extra (Large)", "price_lbp": 100000 },
+            { "name": "Cheese (Small)", "price_lbp": 100000 },
+            { "name": "Cheese (Large)", "price_lbp": 200000 },
+            { "name": "Cheese Extra (Small)", "price_lbp": 125000 },
+            { "name": "Cheese Extra (Large)", "price_lbp": 250000 },
+            { "name": "Zaatar & Cheese (Small)", "price_lbp": 100000 },
+            { "name": "Zaatar & Cheese (Large)", "price_lbp": 200000 },
+            { "name": "Jambon & Cheese (Small)", "price_lbp": 200000 },
+            { "name": "Jambon & Cheese (Large)", "price_lbp": 350000 },
+            { "name": "Jambon & Cheese Extra (Small)", "price_lbp": 200000 },
+            { "name": "Jambon & Cheese Extra (Large)", "price_lbp": 350000 },
+            { "name": "Turkey & Cheese (Small)", "price_lbp": 150000 },
+            { "name": "Turkey & Cheese (Large)", "price_lbp": 300000 },
+            { "name": "Labne (Small)", "price_lbp": 125000 },
+            { "name": "Labne (Large)", "price_lbp": 250000 },
+            { "name": "Chanklish (Small)", "price_lbp": 100000 },
+            { "name": "Chanklish (Large)", "price_lbp": 200000 },
+            { "name": "3ejie (Small)", "price_lbp": 150000 },
+            { "name": "3ejie (Large)", "price_lbp": 300000 },
+            { "name": "Sabanegh (Small)", "price_lbp": 75000 },
+            { "name": "Sabanegh (Large)", "price_lbp": 150000 },
+            { "name": "Lahme (Small)", "price_lbp": 100000 },
+            { "name": "Lahme (Large)", "price_lbp": 200000 },
+            { "name": "Lahme & Cheese (Small)", "price_lbp": 125000 },
+            { "name": "Lahme & Cheese (Large)", "price_lbp": 250000 },
+            { "name": "Picon (Small)", "price_lbp": 100000 },
+            { "name": "Picon (Large)", "price_lbp": 200000 }
+          ]
+        },
+        {
+          "name": "Pizza",
+          "items": [
+            { "name": "Spicy Chicken Ranch (Small)", "price_lbp": 900000 },
+            { "name": "Spicy Chicken Ranch (Medium)", "price_lbp": 1600000 },
+            { "name": "Spicy Chicken Ranch (Large)", "price_lbp": 2200000 },
+            { "name": "Chicken BBQ (Small)", "price_lbp": 900000 },
+            { "name": "Chicken BBQ (Medium)", "price_lbp": 1600000 },
+            { "name": "Chicken BBQ (Large)", "price_lbp": 2200000 },
+            { "name": "Marguerita (Small)", "price_lbp": 500000 },
+            { "name": "Marguerita (Medium)", "price_lbp": 900000 },
+            { "name": "Marguerita (Large)", "price_lbp": 1300000 },
+            { "name": "Lebanese (Small)", "price_lbp": 600000 },
+            { "name": "Lebanese (Medium)", "price_lbp": 1200000 },
+            { "name": "Lebanese (Large)", "price_lbp": 1600000 },
+            { "name": "Pepperoni (Small)", "price_lbp": 550000 },
+            { "name": "Pepperoni (Medium)", "price_lbp": 1000000 },
+            { "name": "Pepperoni (Large)", "price_lbp": 1500000 },
+            { "name": "Sojok (Small)", "price_lbp": 800000 },
+            { "name": "Sojok (Medium)", "price_lbp": 1400000 },
+            { "name": "Sojok (Large)", "price_lbp": 2000000 }
+          ]
+        },
+        {
+          "name": "Sandwiches Bl Aajin",
+          "items": [
+            { "name": "Submarine", "price_lbp": 550000 },
+            { "name": "Picasso Sandwich", "price_lbp": 600000 }
+          ]
+        },
+        {
+          "name": "Farrouj Specials",
+          "items": [
+            { "name": "Farouj Al Ein Sandwich", "price": 5.50, "description": "Special Sauce + Pickles + Garlic" },
+            { "name": "Farrouj Al Ein (Whole)", "price": 10.00 },
+            { "name": "Farrouj Al Ein x2", "price": 20.00 }
+          ]
+        },
+        {
+          "name": "Mashewe",
+          "items": [
+            { "name": "Kilo Tawouk", "price": 25.00 }
+          ]
+        }
+      ]
     }
   ]
 }
