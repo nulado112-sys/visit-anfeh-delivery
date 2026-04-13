@@ -155,7 +155,7 @@ export default function MenuTabs({ restaurantId, restaurantName, categories, cur
         {activeCategory && (
           <>
             <div className="mb-5">
-              <h2 className="text-2xl font-black tracking-tight text-[#0C2B35]">{activeCategory.name}</h2>
+              <h2 className="font-display text-2xl font-black tracking-tight text-[#0C2B35]">{activeCategory.name}</h2>
               {activeCategory.note && (
                 <p className="mt-1 text-sm italic text-slate-500">{activeCategory.note}</p>
               )}
