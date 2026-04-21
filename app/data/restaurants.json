@@ -4221,7 +4221,7 @@
               "size_options": [
                 {"size": "Slice", "price": 3.5},
                 {"size": "25cm", "price": 18.0},
-                {"size": "30cm", "price": 20.0}
+                {"size": "50cm", "price": 20.0}
               ]
             },
             {
@@ -4231,7 +4231,7 @@
               "size_options": [
                 {"size": "Slice", "price": 4.0},
                 {"size": "25cm", "price": 19.0},
-                {"size": "30cm", "price": 25.0}
+                {"size": "50cm", "price": 25.0}
               ]
             },
             {
@@ -4241,7 +4241,7 @@
               "size_options": [
                 {"size": "Slice", "price": 4.0},
                 {"size": "25cm", "price": 19.0},
-                {"size": "30cm", "price": 27.0}
+                {"size": "50cm", "price": 27.0}
               ]
             },
             {
@@ -4251,7 +4251,7 @@
               "size_options": [
                 {"size": "Slice", "price": 4.0},
                 {"size": "25cm", "price": 19.0},
-                {"size": "30cm", "price": 25.0}
+                {"size": "50cm", "price": 25.0}
               ]
             },
             {
@@ -4261,7 +4261,7 @@
               "size_options": [
                 {"size": "Slice", "price": 4.0},
                 {"size": "25cm", "price": 19.0},
-                {"size": "30cm", "price": 30.0}
+                {"size": "50cm", "price": 30.0}
               ]
             },
             {
@@ -4271,7 +4271,7 @@
               "size_options": [
                 {"size": "Slice", "price": 4.0},
                 {"size": "25cm", "price": 19.0},
-                {"size": "30cm", "price": 25.0}
+                {"size": "50cm", "price": 25.0}
               ]
             },
             {
@@ -4281,7 +4281,7 @@
               "size_options": [
                 {"size": "Slice", "price": 5.0},
                 {"size": "25cm", "price": 21.0},
-                {"size": "30cm", "price": 30.0}
+                {"size": "50cm", "price": 30.0}
               ]
             },
             {
@@ -4291,7 +4291,7 @@
               "size_options": [
                 {"size": "Slice", "price": 3.0},
                 {"size": "25cm", "price": 15.0},
-                {"size": "30cm", "price": 20.0}
+                {"size": "50cm", "price": 20.0}
               ]
             },
             {
@@ -4301,7 +4301,7 @@
               "size_options": [
                 {"size": "Slice", "price": 3.0},
                 {"size": "25cm", "price": 15.0},
-                {"size": "30cm", "price": 20.0}
+                {"size": "50cm", "price": 20.0}
               ]
             }
           ]
