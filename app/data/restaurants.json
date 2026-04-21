@@ -3335,10 +3335,209 @@
     },
     {
       "id": "janet-zahr-el-loz",
-      "name": "Janet Zahr El Loz",
+      "name": "Zaher El Loz",
       "name_ar": "زهر اللوز",
       "logo": "janet-zahr-el-loz-logo.jpg",
-      "note": "Logo only - menu not provided"
+      "source_url": "zaher_el_loz",
+      "categories": [
+        {
+          "name": "Breakfast",
+          "items": [
+            { "name": "Kaak", "price": 3.00 },
+            { "name": "Add on's per item (Labneh/Cheese/Ham/Turkey)", "price": 2.00 },
+            { "name": "Halloumi Sandwich", "price": 8.00 },
+            { "name": "Turkey Sandwich", "price": 8.00 },
+            { "name": "Croissant Plain", "price": 2.00 },
+            { "name": "Croissant Zaatar", "price": 2.00 },
+            { "name": "Croissant Cheese", "price": 3.00 },
+            { "name": "Croissant Cheese & Turkey", "price": 4.00 },
+            { "name": "Croissant Cheese & Ham", "price": 4.00 }
+          ]
+        },
+        {
+          "name": "Appetizers",
+          "items": [
+            { "name": "Crispy Tacos (2 pc)", "price": 10.00 },
+            { "name": "Shrimp Tacos (2 pc)", "price": 10.00 },
+            { "name": "Quesadillas", "price": 8.00 },
+            { "name": "Chicken Wings (10 pcs)", "price": 9.00 },
+            { "name": "Mozzarella Sticks (5 pcs)", "price": 7.00 },
+            { "name": "Calamari Rings", "price": 8.00 },
+            { "name": "Dynamite Breaded Shrimp", "price": 8.00 },
+            { "name": "French Fries", "price": 5.00 },
+            { "name": "Potato Wedges", "price": 5.00 },
+            { "name": "Truffle Fries", "price": 10.00 }
+          ]
+        },
+        {
+          "name": "Salads",
+          "items": [
+            { "name": "Caesar Salad", "price": 10.00 },
+            { "name": "Crab Salad", "price": 10.00 },
+            { "name": "Halloumi Salad", "price": 10.00 },
+            { "name": "Quinoa Salad", "price": 10.00 },
+            { "name": "Greek Salad", "price": 10.00 },
+            { "name": "Kale Salad", "price": 12.00 },
+            { "name": "Shrimp Salad", "price": 12.00 },
+            { "name": "Tuna Tartar", "price": 14.00 }
+          ]
+        },
+        {
+          "name": "Burgers",
+          "description": "All plates come with fries and salad",
+          "items": [
+            { "name": "Classic Burger", "price": 10.00 },
+            { "name": "Cheese Burger", "price": 11.00 },
+            { "name": "Chicken Burger", "price": 9.00 },
+            { "name": "Crispy Burger", "price": 9.00 },
+            { "name": "Mozzarella Burger", "price": 8.00 },
+            { "name": "Fish Burger", "price": 9.00 }
+          ]
+        },
+        {
+          "name": "Sandwiches",
+          "items": [
+            { "name": "Chicken Sub", "price": 10.00 },
+            { "name": "Smoky Chicken", "price": 10.00 },
+            { "name": "Chicken Avocado", "price": 11.00 },
+            { "name": "Chicken Fajita", "price": 10.00 },
+            { "name": "Crispy Sandwich", "price": 10.00 },
+            { "name": "Steak Sandwich", "price": 11.00 },
+            { "name": "Tuna Sandwich", "price": 9.00 },
+            { "name": "Crab Sandwich", "price": 9.00 },
+            { "name": "Submarine", "price": 9.00 }
+          ]
+        },
+        {
+          "name": "Main Course (Italiano)",
+          "items": [
+            { "name": "Fettuccini Alfredo", "price": 12.00 },
+            { "name": "Penne Arrabbiata", "price": 10.00 },
+            { "name": "Pink Four Cheese Penne", "price": 10.00 },
+            { "name": "Shrimp Pasta", "price": 15.00 },
+            { "name": "Linguini Pesto", "price": 10.00 },
+            { "name": "Pizza Margherita", "price": 10.00 },
+            { "name": "Pizza Vegetarian", "price": 10.00 },
+            { "name": "Pizza Pepperoni", "price": 11.00 }
+          ]
+        },
+        {
+          "name": "Kids Meals",
+          "items": [
+            { "name": "Crispy Chicken (3 pcs)", "price": 8.00 },
+            { "name": "Chicken Wings (6 pcs)", "price": 6.00 },
+            { "name": "Classic Burger (100gr)", "price": 6.00 }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            { "name": "Crepe Nutella", "price": 6.00 },
+            { "name": "Add Fruit", "price": 1.00 },
+            { "name": "Fruit Salad", "price": 6.00 },
+            { "name": "Fondant Chocolate", "price": 7.00 },
+            { "name": "Mango Cheesecake", "price": 6.00 },
+            { "name": "Lazy Cake", "price": 5.00 }
+          ]
+        },
+        {
+          "name": "Hot Drinks",
+          "items": [
+            { "name": "Espresso Single", "price": 1.50 },
+            { "name": "Espresso Double", "price": 2.50 },
+            { "name": "Macchiato", "price": 1.50 },
+            { "name": "Cortado", "price": 1.50 },
+            { "name": "Piccolo", "price": 1.50 },
+            { "name": "Latte", "price": 3.50 },
+            { "name": "Cappuccino", "price": 3.50 },
+            { "name": "Americano", "price": 3.50 },
+            { "name": "Affogato", "price": 4.00 },
+            { "name": "Mocha", "price": 4.00 },
+            { "name": "Turkish Coffee (Small)", "price": 3.00 },
+            { "name": "Turkish Coffee (Big)", "price": 5.00 },
+            { "name": "Tisane", "price": 2.50 },
+            { "name": "Add Flavor (Caramel/Vanilla/Hazelnut)", "price": 1.00 }
+          ]
+        },
+        {
+          "name": "Cold Drinks",
+          "items": [
+            { "name": "Fresh Juice", "price": 4.00 },
+            { "name": "Perrier", "price": 3.00 },
+            { "name": "Soda", "price": 3.00 },
+            { "name": "Red Bull / Light", "price": 4.00 }
+          ]
+        },
+        {
+          "name": "Alcoholic Beverages",
+          "items": [
+            { "name": "Almaza / Light", "price": 3.50 },
+            { "name": "Add Mexican", "price": 1.00 },
+            { "name": "Heineken", "price": 3.50 },
+            { "name": "Corona / Light", "price": 5.00 }
+          ]
+        },
+        {
+          "name": "Mocktails",
+          "items": [
+            { "name": "Mojito Regular", "price": 4.00 },
+            { "name": "Mojito Flavored", "price": 5.00 },
+            { "name": "Pacific Punch", "price": 4.00 },
+            { "name": "The Berry Patch", "price": 4.00 },
+            { "name": "Green Lightning", "price": 4.00 }
+          ]
+        },
+        {
+          "name": "Smoothies",
+          "items": [
+            { "name": "Passion Apple Blend", "price": 5.00 },
+            { "name": "Berry Blast", "price": 5.00 },
+            { "name": "Tropical Gold (Kiwi, Mango, Pineapple)", "price": 5.00 }
+          ]
+        },
+        {
+          "name": "Milk Shakes",
+          "items": [
+            { "name": "ChocoHolic", "price": 5.00 },
+            { "name": "Caramelle", "price": 5.00 },
+            { "name": "Oreo Madness", "price": 5.00 },
+            { "name": "Biscoff", "price": 5.00 },
+            { "name": "Matcha", "price": 5.00 },
+            { "name": "Frappe Mocha", "price": 4.00 }
+          ]
+        },
+        {
+          "name": "Premium Alcohol",
+          "items": [
+            { "name": "Bombay (Bottle/Glass)", "price": 60.00, "price_glass": 7.00 },
+            { "name": "Tanqueray (Bottle/Glass)", "price": 60.00, "price_glass": 7.00 },
+            { "name": "Hendrick's (Bottle/Glass)", "price": 70.00, "price_glass": 9.00 },
+            { "name": "Jose Cuervo Silver (Bottle/Glass)", "price": 30.00, "price_glass": 4.00 },
+            { "name": "Jose Cuervo Gold (Bottle/Glass)", "price": 35.00, "price_glass": 5.00 },
+            { "name": "1800 Silver (Bottle/Glass)", "price": 85.00, "price_glass": 8.00 },
+            { "name": "1800 Reposado", "price": 100.00 },
+            { "name": "1800 Anejo", "price": 120.00 },
+            { "name": "Don Julio Reposado", "price": 210.00 },
+            { "name": "Don Julio Anejo", "price": 225.00 }
+          ]
+        },
+        {
+          "name": "Wine",
+          "items": [
+            { "name": "Astoria Rose (Bottle)", "price": 35.00 },
+            { "name": "Astoria White (Bottle)", "price": 30.00 },
+            { "name": "IXIR Altitude Rose (Bottle)", "price": 30.00 },
+            { "name": "IXIR Grand Reserve Rose (Bottle)", "price": 40.00 },
+            { "name": "IXIR Altitude White (Bottle)", "price": 30.00 }
+          ]
+        },
+        {
+          "name": "Shisha",
+          "items": [
+            { "name": "Maassal", "price": 5.00 }
+          ]
+        }
+      ]
     },
     {
       "id": "farouj-al-ein",
@@ -3886,6 +4085,121 @@
             { "name": "Extra Coal", "name_ar": "نبريش إكسترا", "price": 0.50 },
             { "name": "Heat", "name_ar": "هيت", "price": 5.00 },
             { "name": "Cigarette Pack", "name_ar": "علبة دخان", "price": 5.00 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "al-baydar",
+      "name": "Al Baydar Restaurant",
+      "name_ar": "البيدر",
+      "logo": "al-baydar-logo.jpg",
+      "source_url": "al_baydar_restaurant",
+      "categories": [
+        {
+          "name": "Cold Mezza",
+          "items": [
+            { "name": "Tabbouleh", "name_ar": "تبولة", "price": 5.00 },
+            { "name": "Fattoush", "name_ar": "فتوش", "price": 5.00 },
+            { "name": "Rocca, Zaatar, Bakleh Salad", "name_ar": "سلطة الروكا مع الزعتر", "price": 5.00 },
+            { "name": "Beetroot Salad", "name_ar": "سلطة الشمندر", "price": 4.00 },
+            { "name": "Hommos", "name_ar": "حمص", "price": 4.00 },
+            { "name": "Hommos with Meat", "name_ar": "حمص مع اللحمة", "price": 7.00 },
+            { "name": "Moutabbal", "name_ar": "متبل", "price": 4.00 },
+            { "name": "Baba Ghannouj", "name_ar": "بابا غنوج", "price": 4.00 },
+            { "name": "Artichoke", "name_ar": "أرضي شوكي", "price": 4.00, "note": "Not Available" },
+            { "name": "Shanklish", "price": 4.50 },
+            { "name": "Labneh", "name_ar": "لبنة", "price": 4.00 },
+            { "name": "Labneh with Garlic", "name_ar": "لبنة بالتوم", "price": 4.50 },
+            { "name": "Warak Inab", "name_ar": "ورق عنب", "price": 4.00 },
+            { "name": "Kibbe Nayyeh", "name_ar": "كبة نية", "price": 8.00 },
+            { "name": "Nayyeh (Lahme or Habra or Kafta)", "price": 8.00 }
+          ]
+        },
+        {
+          "name": "Hot Mezza",
+          "items": [
+            { "name": "Cheese Rakakat (1 Piece)", "name_ar": "رقاقات جبنة", "price": 0.50 },
+            { "name": "Fried Kebbeh (1 Piece)", "name_ar": "كبة قراص", "price": 0.75 },
+            { "name": "Fatayer Spinach (1 Piece)", "name_ar": "فطاير سبانخ", "price": 0.50 },
+            { "name": "Meat Sambusek (1 Piece)", "name_ar": "سمبوسك لحم", "price": 0.50 },
+            { "name": "Mix Mouajanet (2 Sambusek, 2 Rakakat, 2 Ftayer, 2 Kebbeh)", "price": 5.00 },
+            { "name": "Sujuk", "name_ar": "سجق بالبندورة", "price": 6.00 },
+            { "name": "Makanek", "name_ar": "مقانق", "price": 6.00 },
+            { "name": "Grilled Halloumi", "name_ar": "حلوم مشوي", "price": 5.00 },
+            { "name": "Chicken Liver", "name_ar": "سودة دجاج", "price": 4.00 },
+            { "name": "Batata Harra", "name_ar": "بطاطا حرة", "price": 5.00 },
+            { "name": "French Fries", "name_ar": "بطاطا مقلية", "price": 4.00 },
+            { "name": "Grilled Potatoes", "name_ar": "بطاطا مشوية", "price": 5.00 },
+            { "name": "Fried Chicken Wings", "name_ar": "جوانح دجاج بالكزبرة والتوم", "price": 4.00 },
+            { "name": "Grilled Chicken Wings", "name_ar": "جوانح مشوية", "price": 4.00 }
+          ]
+        },
+        {
+          "name": "Machawi (Grills)",
+          "items": [
+            { "name": "Taouk Platter", "name_ar": "صحن شيش طاووق", "price": 7.00 },
+            { "name": "Kafta Platter", "name_ar": "صحن كفتة", "price": 10.00 },
+            { "name": "Kabab Halabi Platter", "name_ar": "صحن كباب حلبي", "price": 10.00 },
+            { "name": "Grilled Meat Platter", "name_ar": "صحن لحم مشوي", "price": 12.00 },
+            { "name": "Mixed Grill Platter", "name_ar": "صحن مشاوي مشكل", "price": 14.00 },
+            { "name": "Kafta (Debs Remmen)", "price": 6.00 },
+            { "name": "Meat Arayess", "price": 13.00 },
+            { "name": "Mixed Grill (1kg - 12 skewers)", "price": 30.00 },
+            { "name": "Grilled Meat (1kg)", "price": 38.00 },
+            { "name": "Shish Taouk (1kg)", "price": 20.00 },
+            { "name": "Grilled Kafta (1kg)", "price": 30.00 },
+            { "name": "Kabab Halabi (1kg)", "price": 28.00 },
+            { "name": "Mixed Grill (1/2kg - 6 skewers)", "price": 17.00 },
+            { "name": "Grilled Meat (1/2kg)", "price": 21.00 },
+            { "name": "Shish Taouk (1/2kg)", "price": 13.00 },
+            { "name": "Grilled Kafta (1/2kg)", "price": 16.00 },
+            { "name": "Kabab Halabi (1/2kg)", "price": 16.00 },
+            { "name": "Grilled Chicken", "name_ar": "فروج مشوي على الفحم", "price": 10.00 },
+            { "name": "Half Grilled Chicken", "price": 6.00 }
+          ]
+        },
+        {
+          "name": "Seafood",
+          "items": [
+            { "name": "Octopus Provencal", "name_ar": "اخطبوط", "price": 15.00 },
+            { "name": "Grilled Octopus", "price": 25.00 },
+            { "name": "Calamar Provencal", "name_ar": "كالمار", "price": 13.00 },
+            { "name": "Grilled Calamar", "price": 18.00 },
+            { "name": "Shrimps Provencal", "name_ar": "قريدس", "price": 12.00 },
+            { "name": "Jumbo Grilled Shrimps", "price": 16.00 },
+            { "name": "Seafood Cocktail", "price": 16.00 },
+            { "name": "Squid with Ink", "name_ar": "صبيدج", "price": 13.00 },
+            { "name": "Fried Bizre", "name_ar": "صحن بزري", "price": 4.00 },
+            { "name": "Bizre Provencal", "price": 5.00 },
+            { "name": "Salmon Plate", "price": 18.00 }
+          ]
+        },
+        {
+          "name": "Drinks & Arguileh",
+          "items": [
+            { "name": "Small Water", "price": 0.50 },
+            { "name": "Big Water", "price": 1.00 },
+            { "name": "Sparkling Water", "price": 2.00 },
+            { "name": "Soft Drink", "price": 2.00 },
+            { "name": "Ice Tea", "price": 2.00 },
+            { "name": "Lemonade", "price": 2.50 },
+            { "name": "Lemonade with Mint", "price": 3.00 },
+            { "name": "Orange Juice", "price": 3.00 },
+            { "name": "Arguileh", "name_ar": "نرجيلة", "price": 6.00 }
+          ]
+        },
+        {
+          "name": "Alcohol",
+          "items": [
+            { "name": "Almaza Beer", "price": 3.00 },
+            { "name": "Mexican Beer", "price": 3.50 },
+            { "name": "Arak (Glass/1/4/1/2/Bottle)", "price_options": [3.00, 8.00, 14.00, 20.00] },
+            { "name": "Arak Al Baydar (Glass/1/4/1/2/Bottle)", "price_options": [4.00, 10.00, 17.00, 25.00] },
+            { "name": "Vodka (Glass)", "price": 4.00 },
+            { "name": "Whiskey (Glass/Bottle)", "price": 5.00, "price_bottle": 40.00 },
+            { "name": "Whiskey Premium (Glass/Bottle)", "price": 7.00, "price_bottle": 65.00 },
+            { "name": "Wine (Glass/1/2/Bottle)", "price_options": [4.00, 12.00, 18.00] }
           ]
         }
       ]
