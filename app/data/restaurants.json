@@ -4203,6 +4203,180 @@
           ]
         }
       ]
+    },
+    {
+      "id": "doh-on-the-go",
+      "name": "Doh on the Go",
+      "name_ar": "دو اون ذا جو",
+      "logo": "doh-on-the-go-logo.jpg",
+      "source_url": "doh_on_the_go",
+      "categories": [
+        {
+          "name": "Pizza",
+          "items": [
+            {
+              "name": "Eats Margherita",
+              "description": "Classic margherita pizza with fresh tomatoes and mozzarella",
+              "price": 3.5,
+              "size_options": [
+                {"size": "Slice", "price": 3.5},
+                {"size": "25cm", "price": 18.0},
+                {"size": "30cm", "price": 20.0}
+              ]
+            },
+            {
+              "name": "Doh Pepperoni",
+              "description": "Traditional pepperoni pizza with mozzarella cheese",
+              "price": 4.0,
+              "size_options": [
+                {"size": "Slice", "price": 4.0},
+                {"size": "25cm", "price": 19.0},
+                {"size": "30cm", "price": 25.0}
+              ]
+            },
+            {
+              "name": "Itza Pizza",
+              "description": "Special house pizza with mixed toppings",
+              "price": 4.0,
+              "size_options": [
+                {"size": "Slice", "price": 4.0},
+                {"size": "25cm", "price": 19.0},
+                {"size": "30cm", "price": 27.0}
+              ]
+            },
+            {
+              "name": "Vegetania",
+              "description": "Vegetarian pizza with artichoke, bell pepper, onions, mushrooms",
+              "price": 4.0,
+              "size_options": [
+                {"size": "Slice", "price": 4.0},
+                {"size": "25cm", "price": 19.0},
+                {"size": "30cm", "price": 25.0}
+              ]
+            },
+            {
+              "name": "Jude 5 Pears",
+              "description": "Caramelized onions, arugula, blue cheese, mozzarella, poached pears",
+              "price": 4.0,
+              "size_options": [
+                {"size": "Slice", "price": 4.0},
+                {"size": "25cm", "price": 19.0},
+                {"size": "30cm", "price": 30.0}
+              ]
+            },
+            {
+              "name": "Ragazza Dura",
+              "description": "Jalapeño, mozzarella, gruyere, black olives",
+              "price": 4.0,
+              "size_options": [
+                {"size": "Slice", "price": 4.0},
+                {"size": "25cm", "price": 19.0},
+                {"size": "30cm", "price": 25.0}
+              ]
+            },
+            {
+              "name": "Fintom",
+              "description": "Fried chicken, pepperoni, bell peppers, red onion, fresh mushrooms, oregano, BBQ sauce drizzle",
+              "price": 5.0,
+              "size_options": [
+                {"size": "Slice", "price": 5.0},
+                {"size": "25cm", "price": 21.0},
+                {"size": "30cm", "price": 30.0}
+              ]
+            },
+            {
+              "name": "Cheese",
+              "description": "Classic cheese pizza with mozzarella",
+              "price": 3.0,
+              "size_options": [
+                {"size": "Slice", "price": 3.0},
+                {"size": "25cm", "price": 15.0},
+                {"size": "30cm", "price": 20.0}
+              ]
+            },
+            {
+              "name": "Nutty Zaata",
+              "description": "Zaatar and cheese pizza with nuts",
+              "price": 3.0,
+              "size_options": [
+                {"size": "Slice", "price": 3.0},
+                {"size": "25cm", "price": 15.0},
+                {"size": "30cm", "price": 20.0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Appetizers",
+          "items": [
+            {
+              "name": "Chicken Tenders (3 pcs)",
+              "description": "Crispy chicken tenders served with dipping sauce",
+              "price": 4.0
+            },
+            {
+              "name": "Mozzarella Sticks (3 pcs)",
+              "description": "Golden fried mozzarella sticks with marinara sauce",
+              "price": 4.0
+            },
+            {
+              "name": "Cut Thin Fries",
+              "description": "Crispy thin-cut french fries",
+              "price": 3.0
+            },
+            {
+              "name": "Curly Fries",
+              "description": "Seasoned curly fries",
+              "price": 3.5
+            },
+            {
+              "name": "Garlic Cheese Bread",
+              "description": "Toasted bread with garlic butter and melted cheese",
+              "price": 5.0
+            },
+            {
+              "name": "Nutty Calzone",
+              "description": "Folded pizza dough stuffed with cheese and nuts",
+              "price": 6.0
+            }
+          ]
+        },
+        {
+          "name": "Sandwich",
+          "items": [
+            {
+              "name": "Submarino",
+              "description": "Tomatoes, lettuce, fresh mushrooms, black olives, mayo cheese",
+              "price": 7.0
+            }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            {
+              "name": "Tilyāne",
+              "description": "Avocado, creamy cheesecake, tomatoes, jalapeño, arugula, balsamic, olive oil",
+              "price": 13.0
+            },
+            {
+              "name": "Donuts",
+              "description": "Fresh glazed donuts",
+              "price": 3.0
+            },
+            {
+              "name": "Bakka",
+              "description": "Traditional Middle Eastern sweet",
+              "price": 4.0
+            },
+            {
+              "name": "Cinnamon Rolls",
+              "description": "Warm cinnamon rolls with icing",
+              "price": 5.0
+            }
+          ]
+        }
+      ]
     }
   ]
 }
