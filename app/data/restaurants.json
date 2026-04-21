@@ -3439,6 +3439,456 @@
           ]
         }
       ]
+    },
+    {
+      "id": "angels-sushi",
+      "name": "Angel's Sushi",
+      "name_ar": "أنجل سوشي",
+      "logo": "angels-sushi-logo.jpg",
+      "source_url": "angels_sushi_lb",
+      "categories": [
+        {
+          "name": "Hosomaki (8pcs)",
+          "items": [
+            { "name": "Kappa Hosomaki", "description": "Sushi rice, cucumber, nori", "price": 4.00 },
+            { "name": "Mango Hosomaki", "description": "Sushi rice, mango, nori", "price": 5.00 },
+            { "name": "Avocado Hosomaki", "description": "Sushi rice, avocado, nori", "price": 6.00 },
+            { "name": "Crab Hosomaki", "description": "Sushi rice, crab stick, nori", "price": 5.00 },
+            { "name": "Salmon Hosomaki", "description": "Sushi rice, salmon, nori", "price": 6.00 },
+            { "name": "Shrimp Hosomaki", "description": "Sushi rice, shrimp, nori", "price": 6.00 },
+            { "name": "Tuna Hosomaki", "description": "Sushi rice, raw tuna, nori", "price": 6.00 },
+            { "name": "Tempura Hosomaki", "description": "Sushi rice, tempura, nori", "price": 6.00 }
+          ]
+        },
+        {
+          "name": "Uramaki (8pcs)",
+          "items": [
+            { "name": "Philly Salmon Maki", "description": "Sushi rice, smoked salmon, philadelphia cheese, sesame", "price": 8.00 },
+            { "name": "Crispy Crazy Maki", "description": "Sushi rice, crazy crab, japanese mayo, tobiko, panko", "price": 8.00 },
+            { "name": "Tuna Avocado Maki", "description": "Sushi rice, tuna, avocado, japanese mayo, sesame", "price": 8.00 },
+            { "name": "Crazy Masago Maki", "description": "Sushi rice, spicy crazy crab, japanese mayo, tobiko", "price": 8.00 },
+            { "name": "Sesame Salmon Maki", "description": "Sushi rice, salmon, cucumber, cream cheese, tobiko, sesame", "price": 8.00 },
+            { "name": "Golden Philly Maki", "description": "Sushi rice, smoked salmon, cream cheese, tobiko", "price": 8.00 },
+            { "name": "Salmon Maki", "description": "Sushi rice, raw salmon, avocado, spicy mayo, sesame", "price": 8.00 },
+            { "name": "Spicy Tuna Mango Maki", "description": "Sushi rice, raw tuna, mango, topped with sesame, toragashi powder and spicy mayo", "price": 8.00 },
+            { "name": "Shrimp Tempura Maki", "description": "Sushi rice, shrimp tempura, teriyaki sauce, furikake", "price": 8.00 },
+            { "name": "Crispy Mango Maki", "description": "Sushi rice, crabstick, mango, topped with panko and japanese mayo", "price": 8.00 },
+            { "name": "Crispy Philadelphia Maki", "description": "Sushi rice, crazy crab, cream cheese, tobiko, panko", "price": 8.00 },
+            { "name": "Purple Flame Maki", "description": "Sushi rice, cooked tuna, avocado, cucumber, topped with red cabbage and spicy mayo", "price": 8.00 },
+            { "name": "California Maki", "description": "Sushi rice, imitation crab, avocado, tobiko", "price": 8.00 }
+          ]
+        },
+        {
+          "name": "Special Rolls (10pcs)",
+          "items": [
+            { "name": "Dragon Roll", "description": "Sushi rice, crabstick, cucumber, topped with avocado, tobiko, spicy mayo, sesame and unagi sauce", "price": 10.00 },
+            { "name": "Ebi Chiri Roll", "description": "Sushi rice, crab stick, cucumber, cream cheese, mango topped with spicy crazy crab and tempura", "price": 10.00 },
+            { "name": "Special Crab Roll", "description": "Sushi rice, crazy crab, cream cheese, avocado, topped with spicy mayo", "price": 10.00 },
+            { "name": "Crispy Spiced Salmon Roll", "description": "Sushi rice, crabstick, cucumber, avocado, cream cheese, topped with spiced salmon, mayo, tobiko and unagi sauce", "price": 10.00 },
+            { "name": "Salmon Philadelphia Roll", "description": "Sushi rice, wrapped in salmon, topped with cream cheese and tobiko", "price": 10.00 },
+            { "name": "Shrimp Salmon Roll", "description": "Sushi rice, shrimp, cream cheese, tobiko topped with salmon", "price": 10.00 },
+            { "name": "Spiced Salmon Roll", "description": "Sushi rice, cream cheese, topped with spiced salmon", "price": 10.00 },
+            { "name": "Mango Tango Roll", "description": "Sushi rice, shrimp tempura, avocado topped with mango, japanese mayo and unagi sauce with tobiko", "price": 11.00 },
+            { "name": "Crunchy Tempura Roll", "description": "Sushi rice, ebi tempura, avocado topped with salmon, spicy mayo and unagi sauce", "price": 10.00 },
+            { "name": "Crispy Lobster Roll", "description": "Sushi rice, cream cheese, avocado, cucumber, topped with surimi lobster, spicy mayo, unagi sauce and tobiko", "price": 11.00 },
+            { "name": "Volcano Roll", "description": "Sushi rice, cucumber, cream cheese, sesame topped with shrimp volcano and green onions", "price": 10.00 },
+            { "name": "Rainbow Roll", "description": "Sushi rice, crabstick, mango, cream cheese, topped with salmon, avocado, spicy mayo and teriyaki sauce", "price": 11.00 },
+            { "name": "Vaiking Roll", "description": "Sushi rice, crab stick, tempura, avocado, topped with crazy crab, spicy mayo and toragashi powder", "price": 10.00 }
+          ]
+        },
+        {
+          "name": "Nigiri (2pcs)",
+          "items": [
+            { "name": "Salmon Nigiri", "description": "Sushi rice, raw salmon, wasabi", "price": 4.00 },
+            { "name": "Shrimp Nigiri", "description": "Sushi rice, shrimp", "price": 5.00 },
+            { "name": "Unagi Nigiri", "description": "Sushi rice, eel, nori, sesame", "price": 7.00 },
+            { "name": "Crab Stick Nigiri", "description": "Sushi rice, imitation crab, nori", "price": 3.00 },
+            { "name": "Tuna Nigiri", "description": "Sushi rice, tuna, nori", "price": 5.00 },
+            { "name": "Avocado Nigiri", "description": "Sushi rice, avocado, nori", "price": 3.00 }
+          ]
+        },
+        {
+          "name": "Sashimi (5pcs)",
+          "items": [
+            { "name": "Tuna Sashimi", "price": 9.00 },
+            { "name": "Salmon Sashimi", "price": 8.00 },
+            { "name": "Unagi Sashimi", "price": 9.00 },
+            { "name": "Shrimp Sashimi", "price": 7.00 },
+            { "name": "Octopus Sashimi", "price": 7.00 },
+            { "name": "Crab Stick Sashimi", "price": 7.00 }
+          ]
+        },
+        {
+          "name": "Gunkan (2pcs)",
+          "items": [
+            { "name": "Salmon Gunkan", "price": 8.00 },
+            { "name": "Shrimp Gunkan", "price": 7.00 },
+            { "name": "Unagi Gunkan", "price": 8.00 },
+            { "name": "Crazy Crab Gunkan", "price": 7.00 },
+            { "name": "Tobiko Gunkan", "price": 7.00 },
+            { "name": "Wakame Gunkan", "price": 6.00 }
+          ]
+        },
+        {
+          "name": "Maki Sushi Boats",
+          "items": [
+            { "name": "Mini Maki Boat (24pcs)", "description": "Choose Any: 1 Hosomaki (8 pcs), 2 Uramaki (16 Pcs)", "price": 17.00 },
+            { "name": "Small Maki Boat (32pcs)", "description": "Choose Any: 1 Hosomaki (8 pcs), 3 Uramaki (24 Pcs)", "price": 22.00 },
+            { "name": "Medium Maki Boat (48pcs)", "description": "Choose Any: 2 Hosomaki (16 pcs), 4 Uramaki (32 Pcs)", "price": 33.00 },
+            { "name": "Large Maki Boat (64pcs)", "description": "Choose Any: 3 Hosomaki (24 pcs), 5 Uramaki (40 Pcs)", "price": 50.00 },
+            { "name": "Party Mix Maki Boat (96pcs)", "description": "Choose Any: 4 Hosomaki (32 pcs), 8 Uramaki (64 Pcs)", "price": 72.00 }
+          ]
+        },
+        {
+          "name": "Mixed Sushi Boats",
+          "items": [
+            { "name": "50 PCS Boat", "description": "Choose Any: 2 Hosomaki (16 pcs), 2 Uramaki (16 Pcs), 4 Nigiri (8 Pcs), 1 Sashimi (5 pcs), 2 Gunkan (6 pcs)", "price": 44.00 },
+            { "name": "70 PCS Boat", "description": "Choose Any: 2 Hosomaki (16pcs), 3 Uramaki (24Pcs), 4 Nigiri (8Pcs), 2 Sashimi (10pcs), 5 Gunkan (10pcs)", "price": 66.00 },
+            { "name": "100 PCS Boat", "description": "Choose Any: 3 Hosomaki (24pcs), 4 Uramaki (32pcs), 6 Nigiri (12pcs), 4 Sashimi (20pcs), 6 Gunkan (12pcs)", "price": 88.00 }
+          ]
+        },
+        {
+          "name": "Burrito",
+          "items": [
+            { "name": "All in Burrito - Whole", "description": "Sushi rice, crazy crab, tempura, spicy salmon, cream cheese, mango, avocado, cucumber, carrots, tobiko", "price": 15.00 },
+            { "name": "All in Burrito - Half", "description": "Sushi rice, crazy crab, tempura, spicy salmon, cream cheese, mango, avocado, cucumber, carrots, tobiko", "price": 8.00 }
+          ]
+        },
+        {
+          "name": "Onigiri (1pc)",
+          "items": [
+            { "name": "Philly Salmon Onigiri", "price": 3.00 },
+            { "name": "Crazy Crab Onigiri", "price": 3.00 },
+            { "name": "Crispy Shrimp Onigiri", "price": 3.00 },
+            { "name": "Tuna Mayo Onigiri", "price": 3.00 }
+          ]
+        },
+        {
+          "name": "Appetizers",
+          "items": [
+            { "name": "Dumplings", "description": "Shrimp / Shrimp & Crab / Spring, Egg and Spring Onion", "price": 5.00 },
+            { "name": "Shrimp Dynamite", "price": 9.00 },
+            { "name": "Spring Rolls", "price": 5.00 },
+            { "name": "Shrimp Tempura", "price": 9.00 },
+            { "name": "Calamari", "price": 9.00 },
+            { "name": "Spicy Kani Rice Paper Boats", "price": 7.00 },
+            { "name": "Edamame", "price": 5.00 },
+            { "name": "Garlic Butter Mussels", "price": 9.00 },
+            { "name": "Vietnamese Spring Rolls", "price": 7.00 }
+          ]
+        },
+        {
+          "name": "Salad",
+          "items": [
+            { "name": "Wakame Salad", "description": "Seaweed Salad with sesame dressing", "price": 8.00 },
+            { "name": "Crab Salad", "description": "Imitation crab, mango and avocado with japanese mayo dressing", "price": 10.00 },
+            { "name": "Shrimp Rocca Salad", "description": "Rocca, shrimps and avocado with lemon vinaigrette dressing", "price": 10.00 },
+            { "name": "Summer Salad", "description": "Mango, avocado, cucumber, onion, capsicum and fresh mint with vinaigrette dressing", "price": 8.00 },
+            { "name": "Salmon Salad", "description": "Salmon, avocado, cabbage, orange, carrots with balsamic-sesame dressing", "price": 11.00 }
+          ]
+        },
+        {
+          "name": "Asian Menu - Bento & Rice Dishes",
+          "items": [
+            { "name": "Bento Box", "description": "Any Beef, Chicken or Shrimp Dish, served with Steamed Rice, Spring Roll, Soup and Dessert", "price": 14.00 },
+            { "name": "Mini Bento Box", "description": "Any Beef, Chicken or Shrimp Served with Steamed Rice", "price": 9.00 }
+          ]
+        },
+        {
+          "name": "Asian Menu - Shrimp Dishes (300g)",
+          "items": [
+            { "name": "Shrimp Stir Fry", "price": 10.00 },
+            { "name": "Shrimp Teriyaki", "price": 10.00 },
+            { "name": "Sweet & Sour Shrimp", "price": 10.00 }
+          ]
+        },
+        {
+          "name": "Asian Menu - Chicken Dishes (300g)",
+          "items": [
+            { "name": "Chicken Stir Fry", "price": 10.00 },
+            { "name": "Chicken Teriyaki", "price": 10.00 },
+            { "name": "Chicken Katsu", "price": 10.00 },
+            { "name": "Sweet & Sour Chicken", "price": 10.00 }
+          ]
+        },
+        {
+          "name": "Asian Menu - Beef Dishes (300g)",
+          "items": [
+            { "name": "Beef Stir Fry", "price": 11.00 },
+            { "name": "Beef Teriyaki", "price": 11.00 }
+          ]
+        },
+        {
+          "name": "Asian Menu - Vegetable Dishes",
+          "items": [
+            { "name": "Vegetable Oyster", "price": 6.00 },
+            { "name": "Stir Fry Green Beans", "price": 8.00 },
+            { "name": "Add-ons (100g)", "description": "Shrimp, Chicken, Beef", "price": 3.00 }
+          ]
+        },
+        {
+          "name": "Asian Menu - Fried Rice",
+          "items": [
+            { "name": "Vegetable Fried Rice", "price": 6.00 },
+            { "name": "Shrimp Fried Rice", "price": 9.00 },
+            { "name": "Beef Fried Rice", "price": 10.00 },
+            { "name": "Chicken Fried Rice", "price": 9.00 }
+          ]
+        },
+        {
+          "name": "Asian Menu - Noodles",
+          "items": [
+            { "name": "Vegetable Noodles", "price": 6.00 },
+            { "name": "Shrimp Noodles", "price": 9.00 },
+            { "name": "Beef Noodles", "price": 10.00 },
+            { "name": "Chicken Noodles", "price": 9.00 }
+          ]
+        },
+        {
+          "name": "Asian Menu - Soup",
+          "items": [
+            { "name": "Spring Onion Soup", "price": 5.00 },
+            { "name": "Chicken Soup", "price": 5.00 },
+            { "name": "Mushroom Soup", "price": 5.00 },
+            { "name": "Fishball Udon Soup", "price": 9.00 },
+            { "name": "Dumpling Udon Soup", "price": 9.00 }
+          ]
+        },
+        {
+          "name": "Asian Menu - Dumplings & Spring Rolls",
+          "items": [
+            { "name": "Shrimp, Egg & Chives Dumplings", "price": 5.00 },
+            { "name": "Shrimp & Crab Dumplings", "price": 5.00 },
+            { "name": "Shrimp Dumplings", "price": 5.00 },
+            { "name": "Vegetable Spring Rolls", "price": 5.00 },
+            { "name": "Chicken Spring Rolls", "price": 5.00 }
+          ]
+        },
+        {
+          "name": "Asian Menu - Bao Sandwiches",
+          "items": [
+            { "name": "Bao Zi Chicken Steamed Bun (1pc)", "price": 3.00 },
+            { "name": "Crispy Chicken Teriyaki Bao (1pc)", "price": 3.00 },
+            { "name": "Crispy Chicken Teriyaki Bao (2pcs)", "price": 5.00 },
+            { "name": "Crispy Beef Teriyaki Bao (1pc)", "price": 3.50 },
+            { "name": "Crispy Beef Teriyaki Bao (2pcs)", "price": 6.00 },
+            { "name": "Crispy Shrimp Teriyaki Bao (1pc)", "price": 3.00 },
+            { "name": "Crispy Shrimp Teriyaki Bao (2pcs)", "price": 5.00 },
+            { "name": "Pulled Chicken Bao (1pc)", "price": 3.50 },
+            { "name": "Pulled Chicken Bao (2pcs)", "price": 6.00 },
+            { "name": "Pulled Beef Bao (1pc)", "price": 4.00 },
+            { "name": "Pulled Beef Bao (2pcs)", "price": 7.00 },
+            { "name": "Bao Meal", "description": "Your choice of 2 BAO Sandwiches, 1 Fries and 1 Drink", "price": 10.00 }
+          ]
+        },
+        {
+          "name": "Drinks - Non-Alcoholic",
+          "items": [
+            { "name": "Water", "price": 1.00 },
+            { "name": "Soft Drinks", "price": 2.00 },
+            { "name": "Iced Tea", "price": 3.00 },
+            { "name": "Sparkling Water", "price": 2.00 },
+            { "name": "Boba Tea (22 oz)", "description": "Brown Sugar, Chocolate, Matcha, Strawberry", "price": 7.00 },
+            { "name": "Boba Tea (12 oz)", "description": "Brown Sugar, Chocolate, Matcha, Strawberry", "price": 4.00 }
+          ]
+        },
+        {
+          "name": "Drinks - Alcoholic",
+          "items": [
+            { "name": "White Wine", "price": 5.00 },
+            { "name": "Rose", "price": 5.00 },
+            { "name": "Beer (Corona)", "price": 5.00 },
+            { "name": "Gin", "price": 5.00 },
+            { "name": "Whiskey", "price": 5.00 },
+            { "name": "Cuba Libre", "price": 5.00 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kahwet-zaman",
+      "name": "Kahwet Zaman",
+      "name_ar": "قهوة زمان",
+      "logo": "kahwet-zaman-logo.jpg",
+      "source_url": "kahwet_zaman",
+      "categories": [
+        {
+          "name": "Breakfast",
+          "items": [
+            { "name": "Msabaha Shamiya", "name_ar": "مسبحة شامية", "price": 7.00 },
+            { "name": "Mutabal Eggplant Plate", "name_ar": "صحن متبل باتنجان", "price": 5.50 },
+            { "name": "Makdous Plate", "name_ar": "صحن مكدوس", "price": 2.00 },
+            { "name": "Labneh Plate", "name_ar": "صحن لبنة", "price": 5.50 },
+            { "name": "Shankleesh", "name_ar": "شنكليش", "price": 5.50 },
+            { "name": "Grilled Halloumi", "name_ar": "حلوم مشوي", "price": 9.00 },
+            { "name": "Balila Plate", "name_ar": "صحن بليلة", "price": 5.00 },
+            { "name": "Hummus", "name_ar": "حمص", "price": 5.50 },
+            { "name": "Foul", "name_ar": "فول", "price": 5.50 },
+            { "name": "Fatteh Plate", "name_ar": "صحن فته", "price": 9.00 },
+            { "name": "Fried Eggs", "name_ar": "بيض مقلي", "price": 5.00 },
+            { "name": "Eggs with Awarma", "name_ar": "بيض بقورما", "price": 8.00 },
+            { "name": "Boiled Eggs", "name_ar": "بيض مسلوق", "price": 4.00 },
+            { "name": "Fried Potatoes", "name_ar": "بطاطا مقلية", "price": 6.00 },
+            { "name": "Grilled Potatoes", "name_ar": "بطاطا مشوية", "price": 5.00 },
+            { "name": "Meat Safiha", "name_ar": "صفيحة لحمة", "price": 6.50 },
+            { "name": "Kafta Safiha", "name_ar": "صفيحة كفتا", "price": 6.50 },
+            { "name": "Cheese & Kafta Safiha", "name_ar": "صفيحة جبنة و كفتا", "price": 7.50 },
+            { "name": "Chicken Caesar Salad (Half)", "price": 10.00 },
+            { "name": "Chicken Caesar Salad (Full)", "price": 13.00 },
+            { "name": "Italian Salad (Half)", "price": 11.00 },
+            { "name": "Italian Salad (Full)", "price": 15.00 },
+            { "name": "Fattoush", "name_ar": "فتوش", "price": 7.00 }
+          ]
+        },
+        {
+          "name": "Manakish",
+          "items": [
+            { "name": "Zaatar Manakish", "name_ar": "منقوشة زعتر", "price": 3.00 },
+            { "name": "Zaatar with Vegetables", "name_ar": "منقوشة زعتر مع خضرة", "price": 3.00 },
+            { "name": "Zaatar & Cheese", "name_ar": "منقوشة زعتر و جبنة", "price": 5.00 },
+            { "name": "Labneh Manakish", "name_ar": "منقوشة لبنة", "price": 5.50 },
+            { "name": "Labneh & Vegetables", "name_ar": "منقوشة لبنة و خضرة", "price": 6.50 },
+            { "name": "Labneh with Awarma", "name_ar": "منقوشة لبنة بقورما", "price": 7.00 },
+            { "name": "Cheese Manakish", "name_ar": "منقوشة جبنة", "price": 4.50 },
+            { "name": "Cheese & Ham", "name_ar": "منقوشة جبنة و جانبون", "price": 6.50 },
+            { "name": "Cheese & Turkey", "name_ar": "منقوشة جبنة و تركي", "price": 6.50 },
+            { "name": "Meat Manakish", "name_ar": "منقوشة لحمة", "price": 6.50 },
+            { "name": "Meat & Cheese", "name_ar": "منقوشة لحمة و جبنة", "price": 7.50 },
+            { "name": "Extra Kafta Manakish", "name_ar": "منقوشة كفتا اكسترا", "price": 9.00 },
+            { "name": "Submarine Manakish", "name_ar": "منقوشة ساب مارين", "price": 10.50 },
+            { "name": "Shankleesh Manakish", "name_ar": "منقوشة شنكليش", "price": 5.50 },
+            { "name": "Zaman Manakish", "name_ar": "منقوشة زمان", "price": 7.00 },
+            { "name": "Nutella Manakish", "name_ar": "منقوشة نوتاال", "price": 7.50 }
+          ]
+        },
+        {
+          "name": "Hot Dishes",
+          "items": [
+            { "name": "Green Clay Pot", "name_ar": "فخارة خضرا", "price": 5.00 },
+            { "name": "Spleen & Potatoes Clay Pot", "name_ar": "فخارة سفاين و بطاطا", "price": 12.00 },
+            { "name": "Mixed Pastries Plate", "name_ar": "صحن معجنات مشكل", "price": 8.00 },
+            { "name": "Hummus with Meat", "name_ar": "حمص بلحم", "price": 9.00 },
+            { "name": "Sparrow Head Meat with Pomegranate Molasses", "name_ar": "لحم راس عصفور بدبس رمان", "price": 11.00 },
+            { "name": "Sparrow Head Meat with Pesto", "name_ar": "لحم راس عصفور مع بيستو", "price": 11.00 },
+            { "name": "Kebbeh Bel Sayniye", "price": 18.00 },
+            { "name": "Falafel Bites", "price": 5.00 },
+            { "name": "Baba Ghannouj", "name_ar": "بتنجان راهب", "price": 5.50 },
+            { "name": "Chicken & Rice Plate", "name_ar": "صحن دجاج و رز", "price": 15.00 },
+            { "name": "Grape Leaves", "name_ar": "ورق عنب", "price": 6.00 },
+            { "name": "Plate Chicken Breast", "price": 15.00 },
+            { "name": "Hummus with Awarma", "name_ar": "حمص مع قورما", "price": 9.00 },
+            { "name": "Wings with Coriander & Garlic", "name_ar": "جوانح مع كزبرا و توم", "price": 7.00 },
+            { "name": "Edamame", "price": 5.00 },
+            { "name": "Kafta Clay Pot", "name_ar": "فخارة كفتة", "price": 12.00 },
+            { "name": "Sausage Clay Pot", "name_ar": "فخارة سجق", "price": 10.00 },
+            { "name": "Sausages Clay Pot", "name_ar": "فخارة مقانق", "price": 10.00 },
+            { "name": "Potatoes & Cheese Clay Pot", "name_ar": "فخارة بطاطا و جبنة", "price": 9.00 },
+            { "name": "Wings & Potatoes Clay Pot", "name_ar": "فخارة جوانح و بطاطا", "price": 8.00 },
+            { "name": "Harra Potatoes", "name_ar": "بطاطا حرة", "price": 6.00 }
+          ]
+        },
+        {
+          "name": "Kaak",
+          "items": [
+            { "name": "Plain Kaak Plate", "name_ar": "صحن كعك سادة", "price": 2.00 },
+            { "name": "Bacon Kaak", "name_ar": "كعكة بيكون", "price": 4.00 },
+            { "name": "Labneh Kaak", "name_ar": "كعكة لبنة", "price": 5.00 },
+            { "name": "Labneh & Vegetables Kaak", "name_ar": "كعكة لبنة و خضرة", "price": 5.50 },
+            { "name": "Jumanji Kaak", "name_ar": "كعكة جومنجي", "price": 7.00 },
+            { "name": "Akkawi Kaak", "name_ar": "كعكة عكاوي", "price": 6.00 },
+            { "name": "Akkawi & Bacon Kaak", "name_ar": "كعكة عكاوي و بيكون", "price": 6.00 },
+            { "name": "Akkawi & Mozzarella Kaak", "name_ar": "كعكة عكاوي و موزيريال", "price": 6.00 },
+            { "name": "Halloumi Kaak", "name_ar": "كعكة حلوم", "price": 6.00 },
+            { "name": "Akkawi & Halloumi Kaak", "name_ar": "كعكة عكاوي و حلوم", "price": 6.00 },
+            { "name": "Halloumi & Pesto Kaak", "name_ar": "كعكة حلوم و بيستو", "price": 6.50 },
+            { "name": "Three Cheese Kaak", "name_ar": "كعكة ثالث أجبان", "price": 7.00 },
+            { "name": "Mozzarella & Turkey Kaak", "name_ar": "كعكة موزيريال و تركي", "price": 6.50 },
+            { "name": "Mozzarella & Ham Kaak", "name_ar": "كعكة موزيريال و جانبون", "price": 6.50 },
+            { "name": "Submarine Kaak", "name_ar": "كعكة ساب مارين", "price": 8.00 },
+            { "name": "Nutella Kaak", "name_ar": "كعكة نوتال", "price": 7.00 }
+          ]
+        },
+        {
+          "name": "Pizza",
+          "items": [
+            { "name": "Lebanese Pizza", "name_ar": "بيتزا ليبانيز", "price": 9.00 },
+            { "name": "Pizza Margherita", "price": 8.00 },
+            { "name": "Chicken Pizza", "name_ar": "تشيكن بيتزا", "price": 11.00 },
+            { "name": "Pepperoni Pizza", "name_ar": "بيتزا بيبيروني", "price": 10.00 },
+            { "name": "Pesto Pizza", "name_ar": "بيستو بيتزا", "price": 10.00 },
+            { "name": "Three Cheese Pizza", "name_ar": "بيتزا ثالث أجبان", "price": 11.00 }
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            { "name": "Cake", "name_ar": "كيك", "price": 6.50 },
+            { "name": "Fondant", "name_ar": "فوندان", "price": 6.50 },
+            { "name": "Ice Cream Scoop", "price": 3.00 },
+            { "name": "Brownies", "name_ar": "براونيز", "price": 6.50 },
+            { "name": "Strawberry Cheesecake", "name_ar": "ستروبري شيز كايك", "price": 6.00 }
+          ]
+        },
+        {
+          "name": "Soft Drinks",
+          "items": [
+            { "name": "Small Water", "name_ar": "مياه صغير", "price": 1.00 },
+            { "name": "Lemon Juice", "name_ar": "عصير ليمون", "price": 4.00 },
+            { "name": "Energy Drink", "name_ar": "مشروب طاقة", "price": 3.50 },
+            { "name": "Iced Tea", "name_ar": "ايستي", "price": 4.00 },
+            { "name": "Soft Drink", "name_ar": "مشروب غازي", "price": 2.00 },
+            { "name": "Perrier", "name_ar": "بيريه", "price": 3.00 },
+            { "name": "Ayran", "name_ar": "لبن عيران", "price": 2.50 }
+          ]
+        },
+        {
+          "name": "Hot Beverages",
+          "items": [
+            { "name": "Espresso", "name_ar": "اسبريسو", "price": 2.00 },
+            { "name": "Nescafe", "name_ar": "نسكفيه", "price": 2.00 },
+            { "name": "Turkish Coffee - Medium", "name_ar": "قهوة تركية - وسط", "price": 4.00 },
+            { "name": "Hot Chocolate", "price": 2.00 },
+            { "name": "Turkish Coffee - Large", "name_ar": "قهوة تركية كبيرة", "price": 5.00 },
+            { "name": "Cappuccino", "name_ar": "كابوشينو", "price": 3.00 },
+            { "name": "Tea", "name_ar": "شاي", "price": 2.00 },
+            { "name": "Tea Pot", "name_ar": "إبريق شاي", "price": 5.00 },
+            { "name": "Mate", "name_ar": "مته", "price": 2.50 }
+          ]
+        },
+        {
+          "name": "Alcoholic Beverages",
+          "items": [
+            { "name": "Almaza", "price": 4.00 },
+            { "name": "Arak Glass", "name_ar": "كاس عرق", "price": 3.00 },
+            { "name": "Vodka Glass", "price": 7.00 },
+            { "name": "Gin Glass", "price": 7.00 },
+            { "name": "Ixsir Wine Bottle", "price": 25.00 },
+            { "name": "Black Label Bottle", "price": 65.00 },
+            { "name": "Almaza Light", "price": 4.00 },
+            { "name": "Mexican Beer", "price": 1.00 },
+            { "name": "1/4 Arak", "price": 8.00 },
+            { "name": "1/2 Arak", "price": 13.00 },
+            { "name": "1/1 Arak", "price": 22.00 },
+            { "name": "Wine Glass", "price": 6.00 },
+            { "name": "Wine Bottle", "price": 20.00 },
+            { "name": "Prosecco", "price": 40.00 },
+            { "name": "Gin Bottle", "price": 40.00 },
+            { "name": "Whiskey Glass", "price": 6.00 }
+          ]
+        },
+        {
+          "name": "Arguileh & Tobacco",
+          "items": [
+            { "name": "Molasses Arguileh", "name_ar": "أرغيلة معسل", "price": 6.00 },
+            { "name": "Arguileh Extra", "price": 10.00 },
+            { "name": "Ajami Arguileh", "name_ar": "أرغيلة عجمي", "price": 11.00 },
+            { "name": "Extra Head", "name_ar": "راس إكسترا", "price": 3.00 },
+            { "name": "Extra Coal", "name_ar": "نبريش إكسترا", "price": 0.50 },
+            { "name": "Heat", "name_ar": "هيت", "price": 5.00 },
+            { "name": "Cigarette Pack", "name_ar": "علبة دخان", "price": 5.00 }
+          ]
+        }
+      ]
     }
   ]
 }
