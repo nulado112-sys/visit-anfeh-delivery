@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { CartProvider } from "./context/cart";
 import { LanguageProvider } from "./context/language";
-import { AuthProvider } from "./context/auth";
 import Navbar from "./components/Navbar";
 import CartDrawer from "./components/CartDrawer";
 import Toast from "./components/Toast";
@@ -29,7 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="bg-[#F4FAFB] font-sans antialiased">
-        <AuthProvider>
         <LanguageProvider>
         <CartProvider>
           <Navbar />
@@ -58,7 +56,6 @@ export default function RootLayout({
           </footer>
         </CartProvider>
         </LanguageProvider>
-        </AuthProvider>
       </body>
     </html>
   );

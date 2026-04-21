@@ -2,9 +2,13 @@
 
 import { useCart } from "../context/cart";
 import { useLang, t } from "../context/language";
-import { useAuth } from "../context/auth";
-import { supabase, generateOrderNumber } from "../lib/supabase";
 import { useState } from "react";
+
+function generateOrderNumber() {
+  const timestamp = Date.now().toString(36);
+  const random = Math.random().toString(36).substr(2, 5);
+  return (timestamp + random).toUpperCase();
+}
 
 const WHATSAPP_NUMBER = "96181526075";
 
@@ -81,7 +85,6 @@ function buildWhatsAppMessage(
 export default function CartDrawer() {
   const { items, isOpen, closeCart, updateQty, clearCart, subtotal, subtotalLbp, itemCount } = useCart();
   const { lang } = useLang();
-  const { user } = useAuth();
   const T = t[lang];
 
   const [customer, setCustomer] = useState<CustomerInfo>({
@@ -107,11 +110,6 @@ export default function CartDrawer() {
   }
 
   function handleOrderClick() {
-    if (!user) {
-      closeCart();
-      window.location.href = "/auth/login";
-      return;
-    }
     if (!validate()) return;
     setShowConfirm(true);
   }
@@ -129,31 +127,7 @@ export default function CartDrawer() {
     setWaUrl(waUrl);
     window.open(waUrl, "_blank");
 
-    // Save order to Supabase in background
-    const orderData = {
-      order_number: orderNum,
-      user_id: user?.id ?? null,
-      customer_name: customer.name.trim(),
-      customer_phone: customer.phone.trim(),
-      zone: customer.zone,
-      address: customer.location.trim(),
-      notes: customer.notes.trim(),
-      items: items.map(i => ({
-        name: i.name,
-        quantity: i.quantity,
-        price: i.price,
-        priceLbp: i.priceLbp ?? null,
-      })),
-      subtotal,
-      subtotal_lbp: subtotalLbp,
-      delivery_fee: deliveryFee,
-      total: subtotal + deliveryFee,
-      status: "pending",
-    };
-
-    supabase.from("orders").insert(orderData).then(({ error }) => {
-      if (error) console.error("Order save failed:", error.message);
-    });
+    // Order data is sent via WhatsApp - no backend storage needed
 
     setOrderNumber(orderNum);
     clearCart();
@@ -519,23 +493,11 @@ export default function CartDrawer() {
         {/* Footer CTA */}
         {items.length > 0 && (
           <div className="border-t border-white/10 px-6 py-5 space-y-3">
-            {!user && (
-              <div className="rounded-xl bg-[#F9B233]/10 border border-[#F9B233]/30 px-4 py-2.5 text-center">
-                <p className="text-xs font-semibold text-[#F9B233]">
-                  {lang === "ar" ? "يجب تسجيل الدخول للطلب" : "You must be signed in to order"}
-                </p>
-                <a href="/auth/login" onClick={closeCart} className="mt-1 block text-xs text-white underline">
-                  {lang === "ar" ? "تسجيل الدخول ←" : "Sign in →"}
-                </a>
-              </div>
-            )}
-            {user && (
-              <p className="text-center text-xs text-slate-500">
-                {lang === "ar"
-                  ? "سيتم تحويلك إلى واتساب لإتمام طلبك"
-                  : "You will be redirected to WhatsApp to confirm your order"}
-              </p>
-            )}
+            <p className="text-center text-xs text-slate-500">
+              {lang === "ar"
+                ? "سيتم تحويلك إلى واتساب لإتمام طلبك"
+                : "You will be redirected to WhatsApp to confirm your order"}
+            </p>
             <button
               onClick={handleOrderClick}
               disabled={loading}
