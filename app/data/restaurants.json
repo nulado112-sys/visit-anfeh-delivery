@@ -4377,6 +4377,114 @@
           ]
         }
       ]
+    },
+    {
+      "id": "fruitys",
+      "name": "Fruity's",
+      "name_ar": "فروتيز",
+      "logo": "fruitys-logo.jpg",
+      "source_url": "fruity-s.v8softwares.com",
+      "categories": [
+        {
+          "name": "Ice Cream (By Scoop)",
+          "items": [
+            {
+              "name": "All Flavors Ice Cream",
+              "description": "Chocolate, Vanilla, Strawberry, Blackberry, Lemon, Mango, Passion Fruit, Ashta, Salted Caramel, Kinder, Dubai Chocolate, Cheesecake Cherry, Meghle",
+              "price": 1.5
+            },
+            {
+              "name": "Add Toppings",
+              "description": "Extra toppings for your ice cream",
+              "price": 1.0
+            },
+            {
+              "name": "Ice Cream Regular Cone",
+              "description": "Ice cream served in regular cone",
+              "price": 4.0,
+              "size_options": [{"size": "Single", "price": 4.0}, {"size": "Double", "price": 5.0}]
+            },
+            {
+              "name": "Ice Cream Premium Cone",
+              "description": "Ice cream served in premium cone",
+              "price": 5.0,
+              "size_options": [{"size": "Single", "price": 5.0}, {"size": "Double", "price": 6.0}]
+            }
+          ]
+        },
+        {
+          "name": "Cakes",
+          "items": [
+            {"name": "Bahamas", "price": 4.0},
+            {"name": "Crispy Snickers", "price": 4.0},
+            {"name": "Fudge Cake", "price": 4.0},
+            {"name": "Trio Mousse", "price": 4.0},
+            {"name": "Kinder Cheesecake Cans", "price": 4.0},
+            {"name": "Blackberry Cheesecake Cans", "price": 4.0},
+            {"name": "Lotus Cheesecake Cans", "price": 4.0},
+            {"name": "Eclaire Chocolat", "price": 4.0},
+            {"name": "Millefeuille", "price": 3.0},
+            {"name": "Strawberry Pie", "price": 4.0},
+            {"name": "Profiterole Creamy", "price": 4.0},
+            {"name": "Cake for 10 People", "price": 15.0, "size_options": [{"size": "Small", "price": 15.0}, {"size": "Large", "price": 25.0}]}
+          ]
+        },
+        {
+          "name": "Cocktails - Avocado Collection",
+          "items": [
+            {"name": "The Emerald", "description": "Pure Avocado, Honey & Nuts", "price": 7.0, "size_options": [{"size": "Regular", "price": 7.0}, {"size": "Large", "price": 8.0}]},
+            {"name": "The Exotic Avvo", "description": "Avocado & Exotic Fruits", "price": 8.0, "size_options": [{"size": "Regular", "price": 8.0}, {"size": "Large", "price": 9.0}]},
+            {"name": "Avo-Straw", "description": "Avocado, Strawberry Juice", "price": 6.0, "size_options": [{"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Straw-Cado", "description": "Avocado, Strawberry Juice & Exotic Fruits", "price": 7.0, "size_options": [{"size": "Regular", "price": 7.0}, {"size": "Large", "price": 8.0}]},
+            {"name": "Golden Glow", "description": "Avocado, Mango Juice & Exotic Fruits", "price": 7.0, "size_options": [{"size": "Regular", "price": 7.0}, {"size": "Large", "price": 8.0}]},
+            {"name": "Berry-Cado", "description": "Avocado & Forest Berry Blend", "price": 7.0, "size_options": [{"size": "Regular", "price": 7.0}, {"size": "Large", "price": 8.0}]}
+          ]
+        },
+        {
+          "name": "Cocktails - Strawberry Collection",
+          "items": [
+            {"name": "Stravana Gold", "description": "Strawberry, Banana", "price": 5.0, "size_options": [{"size": "Regular", "price": 5.0}, {"size": "Large", "price": 6.0}]},
+            {"name": "Stravana Royale", "description": "Strawberry, Banana & Exotic Fruits", "price": 6.0, "size_options": [{"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]}
+          ]
+        },
+        {
+          "name": "Fresh Juices",
+          "items": [
+            {"name": "Citrus Royal", "description": "Freshly Squeezed Orange Juice", "price": 3.0, "size_options": [{"size": "Regular", "price": 3.0}, {"size": "Large", "price": 4.0}]},
+            {"name": "Carotene Royal", "description": "Freshly Squeezed Carrot Juice", "price": 3.0, "size_options": [{"size": "Regular", "price": 3.0}, {"size": "Large", "price": 4.0}]},
+            {"name": "Pomegranate Royal", "description": "Pure Heart-Healthy Pomegranate Juice", "price": 4.0, "size_options": [{"size": "Regular", "price": 4.0}, {"size": "Large", "price": 5.0}]},
+            {"name": "Mango Royal", "description": "Fresh Tropical Mango Juice", "price": 5.0, "size_options": [{"size": "Regular", "price": 5.0}, {"size": "Large", "price": 6.0}]},
+            {"name": "Island Fusion", "description": "Signature Exotic Blend", "price": 5.0, "size_options": [{"size": "Regular", "price": 5.0}, {"size": "Large", "price": 6.0}]}
+          ]
+        },
+        {
+          "name": "Chocolate Lovers",
+          "items": [
+            {"name": "Choco-Cado", "description": "Avocado & Creamy Nutella", "price": 7.0, "size_options": [{"size": "Regular", "price": 7.0}, {"size": "Large", "price": 8.0}]},
+            {"name": "Choco-Cado Royale", "description": "Avocado, Exotic Fruits & Nutella", "price": 8.0, "size_options": [{"size": "Regular", "price": 8.0}, {"size": "Large", "price": 9.0}]},
+            {"name": "Choco-Cado Fusion", "description": "Avocado & Lotus / Oreo", "price": 7.0, "size_options": [{"size": "Regular", "price": 7.0}, {"size": "Large", "price": 8.0}]}
+          ]
+        },
+        {
+          "name": "Dairy Free",
+          "items": [
+            {"name": "Dato-Cado", "description": "Avocado & Natural Dates", "price": 6.0, "size_options": [{"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Dato-Cado Royal", "description": "Avocado, Dates & Exotic Fruits", "price": 7.0, "size_options": [{"size": "Regular", "price": 7.0}, {"size": "Large", "price": 8.0}]},
+            {"name": "Dato-Cado Berry", "description": "Avocado, Dates & Berry Blend", "price": 6.0, "size_options": [{"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Tropical Royal DF", "description": "Pineapple, Mango & Exotic Fruits", "price": 6.0, "size_options": [{"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Stravana Royal DF", "description": "Strawberry, Banana & Exotic Fruits", "price": 5.0, "size_options": [{"size": "Regular", "price": 5.0}, {"size": "Large", "price": 6.0}]}
+          ]
+        },
+        {
+          "name": "Dessert Specials",
+          "items": [
+            {"name": "The Pink Cloud", "description": "Strawberry Ice Cream, Fresh Berries & Whipped Cream", "price": 4.0, "size_options": [{"size": "Regular", "price": 4.0}, {"size": "Large", "price": 6.0}]},
+            {"name": "The Cocoa Cloud", "description": "Premium Chocolate Ice Cream, Whipped Cream & Crushed Nuts", "price": 4.0, "size_options": [{"size": "Regular", "price": 4.0}, {"size": "Large", "price": 6.0}]},
+            {"name": "Ashta Royale", "description": "Traditional Ashta Cream Topped with Exotic Fruits", "price": 10.0},
+            {"name": "Fruit Royale", "description": "Chopped Exotic Fruits", "price": 15.0, "size_options": [{"size": "Regular", "price": 15.0}, {"size": "Large", "price": 20.0}]}
+          ]
+        }
+      ]
     }
   ]
 }
