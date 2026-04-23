@@ -4598,7 +4598,8 @@
       "id": "mishway",
       "name": "Mishway",
       "name_ar": "مشواي",
-      "logo": "mishway-logo.jpg",
+      "logo": "mishway-logo.pdf",
+      "logo_bg": "#ffffff",
       "source_url": "mishway_restaurant",
       "phone": "70713763",
       "categories": [
@@ -4679,7 +4680,7 @@
       "name": "Vee Coffee Shop", 
       "name_ar": "في كوفي شوب",
       "logo": "vee-coffee-shop-logo.jpg",
-      "logo_bg": "#2d7d32",
+      "logo_bg": "#ffffff",
       "source_url": "vee_coffee_shop",
       "categories": [
         {
