@@ -8,7 +8,6 @@
       "name": "Kahwet El Ostez",
       "name_ar": "قهوة الإستاذ",
       "logo": "kahwet-el-ostez-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#e8f4fd",
       "source_url": "mysitescom.my.canva.site",
       "categories": [
@@ -933,7 +932,6 @@
       "name": "Mayel Restaurant",
       "tagline": "Order - Eat - Repeat",
       "logo": "mayel-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#f0f8ff",
       "source_url": "mayelrestaurant.weebly.com",
       "categories": [
@@ -1272,7 +1270,6 @@
       "name": "Machewe Express",
       "name_ar": "مشاوي اكسبرس",
       "logo": "machewe-express-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#1e3a5f",
       "source_url": "menu.omegasoftware.ca",
       "currency": "LBP",
@@ -1767,7 +1764,6 @@
       "name_ar": "ع الطيب",
       "tagline": "كعكتنا ميرتنا قعدتنا بقهوتنا",
       "logo": "al-tayeb-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#e8e8e8",
       "source_url": "aaltayeb.v8softwares.com",
       "location": "Sahet Anfeh, Anfeh el Koura",
@@ -2191,7 +2187,6 @@
       "id": "diwen-by-the-bay",
       "name": "Diwen by the Bay",
       "logo": "diwen-by-the-bay-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#e8f4fd",
       "source_url": "diwenbythebay.com",
       "description": "Experience authentic Lebanese cuisine at Diwen by the Bay, where traditional dishes like Zghrarta Kebbeh 2ras come alive near the beautiful shores of Anfeh.",
@@ -2685,7 +2680,6 @@
       "name": "Macro's Kitchen",
       "tagline": "Catering",
       "logo": "macros-kitchen-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#f0f8ff",
       "source_url": "macrokitchen.v8softwares.com",
       "phone": "+961 79 164 160",
@@ -2870,7 +2864,6 @@
       "id": "tunnel-xtc",
       "name": "Tunnel XTC Restaurant",
       "logo": "tunnel-xtc-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#2c5282",
       "source_url": "shark-accounting.com",
       "currency": "LBP",
@@ -3020,7 +3013,6 @@
       "id": "doze-coffee-shop",
       "name": "Doze Coffee Shop",
       "logo": "doze-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#8b5a2b",
       "price_format_note": "Two prices = Warm / Iced",
       "categories": [
@@ -3354,7 +3346,6 @@
       "name": "Zaher El Loz",
       "name_ar": "زهر اللوز",
       "logo": "zaher-el-loz-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#4a90e2",
       "source_url": "zaher_el_loz",
       "categories": [
@@ -3563,7 +3554,6 @@
       "name_ar": "فرّوج العين",
       "logo": "farouj-al-ein-logo.jpg",
       "logo_bg": "#f0f8ff",
-      "logo_fit": "contain",
       "categories": [
         {
           "name": "Appetizers",
@@ -3662,7 +3652,6 @@
       "name": "Angel's Sushi",
       "name_ar": "أنجل سوشي",
       "logo": "angels-sushi-logo-fixed.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#000000",
       "source_url": "angels_sushi_lb",
       "categories": [
@@ -3929,7 +3918,6 @@
       "name": "Kahwet Zaman",
       "name_ar": "قهوة زمان",
       "logo": "kahwet-zaman-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#e8f4fd",
       "source_url": "kahwet_zaman",
       "categories": [
@@ -4116,7 +4104,6 @@
       "name": "Al Baydar Restaurant",
       "name_ar": "البيدر",
       "logo": "al-baydar-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#2d5016",
       "source_url": "al_baydar_restaurant",
       "categories": [
@@ -4233,7 +4220,6 @@
       "name": "Doh on the Go",
       "name_ar": "دو اون ذا جو",
       "logo": "doh-on-the-go-logo.jpg",
-      "logo_fit": "contain",
       "logo_bg": "#ff0000",
       "source_url": "doh_on_the_go",
       "categories": [
@@ -4408,8 +4394,7 @@
       "id": "fruitys",
       "name": "Fruity's",
       "name_ar": "فروتيز",
-      "logo": "fruitys-logo-fixed.jpg",
-      "logo_fit": "contain",
+      "logo": "fruitys-logo.jpg",
       "logo_bg": "#f0f8ff",
       "source_url": "fruity-s.v8softwares.com",
       "categories": [
