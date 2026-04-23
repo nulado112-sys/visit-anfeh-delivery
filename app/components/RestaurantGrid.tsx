@@ -98,7 +98,7 @@ export default function RestaurantGrid({
                       alt={restaurant.name}
                       fill
                       fallback={restaurant.name[0]}
-                      className={`transition-transform duration-500 group-hover:scale-105 ${restaurant.logo_fit === "contain" ? "object-contain p-3" : "object-cover"}`}
+                      className={`transition-transform duration-500 group-hover:scale-105 ${restaurant.logo_fit === "contain" ? "object-contain p-6" : "object-cover"}`}
                     />
                   ) : (
                     <div className="flex h-full items-center justify-center bg-[#1AABBD] text-4xl font-black text-white">
