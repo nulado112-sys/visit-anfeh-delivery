@@ -8,7 +8,6 @@
       "name": "Kahwet El Ostez",
       "name_ar": "قهوة الإستاذ",
       "logo": "kahwet-el-ostez-logo.jpg",
-      "logo_bg": "#e8f4fd",
       "source_url": "mysitescom.my.canva.site",
       "categories": [
         {
@@ -932,7 +931,6 @@
       "name": "Mayel Restaurant",
       "tagline": "Order - Eat - Repeat",
       "logo": "mayel-logo.jpg",
-      "logo_bg": "#f0f8ff",
       "source_url": "mayelrestaurant.weebly.com",
       "categories": [
         {
@@ -1764,7 +1762,6 @@
       "name_ar": "ع الطيب",
       "tagline": "كعكتنا ميرتنا قعدتنا بقهوتنا",
       "logo": "al-tayeb-logo.jpg",
-      "logo_bg": "#e8e8e8",
       "source_url": "aaltayeb.v8softwares.com",
       "location": "Sahet Anfeh, Anfeh el Koura",
       "phone": "81116532",
@@ -2187,7 +2184,6 @@
       "id": "diwen-by-the-bay",
       "name": "Diwen by the Bay",
       "logo": "diwen-by-the-bay-logo.jpg",
-      "logo_bg": "#e8f4fd",
       "source_url": "diwenbythebay.com",
       "description": "Experience authentic Lebanese cuisine at Diwen by the Bay, where traditional dishes like Zghrarta Kebbeh 2ras come alive near the beautiful shores of Anfeh.",
       "categories": [
@@ -2680,7 +2676,6 @@
       "name": "Macro's Kitchen",
       "tagline": "Catering",
       "logo": "macros-kitchen-logo.jpg",
-      "logo_bg": "#f0f8ff",
       "source_url": "macrokitchen.v8softwares.com",
       "phone": "+961 79 164 160",
       "location": "Anfeh el Koura",
@@ -3553,7 +3548,6 @@
       "name": "Farouj Al Ein",
       "name_ar": "فرّوج العين",
       "logo": "farouj-al-ein-logo.jpg",
-      "logo_bg": "#f0f8ff",
       "categories": [
         {
           "name": "Appetizers",
@@ -3918,7 +3912,6 @@
       "name": "Kahwet Zaman",
       "name_ar": "قهوة زمان",
       "logo": "kahwet-zaman-logo.jpg",
-      "logo_bg": "#e8f4fd",
       "source_url": "kahwet_zaman",
       "categories": [
         {
@@ -4395,7 +4388,6 @@
       "name": "Fruity's",
       "name_ar": "فروتيز",
       "logo": "fruitys-logo.jpg",
-      "logo_bg": "#f0f8ff",
       "source_url": "fruity-s.v8softwares.com",
       "categories": [
         {

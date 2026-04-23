@@ -99,7 +99,6 @@ export default function RestaurantGrid({
                       fill
                       fallback={restaurant.name[0]}
                       className="transition-transform duration-500 group-hover:scale-105 object-cover"
-                      blendMultiply={restaurant.logo_bg && restaurant.logo_bg !== "#ffffff"}
                     />
                   ) : (
                     <div className="flex h-full items-center justify-center bg-[#1AABBD] text-4xl font-black text-white">
