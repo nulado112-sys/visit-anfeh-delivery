@@ -3338,6 +3338,7 @@
       "name": "Zaher El Loz",
       "name_ar": "زهر اللوز",
       "logo": "zaher-el-loz-logo.jpg",
+      "logo_fit": "contain",
       "source_url": "zaher_el_loz",
       "categories": [
         {
@@ -3909,6 +3910,7 @@
       "name": "Kahwet Zaman",
       "name_ar": "قهوة زمان",
       "logo": "kahwet-zaman-logo.jpg",
+      "logo_fit": "contain",
       "source_url": "kahwet_zaman",
       "categories": [
         {
@@ -4094,6 +4096,7 @@
       "name": "Al Baydar Restaurant",
       "name_ar": "البيدر",
       "logo": "al-baydar-logo.jpg",
+      "logo_fit": "contain",
       "source_url": "al_baydar_restaurant",
       "categories": [
         {
@@ -4209,6 +4212,7 @@
       "name": "Doh on the Go",
       "name_ar": "دو اون ذا جو",
       "logo": "doh-on-the-go-logo.jpg",
+      "logo_fit": "contain",
       "source_url": "doh_on_the_go",
       "categories": [
         {
