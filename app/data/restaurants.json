@@ -3337,7 +3337,7 @@
       "id": "janet-zahr-el-loz",
       "name": "Zaher El Loz",
       "name_ar": "زهر اللوز",
-      "logo": "zaher-el-loz-logo.jpg",
+      "logo": "zaher-el-loz-logo-fixed.jpg",
       "source_url": "zaher_el_loz",
       "categories": [
         {
@@ -3643,7 +3643,7 @@
       "id": "angels-sushi",
       "name": "Angel's Sushi",
       "name_ar": "أنجل سوشي",
-      "logo": "angels-sushi-logo-new.jpg",
+      "logo": "angels-sushi-logo-fixed.jpg",
       "source_url": "angels_sushi_lb",
       "categories": [
         {
@@ -4093,7 +4093,7 @@
       "id": "al-baydar",
       "name": "Al Baydar Restaurant",
       "name_ar": "البيدر",
-      "logo": "al-baydar-logo-new.jpg",
+      "logo": "al-baydar-logo-fixed.jpg",
       "source_url": "al_baydar_restaurant",
       "categories": [
         {
@@ -4208,7 +4208,7 @@
       "id": "doh-on-the-go",
       "name": "Doh on the Go",
       "name_ar": "دو اون ذا جو",
-      "logo": "doh-on-the-go-logo.jpg",
+      "logo": "doh-on-the-go-logo-fixed.jpg",
       "source_url": "doh_on_the_go",
       "categories": [
         {
@@ -4382,7 +4382,7 @@
       "id": "fruitys",
       "name": "Fruity's",
       "name_ar": "فروتيز",
-      "logo": "fruitys-logo.jpg",
+      "logo": "fruitys-logo-fixed.jpg",
       "source_url": "fruity-s.v8softwares.com",
       "categories": [
         {
