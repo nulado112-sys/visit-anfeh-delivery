@@ -9,7 +9,8 @@ type Item = {
   name: string;
   description?: string;
   price?: number;
-  price_lbp?: number;
+  priceLbp?: number;
+  size_options?: { size: string; price: number }[];
   is_new?: boolean;
   note?: string;
 };
@@ -30,12 +31,59 @@ type Props = {
 
 function formatPrice(item: Item): string {
   if (item.price !== undefined) return `$${item.price}`;
-  if (item.price_lbp !== undefined) {
-    return item.price_lbp >= 1_000_000
-      ? `${(item.price_lbp / 1_000_000).toFixed(2)}M LBP`
-      : `${item.price_lbp.toLocaleString()} LBP`;
+  if (item.priceLbp !== undefined) {
+    return item.priceLbp >= 1_000_000
+      ? `${(item.priceLbp / 1_000_000).toFixed(2)}M LBP`
+      : `${item.priceLbp.toLocaleString()} LBP`;
   }
   return "—";
+}
+
+function SizeAddButton({ item, size, price, restaurantId, restaurantName }: { item: Item; size: string; price: number; restaurantId: string; restaurantName: string }) {
+  const { items, addItem, updateQty } = useCart();
+  const itemName = `${item.name} (${size})`;
+  const cartItem = items.find(i => i.restaurantId === restaurantId && i.name === itemName);
+  const qty = cartItem?.quantity ?? 0;
+
+  function handleAdd() {
+    addItem({ restaurantId, restaurantName, name: itemName, price: price, priceLbp: null });
+    showToast(`${item.name} (${size})`);
+  }
+
+  if (qty === 0) {
+    return (
+      <button
+        onClick={handleAdd}
+        className="flex h-10 w-10 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-[#1AABBD] text-white shadow-sm transition hover:bg-[#168fa0] hover:scale-110 active:scale-95 touch-manipulation"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+      </button>
+    );
+  }
+
+  return (
+    <div className="flex items-center gap-1 rounded-full bg-[#0C2B35] px-1 py-1">
+      <button
+        onClick={() => updateQty(restaurantId, itemName, qty - 1)}
+        className="flex h-8 w-8 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 touch-manipulation"
+      >
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="M5 12h14"/>
+        </svg>
+      </button>
+      <span className="w-6 sm:w-4 text-center text-xs font-bold text-white">{qty}</span>
+      <button
+        onClick={() => updateQty(restaurantId, itemName, qty + 1)}
+        className="flex h-8 w-8 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-[#1AABBD] text-white transition hover:bg-[#168fa0] touch-manipulation"
+      >
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+      </button>
+    </div>
+  );
 }
 
 function AddButton({ item, restaurantId, restaurantName }: { item: Item; restaurantId: string; restaurantName: string }) {
@@ -44,7 +92,7 @@ function AddButton({ item, restaurantId, restaurantName }: { item: Item; restaur
   const qty = cartItem?.quantity ?? 0;
 
   function handleAdd() {
-    addItem({ restaurantId, restaurantName, name: item.name, price: item.price ?? null, priceLbp: item.price_lbp ?? null });
+    addItem({ restaurantId, restaurantName, name: item.name, price: item.price ?? null, priceLbp: item.priceLbp ?? null });
     showToast(item.name);
   }
 
@@ -52,7 +100,7 @@ function AddButton({ item, restaurantId, restaurantName }: { item: Item; restaur
     return (
       <button
         onClick={handleAdd}
-        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1AABBD] text-white shadow-sm transition hover:bg-[#168fa0] hover:scale-110 active:scale-95"
+        className="flex h-10 w-10 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full bg-[#1AABBD] text-white shadow-sm transition hover:bg-[#168fa0] hover:scale-110 active:scale-95 touch-manipulation"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <path d="M12 5v14M5 12h14"/>
@@ -65,16 +113,16 @@ function AddButton({ item, restaurantId, restaurantName }: { item: Item; restaur
     <div className="flex items-center gap-1.5 rounded-full bg-[#0C2B35] px-1 py-1">
       <button
         onClick={() => updateQty(restaurantId, item.name, qty - 1)}
-        className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+        className="flex h-9 w-9 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 touch-manipulation"
       >
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <path d="M5 12h14"/>
         </svg>
       </button>
-      <span className="w-5 text-center text-xs font-bold text-white">{qty}</span>
+      <span className="w-6 sm:w-5 text-center text-xs font-bold text-white">{qty}</span>
       <button
         onClick={() => updateQty(restaurantId, item.name, qty + 1)}
-        className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1AABBD] text-white transition hover:bg-[#168fa0]"
+        className="flex h-9 w-9 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-[#1AABBD] text-white transition hover:bg-[#168fa0] touch-manipulation"
       >
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <path d="M12 5v14M5 12h14"/>
@@ -181,17 +229,39 @@ export default function MenuTabs({ restaurantId, restaurantName, categories, cur
                       {item.note && item.note !== "Ask for price" && (
                         <p className="mt-1 text-xs italic text-amber-600">{item.note}</p>
                       )}
-                      <p className="mt-2 text-base font-extrabold text-[#1AABBD]">
-                        {item.note === "Ask for price" ? (
-                          <span className="text-sm font-semibold text-slate-400 italic">{T.menu_ask_price}</span>
+                      <div className="mt-2">
+                        {item.size_options && item.size_options.length > 0 ? (
+                          <div className="space-y-2">
+                            {item.size_options.map((option, idx) => (
+                              <div key={idx} className="flex items-center justify-between text-sm">
+                                <div>
+                                  <span className="font-medium text-slate-600">{option.size}</span>
+                                  <span className="ml-2 font-bold text-[#1AABBD]">${option.price}</span>
+                                </div>
+                                <SizeAddButton 
+                                  item={item} 
+                                  size={option.size} 
+                                  price={option.price} 
+                                  restaurantId={restaurantId} 
+                                  restaurantName={restaurantName} 
+                                />
+                              </div>
+                            ))}
+                          </div>
                         ) : (
-                          formatPrice(item)
+                          <p className="text-base font-extrabold text-[#1AABBD]">
+                            {item.note === "Ask for price" ? (
+                              <span className="text-sm font-semibold text-slate-400 italic">{T.menu_ask_price}</span>
+                            ) : (
+                              formatPrice(item)
+                            )}
+                          </p>
                         )}
-                      </p>
+                      </div>
                     </div>
 
                     <div className="shrink-0 pt-0.5">
-                      {item.note !== "Ask for price" && (
+                      {item.note !== "Ask for price" && !(item.size_options && item.size_options.length > 0) && (
                         <AddButton item={item} restaurantId={restaurantId} restaurantName={restaurantName} />
                       )}
                     </div>

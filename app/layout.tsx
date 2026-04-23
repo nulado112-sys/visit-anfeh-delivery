@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     "Order from the best restaurants in Anfeh, Lebanon. Fast delivery, great food.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

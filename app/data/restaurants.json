@@ -1284,35 +1284,35 @@
           "items": [
             {
               "name": "Fattouch",
-              "price_lbp": 600000
+              "priceLbp": 600000
             },
             {
               "name": "Tabbouleh",
-              "price_lbp": 600000
+              "priceLbp": 600000
             },
             {
               "name": "Hommus",
-              "price_lbp": 400000
+              "priceLbp": 400000
             },
             {
               "name": "Moutabal",
-              "price_lbp": 400000
+              "priceLbp": 400000
             },
             {
               "name": "Warak Enab",
-              "price_lbp": 450000
+              "priceLbp": 450000
             },
             {
               "name": "Fries Box",
-              "price_lbp": 275000
+              "priceLbp": 275000
             },
             {
               "name": "Fries Platter",
-              "price_lbp": 400000
+              "priceLbp": 400000
             },
             {
               "name": "Grilled Potatoes",
-              "price_lbp": 450000
+              "priceLbp": 450000
             }
           ]
         },
@@ -1321,19 +1321,19 @@
           "items": [
             {
               "name": "Sambusek (4 pcs)",
-              "price_lbp": 450000
+              "priceLbp": 450000
             },
             {
               "name": "Cheese Rkakat (4 pcs)",
-              "price_lbp": 400000
+              "priceLbp": 400000
             },
             {
               "name": "Fried Stuffed Kebbeh (4 pcs)",
-              "price_lbp": 550000
+              "priceLbp": 550000
             },
             {
               "name": "Mix Mouajanet (6 pcs)",
-              "price_lbp": 675000
+              "priceLbp": 675000
             }
           ]
         },
@@ -1342,37 +1342,37 @@
           "items": [
             {
               "name": "Francisco",
-              "price_lbp": 540000
+              "priceLbp": 540000
             },
             {
               "name": "Soujouk",
-              "price_lbp": 585000
+              "priceLbp": 585000
             },
             {
               "name": "Makanek",
-              "price_lbp": 585000
+              "priceLbp": 585000
             },
             {
               "name": "Roast Beef",
-              "price_lbp": 650000
+              "priceLbp": 650000
             },
             {
               "name": "Chicken Liver",
-              "price_lbp": 500000
+              "priceLbp": 500000
             },
             {
               "name": "Chicken Sub",
-              "price_lbp": 500000,
+              "priceLbp": 500000,
               "is_new": true
             },
             {
               "name": "Tandouri Chicken",
-              "price_lbp": 500000,
+              "priceLbp": 500000,
               "is_new": true
             },
             {
               "name": "Chicken Msahab",
-              "price_lbp": 500000
+              "priceLbp": 500000
             }
           ]
         },
@@ -1381,15 +1381,15 @@
           "items": [
             {
               "name": "Lebanese Beef Burger",
-              "price_lbp": 550000
+              "priceLbp": 550000
             },
             {
               "name": "Lebanese Chicken Breast Burger",
-              "price_lbp": 550000
+              "priceLbp": 550000
             },
             {
               "name": "Lebanese Chicken Escalope Burger",
-              "price_lbp": 550000
+              "priceLbp": 550000
             }
           ]
         },
@@ -1398,47 +1398,47 @@
           "items": [
             {
               "name": "Classic Taouk",
-              "price_lbp": 540000
+              "priceLbp": 540000
             },
             {
               "name": "Lebanese Taouk",
-              "price_lbp": 585000
+              "priceLbp": 585000
             },
             {
               "name": "Kabab",
-              "price_lbp": 540000
+              "priceLbp": 540000
             },
             {
               "name": "Kabab Pistachio",
-              "price_lbp": 585000,
+              "priceLbp": 585000,
               "is_new": true
             },
             {
               "name": "Kabab Orfali (spicy)",
-              "price_lbp": 585000,
+              "priceLbp": 585000,
               "is_new": true
             },
             {
               "name": "Kabab Intabli (spicy)",
-              "price_lbp": 585000,
+              "priceLbp": 585000,
               "is_new": true
             },
             {
               "name": "Kabab Eggplant",
-              "price_lbp": 585000,
+              "priceLbp": 585000,
               "is_new": true
             },
             {
               "name": "Deboned Grilled Chicken",
-              "price_lbp": 585000
+              "priceLbp": 585000
             },
             {
               "name": "Imported Veal Filet",
-              "price_lbp": 855000
+              "priceLbp": 855000
             },
             {
               "name": "Local Beef Filet",
-              "price_lbp": 650000
+              "priceLbp": 650000
             }
           ]
         },
@@ -1448,55 +1448,55 @@
           "items": [
             {
               "name": "Shish Taouk (280g)",
-              "price_lbp": 1035000
+              "priceLbp": 1035000
             },
             {
               "name": "Kabab (240g)",
-              "price_lbp": 1080000
+              "priceLbp": 1080000
             },
             {
               "name": "Kabab Pistachio (240g)",
-              "price_lbp": 1215000,
+              "priceLbp": 1215000,
               "is_new": true
             },
             {
               "name": "Kabab Orfali (240g, spicy)",
-              "price_lbp": 1170000,
+              "priceLbp": 1170000,
               "is_new": true
             },
             {
               "name": "Kabab Intabli (240g, spicy)",
-              "price_lbp": 1170000,
+              "priceLbp": 1170000,
               "is_new": true
             },
             {
               "name": "Kabab Eggplant (240g)",
-              "price_lbp": 1170000,
+              "priceLbp": 1170000,
               "is_new": true
             },
             {
               "name": "Imported Veal Filet (240g)",
-              "price_lbp": 1800000
+              "priceLbp": 1800000
             },
             {
               "name": "Local Beef Filet (240g)",
-              "price_lbp": 1350000
+              "priceLbp": 1350000
             },
             {
               "name": "Mix Grill Beef (380g)",
-              "price_lbp": 1620000
+              "priceLbp": 1620000
             },
             {
               "name": "Mix Grill Veal (380g)",
-              "price_lbp": 1890000
+              "priceLbp": 1890000
             },
             {
               "name": "Chicken Escalope (240g)",
-              "price_lbp": 900000
+              "priceLbp": 900000
             },
             {
               "name": "Chicken Breast (300g)",
-              "price_lbp": 1250000
+              "priceLbp": 1250000
             }
           ]
         },
@@ -1506,47 +1506,47 @@
           "items": [
             {
               "name": "Shish Taouk",
-              "price_lbp": 1800000
+              "priceLbp": 1800000
             },
             {
               "name": "Kabab",
-              "price_lbp": 1800000
+              "priceLbp": 1800000
             },
             {
               "name": "Kabab Pistachio",
-              "price_lbp": 2025000,
+              "priceLbp": 2025000,
               "is_new": true
             },
             {
               "name": "Kabab Orfali",
-              "price_lbp": 1980000,
+              "priceLbp": 1980000,
               "is_new": true
             },
             {
               "name": "Kabab Intabli",
-              "price_lbp": 1980000,
+              "priceLbp": 1980000,
               "is_new": true
             },
             {
               "name": "Kabab Eggplant",
-              "price_lbp": 1980000,
+              "priceLbp": 1980000,
               "is_new": true
             },
             {
               "name": "Grilled Veal Filet",
-              "price_lbp": 3600000
+              "priceLbp": 3600000
             },
             {
               "name": "Grilled Beef Filet",
-              "price_lbp": 2520000
+              "priceLbp": 2520000
             },
             {
               "name": "Mix Grill Beef",
-              "price_lbp": 2430000
+              "priceLbp": 2430000
             },
             {
               "name": "Mix Grill Veal",
-              "price_lbp": 2610000
+              "priceLbp": 2610000
             }
           ]
         },
@@ -1556,47 +1556,47 @@
           "items": [
             {
               "name": "Shish Taouk",
-              "price_lbp": 2700000
+              "priceLbp": 2700000
             },
             {
               "name": "Kabab",
-              "price_lbp": 3150000
+              "priceLbp": 3150000
             },
             {
               "name": "Kabab Pistachio",
-              "price_lbp": 3420000,
+              "priceLbp": 3420000,
               "is_new": true
             },
             {
               "name": "Kabab Orfali",
-              "price_lbp": 3240000,
+              "priceLbp": 3240000,
               "is_new": true
             },
             {
               "name": "Kabab Intabli",
-              "price_lbp": 3240000,
+              "priceLbp": 3240000,
               "is_new": true
             },
             {
               "name": "Kabab Eggplant",
-              "price_lbp": 3240000,
+              "priceLbp": 3240000,
               "is_new": true
             },
             {
               "name": "Grilled Veal Filet",
-              "price_lbp": 5850000
+              "priceLbp": 5850000
             },
             {
               "name": "Grilled Beef Filet",
-              "price_lbp": 4500000
+              "priceLbp": 4500000
             },
             {
               "name": "Mix Grill Beef",
-              "price_lbp": 3600000
+              "priceLbp": 3600000
             },
             {
               "name": "Mix Grill Veal",
-              "price_lbp": 4050000
+              "priceLbp": 4050000
             }
           ]
         },
@@ -1605,23 +1605,23 @@
           "items": [
             {
               "name": "Half Grilled Chicken",
-              "price_lbp": 950000
+              "priceLbp": 950000
             },
             {
               "name": "Grilled Chicken",
-              "price_lbp": 1500000
+              "priceLbp": 1500000
             },
             {
               "name": "Half Chicken Boneless",
-              "price_lbp": 950000
+              "priceLbp": 950000
             },
             {
               "name": "Chicken Boneless",
-              "price_lbp": 1500000
+              "priceLbp": 1500000
             },
             {
               "name": "Grilled Chicken Wings (8 pcs)",
-              "price_lbp": 800000
+              "priceLbp": 800000
             }
           ]
         },
@@ -1631,27 +1631,27 @@
           "items": [
             {
               "name": "Kabab",
-              "price_lbp": 810000
+              "priceLbp": 810000
             },
             {
               "name": "Shish Taouk",
-              "price_lbp": 810000
+              "priceLbp": 810000
             },
             {
               "name": "Shawarma Chicken",
-              "price_lbp": 810000
+              "priceLbp": 810000
             },
             {
               "name": "Shawarma Beef",
-              "price_lbp": 1080000
+              "priceLbp": 1080000
             },
             {
               "name": "Deboned Chicken Sandwich",
-              "price_lbp": 810000
+              "priceLbp": 810000
             },
             {
               "name": "Grilled Local Beef Filet",
-              "price_lbp": 900000
+              "priceLbp": 900000
             }
           ]
         },
@@ -1660,27 +1660,27 @@
           "items": [
             {
               "name": "Shawarma Chicken - Small",
-              "price_lbp": 400000
+              "priceLbp": 400000
             },
             {
               "name": "Shawarma Chicken - Medium",
-              "price_lbp": 500000
+              "priceLbp": 500000
             },
             {
               "name": "Shawarma Chicken - Large",
-              "price_lbp": 650000
+              "priceLbp": 650000
             },
             {
               "name": "Shawarma Beef - Small",
-              "price_lbp": 500000
+              "priceLbp": 500000
             },
             {
               "name": "Shawarma Beef - Medium",
-              "price_lbp": 600000
+              "priceLbp": 600000
             },
             {
               "name": "Shawarma Beef - Large",
-              "price_lbp": 750000
+              "priceLbp": 750000
             }
           ]
         },
@@ -1689,39 +1689,39 @@
           "items": [
             {
               "name": "Shawarma Chicken - Platter",
-              "price_lbp": 900000
+              "priceLbp": 900000
             },
             {
               "name": "Shawarma Chicken - Half Kilo",
-              "price_lbp": 1800000
+              "priceLbp": 1800000
             },
             {
               "name": "Shawarma Chicken - Kilo",
-              "price_lbp": 3240000
+              "priceLbp": 3240000
             },
             {
               "name": "Shawarma Beef - Platter",
-              "price_lbp": 1350000
+              "priceLbp": 1350000
             },
             {
               "name": "Shawarma Beef - Half Kilo",
-              "price_lbp": 2700000
+              "priceLbp": 2700000
             },
             {
               "name": "Shawarma Beef - Kilo",
-              "price_lbp": 4950000
+              "priceLbp": 4950000
             },
             {
               "name": "Shawarma Mix - Platter",
-              "price_lbp": 1305000
+              "priceLbp": 1305000
             },
             {
               "name": "Shawarma Mix - Half Kilo",
-              "price_lbp": 2340000
+              "priceLbp": 2340000
             },
             {
               "name": "Shawarma Mix - Kilo",
-              "price_lbp": 4050000
+              "priceLbp": 4050000
             }
           ]
         },
@@ -1730,27 +1730,27 @@
           "items": [
             {
               "name": "Soft Drinks",
-              "price_lbp": 135000
+              "priceLbp": 135000
             },
             {
               "name": "Ice Tea",
-              "price_lbp": 150000
+              "priceLbp": 150000
             },
             {
               "name": "Laban Iran",
-              "price_lbp": 100000
+              "priceLbp": 100000
             },
             {
               "name": "Mineral Water",
-              "price_lbp": 50000
+              "priceLbp": 50000
             },
             {
               "name": "Sparkling Water",
-              "price_lbp": 150000
+              "priceLbp": 150000
             },
             {
               "name": "Almaza",
-              "price_lbp": 270000
+              "priceLbp": 270000
             }
           ]
         }
@@ -2869,27 +2869,27 @@
           "items": [
             {
               "name": "Cheese Nachos",
-              "price_lbp": 400000
+              "priceLbp": 400000
             },
             {
               "name": "Cheese Garlic Bread",
-              "price_lbp": 400000
+              "priceLbp": 400000
             },
             {
               "name": "French Fries",
-              "price_lbp": 300000
+              "priceLbp": 300000
             },
             {
               "name": "Fries and Cheese",
-              "price_lbp": 400000
+              "priceLbp": 400000
             },
             {
               "name": "Crispy Fries",
-              "price_lbp": 300000
+              "priceLbp": 300000
             },
             {
               "name": "Potato Wedges",
-              "price_lbp": 300000
+              "priceLbp": 300000
             },
             {
               "name": "Twister Fries",
@@ -2903,47 +2903,47 @@
             {
               "name": "Tunnel Special",
               "description": "Chicken, cheese, mushroom, green pepper, corn, tomato, pickles, coleslaw",
-              "price_lbp": 650000
+              "priceLbp": 650000
             },
             {
               "name": "Shish Taouk",
               "description": "Chicken, garlic, fries, pickles, coleslaw",
-              "price_lbp": 500000
+              "priceLbp": 500000
             },
             {
               "name": "Chicken Curry",
               "description": "Chicken, curry, garlic, fries, pickles, coleslaw",
-              "price_lbp": 550000
+              "priceLbp": 550000
             },
             {
               "name": "Mexi Chicken",
               "description": "Chicken, hot mexican sauce, onion, green pepper, pickles, iceberg, mayo",
-              "price_lbp": 600000
+              "priceLbp": 600000
             },
             {
               "name": "San Francisco",
               "description": "Chicken, cheddar cheese, tomato, pickles, coleslaw",
-              "price_lbp": 600000
+              "priceLbp": 600000
             },
             {
               "name": "Chicken Sub",
               "description": "Chicken, cheese, garlic, fries, pickles, iceberg",
-              "price_lbp": 650000
+              "priceLbp": 650000
             },
             {
               "name": "Fajita",
               "description": "Chicken, mushroom, onion, green pepper, cheese",
-              "price_lbp": 650000
+              "priceLbp": 650000
             },
             {
               "name": "Crispy Chicken",
               "description": "Fried chicken, fries, thousand island, pickles, iceberg",
-              "price_lbp": 600000
+              "priceLbp": 600000
             },
             {
               "name": "Philly Steak",
               "description": "Steak, mushroom, onion, green pepper, cheese",
-              "price_lbp": 700000
+              "priceLbp": 700000
             },
             {
               "name": "Hotdog",
@@ -2958,27 +2958,27 @@
             {
               "name": "Chicken Breast platter",
               "description": "Grilled chicken breast 3 slices, coleslaw, pickles, garlic, french fries",
-              "price_lbp": 800000
+              "priceLbp": 800000
             },
             {
               "name": "Chicken Burger platter",
               "description": "2 pcs steak chicken, coleslaw or green salad, pickles, tomato, french fries",
-              "price_lbp": 650000
+              "priceLbp": 650000
             },
             {
               "name": "Chicken Cheese Burger platter",
               "description": "2 pcs, cheese, coleslaw, pickles, tomato, french fries",
-              "price_lbp": 750000
+              "priceLbp": 750000
             },
             {
               "name": "Hamburger platter",
               "description": "2 pcs, coleslaw, pickles, tomato, french fries",
-              "price_lbp": 1000000
+              "priceLbp": 1000000
             },
             {
               "name": "Cheese Burger platter",
               "description": "2 pcs, cheese, coleslaw, pickles, tomato, french fries",
-              "price_lbp": 1100000
+              "priceLbp": 1100000
             },
             {
               "name": "Cordon Bleu platter",
@@ -2988,7 +2988,7 @@
             {
               "name": "Crispy Chicken platter",
               "description": "200 grm, coleslaw, pickles, tomato, french fries",
-              "price_lbp": 900000
+              "priceLbp": 900000
             },
             {
               "name": "Calamari",
@@ -2998,7 +2998,7 @@
             {
               "name": "Nuggets",
               "description": "5 nuggets, coleslaw, pickles, french fries",
-              "price_lbp": 550000
+              "priceLbp": 550000
             }
           ]
         }
@@ -3552,77 +3552,77 @@
         {
           "name": "Appetizers",
           "items": [
-            { "name": "French Fries (Small)", "price_lbp": 300000 },
-            { "name": "French Fries (Large)", "price_lbp": 600000 },
-            { "name": "Fattoush (Small)", "price_lbp": 300000 },
-            { "name": "Fattoush (Large)", "price_lbp": 600000 },
-            { "name": "Homus (Small)", "price_lbp": 300000 },
-            { "name": "Homus (Large)", "price_lbp": 600000 }
+            { "name": "French Fries (Small)", "priceLbp": 300000 },
+            { "name": "French Fries (Large)", "priceLbp": 600000 },
+            { "name": "Fattoush (Small)", "priceLbp": 300000 },
+            { "name": "Fattoush (Large)", "priceLbp": 600000 },
+            { "name": "Homus (Small)", "priceLbp": 300000 },
+            { "name": "Homus (Large)", "priceLbp": 600000 }
           ]
         },
         {
           "name": "Manakish",
           "items": [
-            { "name": "Zaatar (Small)", "price_lbp": 40000 },
-            { "name": "Zaatar (Large)", "price_lbp": 80000 },
-            { "name": "Zaatar Extra (Small)", "price_lbp": 50000 },
-            { "name": "Zaatar Extra (Large)", "price_lbp": 100000 },
-            { "name": "Cheese (Small)", "price_lbp": 100000 },
-            { "name": "Cheese (Large)", "price_lbp": 200000 },
-            { "name": "Cheese Extra (Small)", "price_lbp": 125000 },
-            { "name": "Cheese Extra (Large)", "price_lbp": 250000 },
-            { "name": "Zaatar & Cheese (Small)", "price_lbp": 100000 },
-            { "name": "Zaatar & Cheese (Large)", "price_lbp": 200000 },
-            { "name": "Jambon & Cheese (Small)", "price_lbp": 200000 },
-            { "name": "Jambon & Cheese (Large)", "price_lbp": 350000 },
-            { "name": "Jambon & Cheese Extra (Small)", "price_lbp": 200000 },
-            { "name": "Jambon & Cheese Extra (Large)", "price_lbp": 350000 },
-            { "name": "Turkey & Cheese (Small)", "price_lbp": 150000 },
-            { "name": "Turkey & Cheese (Large)", "price_lbp": 300000 },
-            { "name": "Labne (Small)", "price_lbp": 125000 },
-            { "name": "Labne (Large)", "price_lbp": 250000 },
-            { "name": "Chanklish (Small)", "price_lbp": 100000 },
-            { "name": "Chanklish (Large)", "price_lbp": 200000 },
-            { "name": "3ejie (Small)", "price_lbp": 150000 },
-            { "name": "3ejie (Large)", "price_lbp": 300000 },
-            { "name": "Sabanegh (Small)", "price_lbp": 75000 },
-            { "name": "Sabanegh (Large)", "price_lbp": 150000 },
-            { "name": "Lahme (Small)", "price_lbp": 100000 },
-            { "name": "Lahme (Large)", "price_lbp": 200000 },
-            { "name": "Lahme & Cheese (Small)", "price_lbp": 125000 },
-            { "name": "Lahme & Cheese (Large)", "price_lbp": 250000 },
-            { "name": "Picon (Small)", "price_lbp": 100000 },
-            { "name": "Picon (Large)", "price_lbp": 200000 }
+            { "name": "Zaatar (Small)", "priceLbp": 40000 },
+            { "name": "Zaatar (Large)", "priceLbp": 80000 },
+            { "name": "Zaatar Extra (Small)", "priceLbp": 50000 },
+            { "name": "Zaatar Extra (Large)", "priceLbp": 100000 },
+            { "name": "Cheese (Small)", "priceLbp": 100000 },
+            { "name": "Cheese (Large)", "priceLbp": 200000 },
+            { "name": "Cheese Extra (Small)", "priceLbp": 125000 },
+            { "name": "Cheese Extra (Large)", "priceLbp": 250000 },
+            { "name": "Zaatar & Cheese (Small)", "priceLbp": 100000 },
+            { "name": "Zaatar & Cheese (Large)", "priceLbp": 200000 },
+            { "name": "Jambon & Cheese (Small)", "priceLbp": 200000 },
+            { "name": "Jambon & Cheese (Large)", "priceLbp": 350000 },
+            { "name": "Jambon & Cheese Extra (Small)", "priceLbp": 200000 },
+            { "name": "Jambon & Cheese Extra (Large)", "priceLbp": 350000 },
+            { "name": "Turkey & Cheese (Small)", "priceLbp": 150000 },
+            { "name": "Turkey & Cheese (Large)", "priceLbp": 300000 },
+            { "name": "Labne (Small)", "priceLbp": 125000 },
+            { "name": "Labne (Large)", "priceLbp": 250000 },
+            { "name": "Chanklish (Small)", "priceLbp": 100000 },
+            { "name": "Chanklish (Large)", "priceLbp": 200000 },
+            { "name": "3ejie (Small)", "priceLbp": 150000 },
+            { "name": "3ejie (Large)", "priceLbp": 300000 },
+            { "name": "Sabanegh (Small)", "priceLbp": 75000 },
+            { "name": "Sabanegh (Large)", "priceLbp": 150000 },
+            { "name": "Lahme (Small)", "priceLbp": 100000 },
+            { "name": "Lahme (Large)", "priceLbp": 200000 },
+            { "name": "Lahme & Cheese (Small)", "priceLbp": 125000 },
+            { "name": "Lahme & Cheese (Large)", "priceLbp": 250000 },
+            { "name": "Picon (Small)", "priceLbp": 100000 },
+            { "name": "Picon (Large)", "priceLbp": 200000 }
           ]
         },
         {
           "name": "Pizza",
           "items": [
-            { "name": "Spicy Chicken Ranch (Small)", "price_lbp": 900000 },
-            { "name": "Spicy Chicken Ranch (Medium)", "price_lbp": 1600000 },
-            { "name": "Spicy Chicken Ranch (Large)", "price_lbp": 2200000 },
-            { "name": "Chicken BBQ (Small)", "price_lbp": 900000 },
-            { "name": "Chicken BBQ (Medium)", "price_lbp": 1600000 },
-            { "name": "Chicken BBQ (Large)", "price_lbp": 2200000 },
-            { "name": "Marguerita (Small)", "price_lbp": 500000 },
-            { "name": "Marguerita (Medium)", "price_lbp": 900000 },
-            { "name": "Marguerita (Large)", "price_lbp": 1300000 },
-            { "name": "Lebanese (Small)", "price_lbp": 600000 },
-            { "name": "Lebanese (Medium)", "price_lbp": 1200000 },
-            { "name": "Lebanese (Large)", "price_lbp": 1600000 },
-            { "name": "Pepperoni (Small)", "price_lbp": 550000 },
-            { "name": "Pepperoni (Medium)", "price_lbp": 1000000 },
-            { "name": "Pepperoni (Large)", "price_lbp": 1500000 },
-            { "name": "Sojok (Small)", "price_lbp": 800000 },
-            { "name": "Sojok (Medium)", "price_lbp": 1400000 },
-            { "name": "Sojok (Large)", "price_lbp": 2000000 }
+            { "name": "Spicy Chicken Ranch (Small)", "priceLbp": 900000 },
+            { "name": "Spicy Chicken Ranch (Medium)", "priceLbp": 1600000 },
+            { "name": "Spicy Chicken Ranch (Large)", "priceLbp": 2200000 },
+            { "name": "Chicken BBQ (Small)", "priceLbp": 900000 },
+            { "name": "Chicken BBQ (Medium)", "priceLbp": 1600000 },
+            { "name": "Chicken BBQ (Large)", "priceLbp": 2200000 },
+            { "name": "Marguerita (Small)", "priceLbp": 500000 },
+            { "name": "Marguerita (Medium)", "priceLbp": 900000 },
+            { "name": "Marguerita (Large)", "priceLbp": 1300000 },
+            { "name": "Lebanese (Small)", "priceLbp": 600000 },
+            { "name": "Lebanese (Medium)", "priceLbp": 1200000 },
+            { "name": "Lebanese (Large)", "priceLbp": 1700000 },
+            { "name": "Pepperoni (Small)", "priceLbp": 550000 },
+            { "name": "Pepperoni (Medium)", "priceLbp": 1000000 },
+            { "name": "Pepperoni (Large)", "priceLbp": 1500000 },
+            { "name": "Sojok (Small)", "priceLbp": 800000 },
+            { "name": "Sojok (Medium)", "priceLbp": 1400000 },
+            { "name": "Sojok (Large)", "priceLbp": 2000000 }
           ]
         },
         {
           "name": "Sandwiches Bl Aajin",
           "items": [
-            { "name": "Submarine", "price_lbp": 550000 },
-            { "name": "Picasso Sandwich", "price_lbp": 600000 }
+            { "name": "Submarine", "priceLbp": 550000 },
+            { "name": "Picasso Sandwich", "priceLbp": 600000 }
           ]
         },
         {
@@ -4598,7 +4598,7 @@
       "id": "mishway",
       "name": "Mishway",
       "name_ar": "مشواي",
-      "logo": "mishway-logo.pdf",
+      "logo": "mishway-logo.jpg",
       "logo_bg": "#ffffff",
       "source_url": "mishway_restaurant",
       "phone": "70713763",

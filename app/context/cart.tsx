@@ -116,7 +116,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Persist to localStorage
   useEffect(() => {
-    localStorage.setItem("anfeh-cart", JSON.stringify(state.items));
+    try {
+      localStorage.setItem("anfeh-cart", JSON.stringify(state.items));
+    } catch (error) {
+      console.warn("Failed to save cart to localStorage:", error);
+    }
   }, [state.items]);
 
   const itemCount = state.items.reduce((s, i) => s + i.quantity, 0);

@@ -2,7 +2,7 @@
 
 import { useCart } from "../context/cart";
 import { useLang, t } from "../context/language";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function generateOrderNumber() {
   const timestamp = Date.now().toString(36);
@@ -28,10 +28,10 @@ type CustomerInfo = {
 function buildWhatsAppMessage(
   items: ReturnType<typeof useCart>["items"],
   subtotal: number,
+  subtotalLbp: number,
   customer: CustomerInfo,
   deliveryFee: number,
   orderNumber: string,
-  trackUrl: string,
 ) {
   const grouped: Record<string, typeof items> = {};
   for (const item of items) {
@@ -58,12 +58,26 @@ function buildWhatsAppMessage(
   }
 
   msg += "━━━━━━━━━━━━━━━━━━━━\n";
-  const hasLbp = items.some((i) => i.price === null);
-  msg += `Subtotal: $${subtotal.toFixed(2)}\n`;
+  if (subtotal > 0) {
+    msg += `Subtotal: $${subtotal.toFixed(2)}\n`;
+  }
+  if (subtotalLbp > 0) {
+    msg += `Subtotal: ${subtotalLbp >= 1_000_000 ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP` : `${subtotalLbp.toLocaleString()} LBP`}\n`;
+  }
   msg += `Delivery (${customer.zone}): $${deliveryFee.toFixed(2)}\n`;
-  msg += `*Total: $${(subtotal + deliveryFee).toFixed(2)}*`;
-  if (hasLbp) msg += ` *(+ LBP items)*`;
-  msg += "\n\n";
+  
+  // Handle totals based on what items we have
+  if (subtotal > 0 && subtotalLbp > 0) {
+    // Mixed USD and LBP items
+    msg += `*Total: $${(subtotal + deliveryFee).toFixed(2)} + ${subtotalLbp >= 1_000_000 ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP` : `${subtotalLbp.toLocaleString()} LBP`}*\n`;
+  } else if (subtotal > 0) {
+    // Only USD items
+    msg += `*Total: $${(subtotal + deliveryFee).toFixed(2)}*\n`;
+  } else if (subtotalLbp > 0) {
+    // Only LBP items
+    msg += `*Total: ${subtotalLbp >= 1_000_000 ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP` : `${subtotalLbp.toLocaleString()} LBP`} + $${deliveryFee.toFixed(2)} delivery*\n`;
+  }
+  msg += "\n";
 
   msg += "━━━━━━━━━━━━━━━━━━━━\n";
   msg += `👤 *Customer:*\n`;
@@ -76,7 +90,6 @@ function buildWhatsAppMessage(
   }
 
   msg += "\n\n💵 *Payment: Cash on delivery*";
-  msg += `\n\n🔗 *Track order:* ${trackUrl}`;
   msg += "\n\nPlease confirm my order. Thank you! 🙏";
 
   return msg;
@@ -95,6 +108,40 @@ export default function CartDrawer() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [orderNumber, setOrderNumber] = useState<string | null>(null);
   const [waUrl, setWaUrl] = useState<string | null>(null);
+  const [showSavedInfo, setShowSavedInfo] = useState(false);
+
+  // Load saved customer info on component mount
+  useEffect(() => {
+    const savedCustomer = localStorage.getItem("visit-anfeh-customer-info");
+    if (savedCustomer) {
+      try {
+        const parsed = JSON.parse(savedCustomer);
+        setCustomer(parsed);
+        setShowSavedInfo(true);
+      } catch (error) {
+        console.error("Error loading saved customer info:", error);
+      }
+    }
+  }, []);
+
+  // Save customer info to localStorage
+  const saveCustomerInfo = () => {
+    try {
+      localStorage.setItem("visit-anfeh-customer-info", JSON.stringify(customer));
+      setShowSavedInfo(true);
+    } catch (error) {
+      console.error("Error saving customer info:", error);
+    }
+  };
+
+  // Clear saved customer info
+  const clearSavedInfo = () => {
+    localStorage.removeItem("visit-anfeh-customer-info");
+    setCustomer({
+      name: "", phone: "", zone: DELIVERY_ZONES[0].label, location: "", notes: "",
+    });
+    setShowSavedInfo(false);
+  };
 
   const deliveryFee = DELIVERY_ZONES.find((z) => z.label === customer.zone)?.fee ?? 1;
   const total = subtotal + deliveryFee;
@@ -119,8 +166,7 @@ export default function CartDrawer() {
     setLoading(true);
 
     const orderNum = generateOrderNumber();
-    const trackUrl = `${window.location.origin}/track/${orderNum}`;
-    const msg = buildWhatsAppMessage(items, subtotal, customer, deliveryFee, orderNum, trackUrl);
+    const msg = buildWhatsAppMessage(items, subtotal, subtotalLbp, customer, deliveryFee, orderNum);
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
     // Open WhatsApp immediately (must be in user-interaction context to avoid popup block)
@@ -129,9 +175,12 @@ export default function CartDrawer() {
 
     // Order data is sent via WhatsApp - no backend storage needed
 
+    // Save customer info for future orders
+    saveCustomerInfo();
+    
     setOrderNumber(orderNum);
     clearCart();
-    setCustomer({ name: "", phone: "", zone: DELIVERY_ZONES[0].label, location: "", notes: "" });
+    // Don't clear customer info - keep it saved for next order
     setLoading(false);
   }
 
@@ -335,6 +384,32 @@ export default function CartDrawer() {
                 <p className="mb-3 text-xs font-bold tracking-widest text-slate-500 uppercase">
                   {T.cart_section_delivery}
                 </p>
+                
+                {/* Saved Customer Info Banner */}
+                {showSavedInfo && (
+                  <div className="mb-4 rounded-xl border border-[#1AABBD]/30 bg-[#1AABBD]/10 p-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1AABBD" strokeWidth="2">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span className="text-xs font-semibold text-[#1AABBD]">
+                          {lang === "ar" ? "معلومات محفوظة" : "Saved Info"}
+                        </span>
+                      </div>
+                      <button
+                        onClick={clearSavedInfo}
+                        className="text-xs text-slate-400 hover:text-slate-300 underline"
+                      >
+                        {lang === "ar" ? "تغيير" : "Change"}
+                      </button>
+                    </div>
+                    <p className="mt-1 text-xs text-slate-300">
+                      {customer.name} • +961{customer.phone} • {customer.zone}
+                    </p>
+                  </div>
+                )}
+                
                 <div className="space-y-3">
 
                   {/* Full Name */}
