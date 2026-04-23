@@ -4490,6 +4490,353 @@
           ]
         }
       ]
+    },
+    {
+      "id": "memorize-restaurant",
+      "name": "Memorize Restaurant",
+      "name_ar": "مطعم ميموريز",
+      "tagline": "Let's Eat And Remember",
+      "logo": "memorize-logo.jpg",
+      "source_url": "memorize_restaurant",
+      "categories": [
+        {
+          "name": "Pizza",
+          "items": [
+            {"name": "Spaghetti aglio olio", "price": 12.5},
+            {"name": "Spaghetti and meat balls", "price": 14.5},
+            {"name": "Lasagna", "price": 13.5},
+            {"name": "Fettuccine Alfredo (add chicken)", "price": 15.5},
+            {"name": "Penne arabbiata", "price": 13.5},
+            {"name": "Chicken penne alfredo", "price": 15.5},
+            {"name": "Pizza pepperoni", "price": 14.5},
+            {"name": "Pizza vegetarian", "price": 12.5},
+            {"name": "Pizza margaritas", "price": 12.5},
+            {"name": "Pizza regular", "price": 10.5}
+          ]
+        },
+        {
+          "name": "Sandwiches",
+          "items": [
+            {"name": "Chicken Caesar sandwich", "price": 10.5},
+            {"name": "Smashed burger", "price": 12.5},
+            {"name": "Fajita sandwich", "price": 12.5},
+            {"name": "Grilled chicken sandwich", "price": 10.5},
+            {"name": "Chicken burger", "price": 12.5},
+            {"name": "Avocado chicken sandwich", "price": 12.5},
+            {"name": "Pesto chicken sandwich", "price": 10.5}
+          ]
+        },
+        {
+          "name": "Platters",
+          "items": [
+            {"name": "Teriyaki chicken and mango salsa", "price": 18.5},
+            {"name": "Crispy chicken", "price": 18.5},
+            {"name": "Sweet and sour chicken", "price": 17.5},
+            {"name": "Thai coconut chicken curry", "price": 18.5},
+            {"name": "Escalope chicken", "price": 17.5},
+            {"name": "Crispy chicken", "price": 17.5},
+            {"name": "Chicken mushroom", "price": 22.5},
+            {"name": "Mexican chicken fajita", "price": 18.5},
+            {"name": "Chinese noodles chicken", "price": 18.5},
+            {"name": "Shrimp curry basmati rice", "price": 25.5},
+            {"name": "Grilled salmon", "price": 16.5},
+            {"name": "Fish and chips", "price": 24.5},
+            {"name": "Steak mushroom", "price": 22.5}
+          ]
+        },
+        {
+          "name": "Drinks",
+          "items": [
+            {"name": "Jamaica", "price": 7.5},
+            {"name": "Vodka orange, pineapple, lemon, grenadine", "price": 7.5},
+            {"name": "Vodka cranberry", "price": 6.5},
+            {"name": "Rum pineapple, black coconut", "price": 7.5},
+            {"name": "Rum black", "price": 6.5},
+            {"name": "Rum Coke", "price": 6.5},
+            {"name": "Mojito", "price": 7.5},
+            {"name": "Margarita", "price": 8.5},
+            {"name": "Long island strawberry liqueur, sugar", "price": 8.5},
+            {"name": "Long island lemon", "price": 8.5},
+            {"name": "Vodka tequila, rum triple sec, gin, lemon and sprite", "price": 8.5},
+            {"name": "Taki", "price": 8.5},
+            {"name": "Ice lemon tea, lemon, sugar", "price": 8.5},
+            {"name": "Martini dry, blanco, kiwi", "price": 8.5},
+            {"name": "Martini dry", "price": 6.5},
+            {"name": "Pineapple juice, pineapple juice, grenadine", "price": 9.5}
+          ]
+        },
+        {
+          "name": "Hot Drinks",
+          "items": [
+            {"name": "Nescafe", "price": 4.5},
+            {"name": "Hot Chocolate", "price": 3.5},
+            {"name": "Coffee", "price": 3.5},
+            {"name": "Tea", "price": 4.5}
+          ]
+        },
+        {
+          "name": "Desserts",
+          "items": [
+            {"name": "Fondant chocolat", "price": 7.5},
+            {"name": "Tiramisu", "price": 6.5},
+            {"name": "Cheese cake", "price": 6.5},
+            {"name": "Brownies", "price": 3.5},
+            {"name": "Chocolate cake", "price": 2.5}
+          ]
+        },
+        {
+          "name": "Wine",
+          "items": [
+            {"name": "Glass 1/2 Bottle", "price": 7.5},
+            {"name": "1/1 Bottle", "price": 15.5},
+            {"name": "Arak Ila", "price": 30.5}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mishway",
+      "name": "Mishway",
+      "name_ar": "مشواي",
+      "logo": "mishway-logo.jpg",
+      "source_url": "mishway_restaurant",
+      "phone": "70713763",
+      "categories": [
+        {
+          "name": "Sandwiches",
+          "items": [
+            {"name": "Shawarma Lahme", "price": 5.5},
+            {"name": "Shawarma Djej", "price": 4.5},
+            {"name": "Djej Msahab", "price": 4.5},
+            {"name": "Taouk", "price": 5.5},
+            {"name": "Lahme", "price": 6.5},
+            {"name": "Kabab Lahme", "price": 5.5},
+            {"name": "Kafta", "price": 5.5},
+            {"name": "Batata", "price": 2.25},
+            {"name": "Falafel", "price": 2.25},
+            {"name": "Sojok", "price": 5.5},
+            {"name": "Makanek", "price": 5.5},
+            {"name": "Burger Bel Khebze", "price": 5.5}
+          ]
+        },
+        {
+          "name": "Farouj",
+          "items": [
+            {"name": "Farouj Ghaz", "price": 11.5},
+            {"name": "Nos Farouj Ghaz", "price": 7.5},
+            {"name": "Farouj 3al Fahem", "price": 11.5}
+          ]
+        },
+        {
+          "name": "Platters", 
+          "items": [
+            {"name": "Grilled Wings Platter", "price": 6.5},
+            {"name": "Shawarma lahme platter", "price": 9.5},
+            {"name": "Shawarma Djej Platter", "price": 8.5},
+            {"name": "Lahme Platter", "price": 12.5},
+            {"name": "Tawook Platter", "price": 8.5},
+            {"name": "Kafta Platter", "price": 9.5},
+            {"name": "Kabab Lahme Platter", "price": 9.5},
+            {"name": "Box batata", "price": 2.5}
+          ]
+        },
+        {
+          "name": "Mishway Platter",
+          "items": [
+            {"name": "Sikh Lahme", "price": 4.5},
+            {"name": "Sikh Kafta", "price": 3.5},
+            {"name": "Sikh Kabab Lahme", "price": 3.5},
+            {"name": "Sikh Tawook", "price": 2.5}
+          ]
+        },
+        {
+          "name": "Drinks",
+          "items": [
+            {"name": "Small Water", "price": 0.25},
+            {"name": "Soft Drinks Ezez", "price": 0.5},
+            {"name": "Soft Drinks", "price": 1.5}
+          ]
+        },
+        {
+          "name": "Bel Kilo",
+          "items": [
+            {"name": "Lahme 0.5 Kg", "price": 25.5},
+            {"name": "Lahme 1 Kg", "price": 38.5},
+            {"name": "Kafta 0.5 Kg", "price": 20.5},
+            {"name": "Kafta 1 Kg", "price": 28.5},
+            {"name": "Mix Grill 0.5 Kg", "price": 23.5},
+            {"name": "Mix Grill 1 Kg", "price": 33.5},
+            {"name": "Kabab Lahme 0.5 Kg", "price": 20.5},
+            {"name": "Kabab Lahme 1 Kg", "price": 28.5},
+            {"name": "Tawook 0.5 Kg", "price": 13.5},
+            {"name": "Tawook 1 Kg", "price": 20.5}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vee-coffee-shop",
+      "name": "Vee Coffee Shop", 
+      "name_ar": "في كوفي شوب",
+      "logo": "vee-coffee-shop-logo.jpg",
+      "source_url": "vee_coffee_shop",
+      "categories": [
+        {
+          "name": "Hot Beverages",
+          "items": [
+            {"name": "Espresso", "price": 2.0},
+            {"name": "Doppio", "price": 3.0},
+            {"name": "Lebanese Coffee", "price": 2.0},
+            {"name": "Machiato Small", "price": 3.5, "size_options": [{"size": "Small", "price": 3.5}, {"size": "Regular", "price": 4.0}, {"size": "Large", "price": 4.5}]},
+            {"name": "American Coffee Small", "price": 3.0, "size_options": [{"size": "Small", "price": 3.0}, {"size": "Regular", "price": 3.5}, {"size": "Large", "price": 4.0}]},
+            {"name": "Americano Small", "price": 3.0, "size_options": [{"size": "Small", "price": 3.0}, {"size": "Regular", "price": 3.5}, {"size": "Large", "price": 4.0}]},
+            {"name": "French Press", "price": 4.0},
+            {"name": "Freddo Espresso Regular", "price": 4.0},
+            {"name": "Caffe Latte Small", "price": 3.5, "size_options": [{"size": "Small", "price": 3.5}, {"size": "Regular", "price": 4.5}, {"size": "Large", "price": 5.5}]},
+            {"name": "Spanish Latte Small", "price": 4.0, "size_options": [{"size": "Small", "price": 4.0}, {"size": "Regular", "price": 5.0}, {"size": "Large", "price": 6.0}]},
+            {"name": "Vee Latte Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "Matcha Latte Small", "price": 4.0, "size_options": [{"size": "Small", "price": 4.0}, {"size": "Regular", "price": 5.0}, {"size": "Large", "price": 6.0}]},
+            {"name": "Mochaccino Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "White Mocha Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "Cappuccino Small", "price": 3.5, "size_options": [{"size": "Small", "price": 3.5}, {"size": "Regular", "price": 4.5}, {"size": "Large", "price": 5.5}]},
+            {"name": "Babyccino Small", "price": 3.0, "size_options": [{"size": "Small", "price": 3.0}, {"size": "Regular", "price": 4.0}, {"size": "Large", "price": 5.0}]},
+            {"name": "Nescafe Small", "price": 3.0, "size_options": [{"size": "Small", "price": 3.0}, {"size": "Regular", "price": 3.5}, {"size": "Large", "price": 4.0}]},
+            {"name": "Tea Regular", "price": 2.5},
+            {"name": "Tea Stick Regular", "price": 3.0}
+          ]
+        },
+        {
+          "name": "Cold Beverages",
+          "items": [
+            {"name": "Iced American Small", "price": 3.0, "size_options": [{"size": "Small", "price": 3.0}, {"size": "Regular", "price": 3.5}, {"size": "Large", "price": 4.0}]},
+            {"name": "Iced Americano Small", "price": 3.0, "size_options": [{"size": "Small", "price": 3.0}, {"size": "Regular", "price": 3.5}, {"size": "Large", "price": 4.0}]},
+            {"name": "Iced Latte Small", "price": 3.5, "size_options": [{"size": "Small", "price": 3.5}, {"size": "Regular", "price": 4.5}, {"size": "Large", "price": 5.5}]},
+            {"name": "Fresh Lemonade Regular", "price": 3.0},
+            {"name": "Fresh Minted Lemonade Regular", "price": 3.2},
+            {"name": "Fresh Strawberry Lemonade Regular", "price": 4.5},
+            {"name": "Fresh Orange Regular", "price": 3.5},
+            {"name": "Black Ice Tea Regular", "price": 3.5},
+            {"name": "Raspberry Ice Tea Regular", "price": 3.5},
+            {"name": "Lemon Ice Tea Regular", "price": 3.5},
+            {"name": "Peach Ice Tea Regular", "price": 3.5},
+            {"name": "Affogato Small", "price": 4.5}
+          ]
+        },
+        {
+          "name": "Hot & Sweet",
+          "items": [
+            {"name": "Hot Chocolate Small", "price": 4.0, "size_options": [{"size": "Small", "price": 4.0}, {"size": "Regular", "price": 5.0}, {"size": "Large", "price": 6.0}]},
+            {"name": "Oreo Hot Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "Nutella Hot Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "Bounty Hot Small", "price": 4.2, "size_options": [{"size": "Small", "price": 4.2}, {"size": "Regular", "price": 5.2}, {"size": "Large", "price": 6.2}]},
+            {"name": "Kitkat Hot Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "Vee Hot Chocolate Small", "price": 5.0, "size_options": [{"size": "Small", "price": 5.0}, {"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Toffee Coffee Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "Salted Toffee Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "Red Velvet Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "Kinder Hot Small", "price": 4.7, "size_options": [{"size": "Small", "price": 4.7}, {"size": "Regular", "price": 5.7}, {"size": "Large", "price": 6.7}]}
+          ]
+        },
+        {
+          "name": "Vee Frappes",
+          "items": [
+            {"name": "Mocha Small", "price": 5.0, "size_options": [{"size": "Small", "price": 5.0}, {"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "White Mocha Small", "price": 5.0, "size_options": [{"size": "Small", "price": 5.0}, {"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Bounty Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.0}, {"size": "Large", "price": 5.5}]},
+            {"name": "Kitkat Small", "price": 5.3, "size_options": [{"size": "Small", "price": 5.3}, {"size": "Regular", "price": 6.3}, {"size": "Large", "price": 7.3}]},
+            {"name": "Nutella Small", "price": 4.8, "size_options": [{"size": "Small", "price": 4.8}, {"size": "Regular", "price": 5.8}, {"size": "Large", "price": 6.8}]},
+            {"name": "Oreo Small", "price": 4.8, "size_options": [{"size": "Small", "price": 4.8}, {"size": "Regular", "price": 5.8}, {"size": "Large", "price": 6.8}]},
+            {"name": "Vee Large", "price": 8.5},
+            {"name": "Caramel Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "Snickers Small", "price": 5.3, "size_options": [{"size": "Small", "price": 5.3}, {"size": "Regular", "price": 6.3}, {"size": "Large", "price": 7.3}]},
+            {"name": "Espresso Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.6}]},
+            {"name": "Mixed Berries Small", "price": 4.8, "size_options": [{"size": "Small", "price": 4.8}, {"size": "Regular", "price": 5.8}, {"size": "Large", "price": 6.8}]},
+            {"name": "Strawberry Small", "price": 4.5, "size_options": [{"size": "Small", "price": 4.5}, {"size": "Regular", "price": 5.5}, {"size": "Large", "price": 6.5}]},
+            {"name": "Nutella & Strawberry Small", "price": 4.8, "size_options": [{"size": "Small", "price": 4.8}, {"size": "Regular", "price": 5.8}, {"size": "Large", "price": 6.8}]},
+            {"name": "Oreo Kitkat Small", "price": 6.3, "size_options": [{"size": "Small", "price": 6.3}, {"size": "Regular", "price": 7.3}, {"size": "Large", "price": 8.3}]},
+            {"name": "Oreo Strawberry Small", "price": 4.8, "size_options": [{"size": "Small", "price": 4.8}, {"size": "Regular", "price": 5.8}, {"size": "Large", "price": 6.8}]},
+            {"name": "Toffee Coffee Small", "price": 5.0, "size_options": [{"size": "Small", "price": 5.0}, {"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Red Velvet Small", "price": 5.0, "size_options": [{"size": "Small", "price": 5.0}, {"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Matcha Small", "price": 5.0, "size_options": [{"size": "Small", "price": 5.0}, {"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Cookies & Cream Small", "price": 5.0, "size_options": [{"size": "Small", "price": 5.0}, {"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Kinder Small", "price": 6.3, "size_options": [{"size": "Small", "price": 6.3}, {"size": "Regular", "price": 7.3}, {"size": "Large", "price": 8.3}]},
+            {"name": "Salted Toffee Small", "price": 5.0, "size_options": [{"size": "Small", "price": 5.0}, {"size": "Regular", "price": 6.0}, {"size": "Large", "price": 7.0}]},
+            {"name": "Lotus Small", "price": 6.0, "size_options": [{"size": "Small", "price": 6.0}, {"size": "Regular", "price": 7.0}, {"size": "Large", "price": 6.5}]}
+          ]
+        },
+        {
+          "name": "Bagels",
+          "items": [
+            {"name": "Cream Cheese", "price": 4.5},
+            {"name": "Pizza", "price": 5.7},
+            {"name": "Turkey & Cheese", "price": 6.0},
+            {"name": "Turkey & Cream Cheese", "price": 6.0},
+            {"name": "Halloumi", "price": 6.0},
+            {"name": "Labneh", "price": 5.5},
+            {"name": "Vee Bagel", "price": 6.0},
+            {"name": "Nutella", "price": 4.5}
+          ]
+        },
+        {
+          "name": "Sandwiches",
+          "items": [
+            {"name": "Ham & Cheese club", "price": 4.0},
+            {"name": "Tuna Sandwich club", "price": 4.0},
+            {"name": "Turkey & Cheese club", "price": 4.0},
+            {"name": "Chicken Turkey club", "price": 4.0},
+            {"name": "Roast Beef Sandwich", "price": 5.5}
+          ]
+        },
+        {
+          "name": "Salads",
+          "items": [
+            {"name": "Chicken Kale Caesar Salad", "price": 9.0},
+            {"name": "Halloumi Quinoa Salad", "price": 8.0},
+            {"name": "Tuna Pasta Salad", "price": 9.0},
+            {"name": "Broccoli Green Salad", "price": 8.5},
+            {"name": "Crazy Crab Salad", "price": 8.0},
+            {"name": "Goat Cheese Salad", "price": 9.0},
+            {"name": "Chicken Avocado Salad", "price": 9.0}
+          ]
+        },
+        {
+          "name": "Sweets",
+          "items": [
+            {"name": "Cinnamon Rolls", "price": 3.0},
+            {"name": "Blueberry Muffin", "price": 3.5},
+            {"name": "Chocolate Muffin", "price": 3.5},
+            {"name": "NYS Cookies Lotus", "price": 4.5},
+            {"name": "NYS Cookies Nutella", "price": 4.5},
+            {"name": "Brownie", "price": 4.0},
+            {"name": "Carrot Cake", "price": 5.0},
+            {"name": "Fudge Cake", "price": 5.5},
+            {"name": "Cheese Cake", "price": 6.0},
+            {"name": "Fruit Cup", "price": 5.5},
+            {"name": "Lava Cake", "price": 6.0}
+          ]
+        },
+        {
+          "name": "Add-ons",
+          "items": [
+            {"name": "Add Espresso", "price": 1.0},
+            {"name": "Add Condensed Milk", "price": 0.8},
+            {"name": "Add Flavor", "price": 0.8},
+            {"name": "Add Cream", "price": 0.8},
+            {"name": "Add Marshmallow", "price": 0.8},
+            {"name": "Add Milk", "price": 0.8},
+            {"name": "Add Non Dairy Milk Small", "price": 1.4, "size_options": [{"size": "Small", "price": 1.4}, {"size": "Regular", "price": 1.5}, {"size": "Large", "price": 1.6}]}
+          ]
+        },
+        {
+          "name": "Drinks",
+          "items": [
+            {"name": "Water", "price": 0.5},
+            {"name": "Soft Drink", "price": 2.0},
+            {"name": "Sparkling Water", "price": 2.5},
+            {"name": "Aloe Vera", "price": 3.0}
+          ]
+        }
+      ]
     }
   ]
 }
