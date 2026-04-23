@@ -98,7 +98,7 @@ export default function RestaurantGrid({
                       alt={restaurant.name}
                       fill
                       fallback={restaurant.name[0]}
-                      className={`transition-transform duration-500 group-hover:scale-105 ${restaurant.logo_fit === "contain" ? "object-contain p-1 sm:p-2 md:p-3" : "object-cover"}`}
+                      className={`transition-transform duration-500 group-hover:scale-105 ${restaurant.logo_fit === "contain" ? "object-contain" : "object-cover"}`}
                       blendMultiply={restaurant.logo_bg && restaurant.logo_bg !== "#ffffff"}
                     />
                   ) : (
