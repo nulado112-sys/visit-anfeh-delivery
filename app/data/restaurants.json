@@ -3645,7 +3645,7 @@
       "id": "angels-sushi",
       "name": "Angel's Sushi",
       "name_ar": "أنجل سوشي",
-      "logo": "angels-sushi-logo-fixed.jpg",
+      "logo": "angels-sushi-logo.jpg",
       "logo_bg": "#000000",
       "source_url": "angels_sushi_lb",
       "categories": [
@@ -4679,6 +4679,7 @@
       "name": "Vee Coffee Shop", 
       "name_ar": "في كوفي شوب",
       "logo": "vee-coffee-shop-logo.jpg",
+      "logo_bg": "#2d7d32",
       "source_url": "vee_coffee_shop",
       "categories": [
         {
