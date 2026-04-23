@@ -77,7 +77,7 @@ export default function RestaurantGrid({
           </div>
         )}
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-3">
           {filtered.map((restaurant) => {
             const itemCount = countItems(restaurant);
 
@@ -87,9 +87,9 @@ export default function RestaurantGrid({
                 href={`/restaurant/${restaurant.id}`}
                 className="group flex flex-col overflow-hidden rounded-3xl border border-[#1AABBD]/15 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#1AABBD]/40 hover:shadow-lg hover:shadow-[#1AABBD]/10"
               >
-                {/* Logo area — full cover */}
+                {/* Logo area — mobile optimized */}
                 <div
-                  className="relative h-44 overflow-hidden"
+                  className="relative h-32 sm:h-40 md:h-44 overflow-hidden"
                   style={{ backgroundColor: (restaurant.logo_bg as string) || "#EBF8FA" }}
                 >
                   {restaurant.logo ? (
@@ -98,7 +98,7 @@ export default function RestaurantGrid({
                       alt={restaurant.name}
                       fill
                       fallback={restaurant.name[0]}
-                      className={`transition-transform duration-500 group-hover:scale-105 ${restaurant.logo_fit === "contain" ? "object-contain p-2" : "object-cover"}`}
+                      className={`transition-transform duration-500 group-hover:scale-105 ${restaurant.logo_fit === "contain" ? "object-contain p-1 sm:p-2 md:p-3" : "object-cover"}`}
                     />
                   ) : (
                     <div className="flex h-full items-center justify-center bg-[#1AABBD] text-4xl font-black text-white">
@@ -112,24 +112,24 @@ export default function RestaurantGrid({
                 </div>
 
                 {/* Info */}
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="font-extrabold leading-tight text-[#0C2B35] transition-colors group-hover:text-[#1AABBD]">
+                <div className="flex flex-1 flex-col p-3 sm:p-4 md:p-5">
+                  <h3 className="text-sm sm:text-base font-extrabold leading-tight text-[#0C2B35] transition-colors group-hover:text-[#1AABBD]">
                     {restaurant.name}
                   </h3>
                   {restaurant.name_ar && (
-                    <p className="mt-0.5 text-sm text-slate-400">{restaurant.name_ar}</p>
+                    <p className="mt-0.5 text-xs sm:text-sm text-slate-400">{restaurant.name_ar}</p>
                   )}
-                  <div className="mt-3 flex items-center gap-1.5 text-xs text-slate-400">
+                  <div className="mt-2 sm:mt-3 flex items-center gap-1.5 text-xs text-slate-400">
                     <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-                    {T.grid_open} · {(restaurant.categories ?? []).length} {T.grid_categories}
+                    <span className="hidden sm:inline">{T.grid_open} · </span>{(restaurant.categories ?? []).length} {T.grid_categories}
                   </div>
                 </div>
 
                 {/* CTA */}
-                <div className="flex items-center justify-between border-t border-[#1AABBD]/10 px-5 py-3.5">
-                  <span className="text-sm font-bold text-[#1AABBD]">{T.grid_view}</span>
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1AABBD] text-white transition-all group-hover:bg-[#0C2B35] group-hover:translate-x-0.5">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <div className="flex items-center justify-between border-t border-[#1AABBD]/10 px-3 sm:px-4 md:px-5 py-2.5 sm:py-3.5">
+                  <span className="text-xs sm:text-sm font-bold text-[#1AABBD]">{T.grid_view}</span>
+                  <div className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-[#1AABBD] text-white transition-all group-hover:bg-[#0C2B35] group-hover:translate-x-0.5">
+                    <svg width="10" height="10" className="sm:w-3 sm:h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                   </div>
