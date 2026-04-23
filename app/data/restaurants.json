@@ -3337,7 +3337,7 @@
       "id": "janet-zahr-el-loz",
       "name": "Zaher El Loz",
       "name_ar": "زهر اللوز",
-      "logo": "zaher-el-loz-logo-fixed.jpg",
+      "logo": "zaher-el-loz-logo.jpg",
       "source_url": "zaher_el_loz",
       "categories": [
         {
@@ -4093,7 +4093,7 @@
       "id": "al-baydar",
       "name": "Al Baydar Restaurant",
       "name_ar": "البيدر",
-      "logo": "al-baydar-logo-fixed.jpg",
+      "logo": "al-baydar-logo.jpg",
       "source_url": "al_baydar_restaurant",
       "categories": [
         {
@@ -4208,7 +4208,7 @@
       "id": "doh-on-the-go",
       "name": "Doh on the Go",
       "name_ar": "دو اون ذا جو",
-      "logo": "doh-on-the-go-logo-fixed.jpg",
+      "logo": "doh-on-the-go-logo.jpg",
       "source_url": "doh_on_the_go",
       "categories": [
         {
