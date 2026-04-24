@@ -58,24 +58,40 @@ function buildWhatsAppMessage(
   }
 
   msg += "━━━━━━━━━━━━━━━━━━━━\n";
+  
+  // Show subtotals
   if (subtotal > 0) {
     msg += `Subtotal: $${subtotal.toFixed(2)}\n`;
   }
   if (subtotalLbp > 0) {
-    msg += `Subtotal: ${subtotalLbp >= 1_000_000 ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP` : `${subtotalLbp.toLocaleString()} LBP`}\n`;
+    const lbpDisplay = subtotalLbp >= 1_000_000 
+      ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP`
+      : `${subtotalLbp.toLocaleString()} LBP`;
+    msg += `Subtotal: ${lbpDisplay}\n`;
   }
+  
+  // Always show delivery
   msg += `Delivery (${customer.zone}): $${deliveryFee.toFixed(2)}\n`;
   
-  // Handle totals based on what items we have
+  // Show totals
   if (subtotal > 0 && subtotalLbp > 0) {
     // Mixed USD and LBP items
-    msg += `*Total: $${(subtotal + deliveryFee).toFixed(2)} + ${subtotalLbp >= 1_000_000 ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP` : `${subtotalLbp.toLocaleString()} LBP`}*\n`;
+    const lbpDisplay = subtotalLbp >= 1_000_000 
+      ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP`
+      : `${subtotalLbp.toLocaleString()} LBP`;
+    msg += `*Total: $${(subtotal + deliveryFee).toFixed(2)} + ${lbpDisplay}*\n`;
   } else if (subtotal > 0) {
     // Only USD items
     msg += `*Total: $${(subtotal + deliveryFee).toFixed(2)}*\n`;
   } else if (subtotalLbp > 0) {
-    // Only LBP items
-    msg += `*Total: ${subtotalLbp >= 1_000_000 ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP` : `${subtotalLbp.toLocaleString()} LBP`} + $${deliveryFee.toFixed(2)} delivery*\n`;
+    // Only LBP items - this is the key fix
+    const lbpDisplay = subtotalLbp >= 1_000_000 
+      ? `${(subtotalLbp / 1_000_000).toFixed(2)}M LBP`
+      : `${subtotalLbp.toLocaleString()} LBP`;
+    msg += `*Total: ${lbpDisplay} + $${deliveryFee.toFixed(2)} delivery*\n`;
+  } else {
+    // Fallback case
+    msg += `*Total: $${deliveryFee.toFixed(2)}*\n`;
   }
   msg += "\n";
 
@@ -91,6 +107,7 @@ function buildWhatsAppMessage(
 
   msg += "\n\n💵 *Payment: Cash on delivery*";
   msg += "\n\nPlease confirm my order. Thank you! 🙏";
+  msg += "\n\n✅ *Fixed Version v2.0*";
 
   return msg;
 }
