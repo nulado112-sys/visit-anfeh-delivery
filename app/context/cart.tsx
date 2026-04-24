@@ -15,6 +15,10 @@ export type CartItem = {
   price: number | null; // null = LBP price only
   priceLbp: number | null;
   quantity: number;
+  customizations?: {
+    remove?: string[];
+    add?: string[];
+  };
 };
 
 type CartState = {
@@ -33,11 +37,19 @@ type CartAction =
 function cartReducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
     case "ADD": {
+      // Create a unique key for items with customizations
+      const getItemKey = (item: Omit<CartItem, "quantity">) => {
+        const customKey = item.customizations 
+          ? JSON.stringify(item.customizations)
+          : "no-custom";
+        return `${item.restaurantId}-${item.name}-${customKey}`;
+      };
+
+      const newItemKey = getItemKey(action.item);
       const idx = state.items.findIndex(
-        (i) =>
-          i.restaurantId === action.item.restaurantId &&
-          i.name === action.item.name,
+        (i) => getItemKey(i) === newItemKey
       );
+      
       if (idx >= 0) {
         const updated = [...state.items];
         updated[idx] = { ...updated[idx], quantity: updated[idx].quantity + 1 };

@@ -18,6 +18,42 @@ export const metadata: Metadata = {
   title: "Visit Anfeh Delivery",
   description:
     "Order from the best restaurants in Anfeh, Lebanon. Fast delivery, great food.",
+  keywords: ["food delivery", "Anfeh", "Lebanon", "restaurants", "delivery", "Lebanese food"],
+  authors: [{ name: "Marketing Leads" }],
+  creator: "Marketing Leads",
+  openGraph: {
+    title: "Visit Anfeh Delivery",
+    description: "Order from the best restaurants in Anfeh, Lebanon. Fast delivery, great food.",
+    url: "https://visitanfehdelivery.vercel.app",
+    siteName: "Visit Anfeh Delivery",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Visit Anfeh Delivery - Order from the best restaurants in Anfeh, Lebanon",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Visit Anfeh Delivery",
+    description: "Order from the best restaurants in Anfeh, Lebanon. Fast delivery, great food.",
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/favicon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport = {

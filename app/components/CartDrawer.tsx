@@ -53,6 +53,16 @@ function buildWhatsAppMessage(
           ? `${(item.priceLbp / 1_000_000).toFixed(2)}M LBP`
           : `LBP`;
       msg += `- ${item.name} ×${item.quantity} (${priceStr})\n`;
+      
+      // Add customizations if any
+      if (item.customizations) {
+        if (item.customizations.remove && item.customizations.remove.length > 0) {
+          msg += `  🚫 Remove: ${item.customizations.remove.join(", ")}\n`;
+        }
+        if (item.customizations.add && item.customizations.add.length > 0) {
+          msg += `  ➕ Add: ${item.customizations.add.join(", ")}\n`;
+        }
+      }
     }
     msg += "\n";
   }
@@ -364,6 +374,20 @@ export default function CartDrawer() {
                               <p className="text-xs text-slate-400">
                                 {item.price !== null ? `$${item.price} ${T.cart_each}` : "LBP price"}
                               </p>
+                              {item.customizations && (
+                                <div className="mt-1 space-y-1">
+                                  {item.customizations.remove && item.customizations.remove.length > 0 && (
+                                    <p className="text-xs text-red-300">
+                                      🚫 Remove: {item.customizations.remove.join(", ")}
+                                    </p>
+                                  )}
+                                  {item.customizations.add && item.customizations.add.length > 0 && (
+                                    <p className="text-xs text-green-300">
+                                      ➕ Add: {item.customizations.add.join(", ")}
+                                    </p>
+                                  )}
+                                </div>
+                              )}
                             </div>
                             <div className="flex items-center gap-1.5">
                               <button
