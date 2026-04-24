@@ -4652,12 +4652,7 @@
               "customizations": {
                 "remove_options": ["No Cheese", "No Lettuce", "No Tomatoes", "No Pickles", "No Special Sauce"]
               }
-            }
-          ]
-        },
-        {
-          "name": "Salads",
-          "items": [
+            },
             {
               "name": "Tilyāne",
               "description": "Avocado, creamy cheesecake, tomatoes, jalapeño, arugula, balsamic, olive oil",
