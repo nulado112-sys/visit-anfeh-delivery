@@ -107,7 +107,6 @@ function buildWhatsAppMessage(
 
   msg += "\n\n💵 *Payment: Cash on delivery*";
   msg += "\n\nPlease confirm my order. Thank you! 🙏";
-  msg += "\n\n✅ *Fixed Version v2.0*";
 
   return msg;
 }
