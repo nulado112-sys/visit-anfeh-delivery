@@ -4,6 +4,24 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Prevent horizontal scrolling and layout shifts */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure containers don't cause overflow */
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @keyframes fade-up {

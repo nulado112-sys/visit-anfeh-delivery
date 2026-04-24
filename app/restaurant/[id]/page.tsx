@@ -34,7 +34,7 @@ export default async function RestaurantPage({ params }: Props) {
       />
 
       {/* Menu */}
-      <section className="mx-auto max-w-7xl px-5 py-10">
+      <section className="mx-auto max-w-7xl px-5 py-10 overflow-hidden">
         <MenuTabs
           restaurantId={restaurant.id}
           restaurantName={restaurant.name}

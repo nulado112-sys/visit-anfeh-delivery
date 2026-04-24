@@ -23,8 +23,8 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="bg-[#F4FAFB] font-sans antialiased">
+      <body className="bg-[#F4FAFB] font-sans antialiased overflow-x-hidden min-h-screen">
         <LanguageProvider>
         <CartProvider>
           <Navbar />
