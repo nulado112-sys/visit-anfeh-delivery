@@ -2988,17 +2988,26 @@
             {
               "name": "Kids Meal",
               "description": "3 pcs chicken strips, fries, bun, sauce, ketchup",
-              "price": 8
+              "price": 8,
+              "customizations": {
+                "remove_options": ["No Fries", "No Bun", "No Sauce", "No Ketchup"]
+              }
             },
             {
               "name": "5 pcs Combo",
               "description": "5 pcs chicken strips, coleslaw, fries, bun, sauce, ketchup",
-              "price": 13
+              "price": 13,
+              "customizations": {
+                "remove_options": ["No Coleslaw", "No Fries", "No Bun", "No Sauce", "No Ketchup"]
+              }
             },
             {
               "name": "Bucket Combo",
               "description": "12 pcs chicken strips, 3 coleslaw, fries, 3 buns, sauce, ketchup",
-              "price": 29
+              "price": 29,
+              "customizations": {
+                "remove_options": ["No Coleslaw", "No Fries", "No Buns", "No Sauce", "No Ketchup"]
+              }
             }
           ],
           "add_ons": [
@@ -3026,22 +3035,34 @@
             {
               "name": "Crispy Chicken Burger",
               "description": "Soft bun with chicken strips, lettuce, pickles, cheddar, Macro's sauce, and BBQ/ketchup sauce",
-              "price": 6.5
+              "price": 6.5,
+              "customizations": {
+                "remove_options": ["No Lettuce", "No Pickles", "No Cheddar", "No Macro's Sauce", "No BBQ Sauce", "No Ketchup"]
+              }
             },
             {
               "name": "Crispy Chicken Wrap",
               "description": "Soft tortilla bread with chicken strips, lettuce, pickles, mayo garlic sauce",
-              "price": 5
+              "price": 5,
+              "customizations": {
+                "remove_options": ["No Lettuce", "No Pickles", "No Mayo Garlic Sauce"]
+              }
             },
             {
               "name": "Mozzarella Sticks",
               "description": "5 pcs mozzarella sticks with Macro's sauce",
-              "price": 6
+              "price": 6,
+              "customizations": {
+                "remove_options": ["No Macro's Sauce"]
+              }
             },
             {
               "name": "Jalapeño Bites",
               "description": "5 pcs jalapeño bites with Macro's sauce",
-              "price": 8
+              "price": 8,
+              "customizations": {
+                "remove_options": ["No Macro's Sauce"]
+              }
             }
           ],
           "add_ons": [
@@ -3956,7 +3977,7 @@
         {
           "name": "Uramaki (8pcs)",
           "items": [
-            { "name": "Philly Salmon Maki", "description": "Sushi rice, smoked salmon, philadelphia cheese, sesame", "price": 8.00 },
+            { "name": "Philly Salmon Maki", "description": "Sushi rice, smoked salmon, philadelphia cheese, sesame", "price": 8.00, "customizations": { "remove_options": ["No Philadelphia Cheese", "No Sesame"] } },
             { "name": "Crispy Crazy Maki", "description": "Sushi rice, crazy crab, japanese mayo, tobiko, panko", "price": 8.00 },
             { "name": "Tuna Avocado Maki", "description": "Sushi rice, tuna, avocado, japanese mayo, sesame", "price": 8.00 },
             { "name": "Crazy Masago Maki", "description": "Sushi rice, spicy crazy crab, japanese mayo, tobiko", "price": 8.00 },
@@ -3968,13 +3989,13 @@
             { "name": "Crispy Mango Maki", "description": "Sushi rice, crabstick, mango, topped with panko and japanese mayo", "price": 8.00 },
             { "name": "Crispy Philadelphia Maki", "description": "Sushi rice, crazy crab, cream cheese, tobiko, panko", "price": 8.00 },
             { "name": "Purple Flame Maki", "description": "Sushi rice, cooked tuna, avocado, cucumber, topped with red cabbage and spicy mayo", "price": 8.00 },
-            { "name": "California Maki", "description": "Sushi rice, imitation crab, avocado, tobiko", "price": 8.00 }
+            { "name": "California Maki", "description": "Sushi rice, imitation crab, avocado, tobiko", "price": 8.00, "customizations": { "remove_options": ["No Avocado", "No Tobiko"] } }
           ]
         },
         {
           "name": "Special Rolls (10pcs)",
           "items": [
-            { "name": "Dragon Roll", "description": "Sushi rice, crabstick, cucumber, topped with avocado, tobiko, spicy mayo, sesame and unagi sauce", "price": 10.00 },
+            { "name": "Dragon Roll", "description": "Sushi rice, crabstick, cucumber, topped with avocado, tobiko, spicy mayo, sesame and unagi sauce", "price": 10.00, "customizations": { "remove_options": ["No Cucumber", "No Avocado", "No Tobiko", "No Spicy Mayo", "No Sesame", "No Unagi Sauce"] } },
             { "name": "Ebi Chiri Roll", "description": "Sushi rice, crab stick, cucumber, cream cheese, mango topped with spicy crazy crab and tempura", "price": 10.00 },
             { "name": "Special Crab Roll", "description": "Sushi rice, crazy crab, cream cheese, avocado, topped with spicy mayo", "price": 10.00 },
             { "name": "Crispy Spiced Salmon Roll", "description": "Sushi rice, crabstick, cucumber, avocado, cream cheese, topped with spiced salmon, mayo, tobiko and unagi sauce", "price": 10.00 },
