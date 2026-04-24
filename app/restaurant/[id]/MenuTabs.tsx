@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useCart } from "../../context/cart";
 import { showToast } from "../../components/Toast";
 import { useLang, t } from "../../context/language";
+import CustomizationModal from "../../components/CustomizationModal";
 
 type Item = {
   name: string;
@@ -11,6 +12,10 @@ type Item = {
   price?: number;
   priceLbp?: number;
   size_options?: { size: string; price: number }[];
+  customizations?: {
+    remove_options?: string[];
+    add_options?: string[];
+  };
   is_new?: boolean;
   note?: string;
 };
@@ -86,26 +91,70 @@ function SizeAddButton({ item, size, price, restaurantId, restaurantName }: { it
   );
 }
 
-function AddButton({ item, restaurantId, restaurantName }: { item: Item; restaurantId: string; restaurantName: string }) {
+function AddButton({ item, restaurantId, restaurantName, removedIngredients, onIngredientsChange }: { 
+  item: Item; 
+  restaurantId: string; 
+  restaurantName: string;
+  removedIngredients: string[];
+  onIngredientsChange: (removed: string[]) => void;
+}) {
   const { items, addItem, updateQty } = useCart();
   const cartItem = items.find(i => i.restaurantId === restaurantId && i.name === item.name);
   const qty = cartItem?.quantity ?? 0;
+  const [showCustomization, setShowCustomization] = useState(false);
 
   function handleAdd() {
-    addItem({ restaurantId, restaurantName, name: item.name, price: item.price ?? null, priceLbp: item.priceLbp ?? null });
+    if (item.customizations && item.customizations.add_options && item.customizations.add_options.length > 0) {
+      setShowCustomization(true);
+    } else {
+      const customizations = removedIngredients.length > 0 ? { remove: removedIngredients } : undefined;
+      addItem({ 
+        restaurantId, 
+        restaurantName, 
+        name: item.name, 
+        price: item.price ?? null, 
+        priceLbp: item.priceLbp ?? null,
+        customizations
+      });
+      showToast(item.name);
+    }
+  }
+
+  function handleCustomizedAdd(customizations: { remove: string[]; add: string[] }) {
+    const finalCustomizations = {
+      remove: [...removedIngredients, ...customizations.remove],
+      add: customizations.add
+    };
+    addItem({ 
+      restaurantId, 
+      restaurantName, 
+      name: item.name, 
+      price: item.price ?? null, 
+      priceLbp: item.priceLbp ?? null,
+      customizations: finalCustomizations.remove.length > 0 || finalCustomizations.add.length > 0 ? finalCustomizations : undefined
+    });
     showToast(item.name);
   }
 
   if (qty === 0) {
     return (
-      <button
-        onClick={handleAdd}
-        className="flex h-10 w-10 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full bg-[#1AABBD] text-white shadow-sm transition hover:bg-[#168fa0] hover:scale-110 active:scale-95 touch-manipulation"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-          <path d="M12 5v14M5 12h14"/>
-        </svg>
-      </button>
+      <>
+        <button
+          onClick={handleAdd}
+          className="flex h-10 w-10 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full bg-[#1AABBD] text-white shadow-sm transition hover:bg-[#168fa0] hover:scale-110 active:scale-95 touch-manipulation"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+        </button>
+        
+        <CustomizationModal
+          isOpen={showCustomization}
+          onClose={() => setShowCustomization(false)}
+          item={item}
+          onAddToCart={handleCustomizedAdd}
+        />
+      </>
     );
   }
 
@@ -132,12 +181,76 @@ function AddButton({ item, restaurantId, restaurantName }: { item: Item; restaur
   );
 }
 
+function IngredientsRemover({ item, removedIngredients, onIngredientsChange }: {
+  item: Item;
+  removedIngredients: string[];
+  onIngredientsChange: (removed: string[]) => void;
+}) {
+  const { lang } = useLang();
+  
+  if (!item.customizations?.remove_options || item.customizations.remove_options.length === 0) {
+    return null;
+  }
+
+  const toggleIngredient = (ingredient: string) => {
+    const newRemoved = removedIngredients.includes(ingredient)
+      ? removedIngredients.filter(i => i !== ingredient)
+      : [...removedIngredients, ingredient];
+    onIngredientsChange(newRemoved);
+  };
+
+  return (
+    <div className="mt-3">
+      <p className="text-xs font-semibold text-slate-600 mb-2">
+        {lang === "ar" ? "اضغط لإزالة المكونات:" : "Tap to remove ingredients:"}
+      </p>
+      <div className="flex flex-wrap gap-1.5">
+        {item.customizations.remove_options.map((ingredient) => {
+          const isRemoved = removedIngredients.includes(ingredient);
+          return (
+            <button
+              key={ingredient}
+              onClick={() => toggleIngredient(ingredient)}
+              className={`px-2.5 py-1 text-xs font-medium rounded-full border transition-all ${
+                isRemoved
+                  ? "bg-red-50 border-red-200 text-red-700 line-through opacity-60"
+                  : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300"
+              }`}
+            >
+              {isRemoved && "🚫 "}
+              {ingredient.replace(/^No /, "")}
+            </button>
+          );
+        })}
+      </div>
+      {removedIngredients.length > 0 && (
+        <p className="mt-1.5 text-xs text-red-600 font-medium">
+          {lang === "ar" 
+            ? `${removedIngredients.length} مكون محذوف` 
+            : `${removedIngredients.length} ingredient${removedIngredients.length === 1 ? '' : 's'} removed`
+          }
+        </p>
+      )}
+    </div>
+  );
+}
+
 export default function MenuTabs({ restaurantId, restaurantName, categories, currencyNote }: Props) {
   const { lang } = useLang();
   const T = t[lang];
   const validCategories = categories.filter(c => c.items && c.items.length > 0);
   const [active, setActive] = useState(validCategories[0]?.name ?? "");
   const activeCategory = categories.find(c => c.name === active);
+  
+  // State for tracking removed ingredients per item
+  const [itemRemovedIngredients, setItemRemovedIngredients] = useState<Record<string, string[]>>({});
+  
+  const handleIngredientsChange = (itemName: string, removedIngredients: string[]) => {
+    setItemRemovedIngredients(prev => ({
+      ...prev,
+      [itemName]: removedIngredients
+    }));
+  };
 
   if (categories.length === 0) {
     return (
@@ -211,62 +324,84 @@ export default function MenuTabs({ restaurantId, restaurantName, categories, cur
 
             {activeCategory.items && activeCategory.items.length > 0 ? (
               <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-                {activeCategory.items.map((item, i) => (
-                  <div
-                    key={i}
-                    className="group flex items-start gap-4 rounded-2xl border border-[#1AABBD]/10 bg-white p-4 shadow-sm transition hover:border-[#1AABBD]/30 hover:shadow-md"
-                  >
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <h4 className="font-bold leading-tight text-[#0C2B35]">{item.name}</h4>
-                        {item.is_new && (
-                          <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs font-bold text-green-700">{T.menu_new}</span>
+                {activeCategory.items.map((item, i) => {
+                  const removedIngredients = itemRemovedIngredients[item.name] || [];
+                  return (
+                    <div
+                      key={i}
+                      className="group flex items-start gap-4 rounded-2xl border border-[#1AABBD]/10 bg-white p-4 shadow-sm transition hover:border-[#1AABBD]/30 hover:shadow-md"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h4 className="font-bold leading-tight text-[#0C2B35]">{item.name}</h4>
+                          {item.customizations && (
+                            <span className="rounded-full bg-[#1AABBD]/10 px-2 py-0.5 text-xs font-bold text-[#1AABBD]">
+                              🎛️ Customizable
+                            </span>
+                          )}
+                          {item.is_new && (
+                            <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs font-bold text-green-700">{T.menu_new}</span>
+                          )}
+                        </div>
+                        {item.description && (
+                          <p className="mt-1 text-sm leading-relaxed text-slate-500 line-clamp-2">{item.description}</p>
                         )}
-                      </div>
-                      {item.description && (
-                        <p className="mt-1 text-sm leading-relaxed text-slate-500 line-clamp-2">{item.description}</p>
-                      )}
-                      {item.note && item.note !== "Ask for price" && (
-                        <p className="mt-1 text-xs italic text-amber-600">{item.note}</p>
-                      )}
-                      <div className="mt-2">
-                        {item.size_options && item.size_options.length > 0 ? (
-                          <div className="space-y-2">
-                            {item.size_options.map((option, idx) => (
-                              <div key={idx} className="flex items-center justify-between text-sm">
-                                <div>
-                                  <span className="font-medium text-slate-600">{option.size}</span>
-                                  <span className="ml-2 font-bold text-[#1AABBD]">${option.price}</span>
+                        {item.note && item.note !== "Ask for price" && (
+                          <p className="mt-1 text-xs italic text-amber-600">{item.note}</p>
+                        )}
+                        
+                        {/* Ingredient removal interface */}
+                        <IngredientsRemover
+                          item={item}
+                          removedIngredients={removedIngredients}
+                          onIngredientsChange={(removed) => handleIngredientsChange(item.name, removed)}
+                        />
+                        
+                        <div className="mt-2">
+                          {item.size_options && item.size_options.length > 0 ? (
+                            <div className="space-y-2">
+                              {item.size_options.map((option, idx) => (
+                                <div key={idx} className="flex items-center justify-between text-sm">
+                                  <div>
+                                    <span className="font-medium text-slate-600">{option.size}</span>
+                                    <span className="ml-2 font-bold text-[#1AABBD]">${option.price}</span>
+                                  </div>
+                                  <SizeAddButton 
+                                    item={item} 
+                                    size={option.size} 
+                                    price={option.price} 
+                                    restaurantId={restaurantId} 
+                                    restaurantName={restaurantName} 
+                                  />
                                 </div>
-                                <SizeAddButton 
-                                  item={item} 
-                                  size={option.size} 
-                                  price={option.price} 
-                                  restaurantId={restaurantId} 
-                                  restaurantName={restaurantName} 
-                                />
-                              </div>
-                            ))}
-                          </div>
-                        ) : (
-                          <p className="text-base font-extrabold text-[#1AABBD]">
-                            {item.note === "Ask for price" ? (
-                              <span className="text-sm font-semibold text-slate-400 italic">{T.menu_ask_price}</span>
-                            ) : (
-                              formatPrice(item)
-                            )}
-                          </p>
+                              ))}
+                            </div>
+                          ) : (
+                            <p className="text-base font-extrabold text-[#1AABBD]">
+                              {item.note === "Ask for price" ? (
+                                <span className="text-sm font-semibold text-slate-400 italic">{T.menu_ask_price}</span>
+                              ) : (
+                                formatPrice(item)
+                              )}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="shrink-0 pt-0.5">
+                        {item.note !== "Ask for price" && !(item.size_options && item.size_options.length > 0) && (
+                          <AddButton 
+                            item={item} 
+                            restaurantId={restaurantId} 
+                            restaurantName={restaurantName}
+                            removedIngredients={removedIngredients}
+                            onIngredientsChange={(removed) => handleIngredientsChange(item.name, removed)}
+                          />
                         )}
                       </div>
                     </div>
-
-                    <div className="shrink-0 pt-0.5">
-                      {item.note !== "Ask for price" && !(item.size_options && item.size_options.length > 0) && (
-                        <AddButton item={item} restaurantId={restaurantId} restaurantName={restaurantName} />
-                      )}
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             ) : (
               <p className="text-sm italic text-slate-400">{T.menu_no_items}</p>
