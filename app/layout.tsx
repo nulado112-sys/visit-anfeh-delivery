@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Visit Anfeh Delivery",
     description: "Order from the best restaurants in Anfeh, Lebanon. Fast delivery, great food.",
-    url: "https://visitanfehdelivery.vercel.app",
+    url: "https://visitanfeh.delivery",
     siteName: "Visit Anfeh Delivery",
     images: [
       {
