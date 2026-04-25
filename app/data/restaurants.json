@@ -5162,6 +5162,212 @@
           ]
         }
       ]
+    },
+    {
+      "id": "joudz-bites",
+      "name": "Joudz Bites",
+      "logo": "joudz-bites-logo.jpg",
+      "phone": "03 33 17 99",
+      "location": "Anfeh - Koura",
+      "note": "Delivery only",
+      "categories": [
+        {
+          "name": "Sandwiches",
+          "items": [
+            {
+              "name": "Halloumi Pesto",
+              "description": "Grilled Halloumi, Iceberg, Cherry Tomato, Pesto Sauce",
+              "price": 6,
+              "customizations": {
+                "remove_options": ["No Iceberg", "No Cherry Tomato", "No Pesto Sauce"]
+              }
+            },
+            {
+              "name": "Tuna Sandwich",
+              "description": "Tuna, Corn, Pickles, Black Olives, Mayo Mustard Sauce",
+              "price": 6.5,
+              "customizations": {
+                "remove_options": ["No Corn", "No Pickles", "No Black Olives", "No Mayo Mustard Sauce"]
+              }
+            },
+            {
+              "name": "Crab Sandwich",
+              "description": "Crab, Lettuce, Carrots, Cucumber, Corn, Mayo Mustard Sauce",
+              "price": 6.5,
+              "customizations": {
+                "remove_options": ["No Lettuce", "No Carrots", "No Cucumber", "No Corn", "No Mayo Mustard Sauce"]
+              }
+            },
+            {
+              "name": "Makanek Sandwich",
+              "description": "Makanek, Tomato, Lemon, Mint, Pickles",
+              "price": 6.5,
+              "customizations": {
+                "remove_options": ["No Tomato", "No Lemon", "No Mint", "No Pickles"]
+              }
+            },
+            {
+              "name": "Soujouk Sandwich",
+              "description": "Soujouk, Tomato, Lemon, Mayo, Pickles",
+              "price": 6.5,
+              "customizations": {
+                "remove_options": ["No Tomato", "No Lemon", "No Mayo", "No Pickles"]
+              }
+            },
+            {
+              "name": "Taouk Sandwich",
+              "description": "Taouk, Pickles, Coleslaw, Garlic Cream",
+              "price": 7,
+              "customizations": {
+                "remove_options": ["No Pickles", "No Coleslaw", "No Garlic Cream"]
+              }
+            },
+            {
+              "name": "Chicken Wrap",
+              "description": "Chicken, Cheddar Cheese, Corn, Pickles, BBQ Mayo Sauce",
+              "price": 7.5,
+              "customizations": {
+                "remove_options": ["No Cheddar Cheese", "No Corn", "No Pickles", "No BBQ Mayo Sauce"]
+              }
+            },
+            {
+              "name": "Mexicana Sandwich",
+              "description": "Chicken, Corn, Bell pepper, Onion, Buffalo Sauce, Mayo Sauce",
+              "price": 7.5,
+              "customizations": {
+                "remove_options": ["No Corn", "No Bell Pepper", "No Onion", "No Buffalo Sauce", "No Mayo Sauce"]
+              }
+            },
+            {
+              "name": "Crispy Chicken Sub",
+              "description": "Crispy chicken, Pickles, Tomato, Ketchup, Cheddar Cheese, Coleslaw",
+              "price": 8,
+              "customizations": {
+                "remove_options": ["No Pickles", "No Tomato", "No Ketchup", "No Cheddar Cheese", "No Coleslaw"]
+              }
+            },
+            {
+              "name": "Chicken Fajita",
+              "description": "Chicken, Fresh mushroom, Onion, Bell Pepper, Cheese, Soya, Mayo Sauce",
+              "price": 8.5,
+              "customizations": {
+                "remove_options": ["No Fresh Mushroom", "No Onion", "No Bell Pepper", "No Cheese", "No Soya", "No Mayo Sauce"]
+              }
+            },
+            {
+              "name": "Chicken Sub",
+              "description": "Chicken, Lettuce, Pickles, Tomato, Garlic Mayo Sauce",
+              "price": 8.5,
+              "customizations": {
+                "remove_options": ["No Lettuce", "No Pickles", "No Tomato", "No Garlic Mayo Sauce"]
+              }
+            },
+            {
+              "name": "Steak Sandwich",
+              "description": "Grilled Beef Filet, Tomato, Onion, Cheddar, Fresh Mushroom, Mayo Sauce",
+              "price": 9,
+              "customizations": {
+                "remove_options": ["No Tomato", "No Onion", "No Cheddar", "No Fresh Mushroom", "No Mayo Sauce"]
+              }
+            },
+            {
+              "name": "Beef Fajita",
+              "description": "Grilled Beef Strips, Fresh Mushroom, Onion, Bell Pepper, Cheese, Soya Mayo Sauce",
+              "price": 9,
+              "customizations": {
+                "remove_options": ["No Fresh Mushroom", "No Onion", "No Bell Pepper", "No Cheese", "No Soya Mayo Sauce"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Burgers",
+          "items": [
+            {
+              "name": "Chicken Burger",
+              "description": "Chicken, Coleslaw, Pickles, Tomato",
+              "price": 6,
+              "customizations": {
+                "remove_options": ["No Coleslaw", "No Pickles", "No Tomato"]
+              }
+            },
+            {
+              "name": "Chicken Breast Burger",
+              "description": "Chicken Breast, Lettuce, Pickles, Garlic Mayo Sauce",
+              "price": 7,
+              "customizations": {
+                "remove_options": ["No Lettuce", "No Pickles", "No Garlic Mayo Sauce"]
+              }
+            },
+            {
+              "name": "Classic Burger",
+              "description": "Angus Beef Patty, Tomato, Onion, Coleslaw, Pickles, Ketchup",
+              "price": 7,
+              "customizations": {
+                "remove_options": ["No Tomato", "No Onion", "No Coleslaw", "No Pickles", "No Ketchup"]
+              }
+            },
+            {
+              "name": "Crispy Burger",
+              "description": "Crispy Chicken, Lettuce, Pickles, Cheddar Cheese, Garlic Mayo sauce",
+              "price": 7,
+              "customizations": {
+                "remove_options": ["No Lettuce", "No Pickles", "No Cheddar Cheese", "No Garlic Mayo Sauce"]
+              }
+            },
+            {
+              "name": "Joudz Burger",
+              "description": "Angus Beef, Coleslaw, Tomato, Pickles, Cheddar Cheese, Ketchup",
+              "price": 8,
+              "customizations": {
+                "remove_options": ["No Coleslaw", "No Tomato", "No Pickles", "No Cheddar Cheese", "No Ketchup"]
+              }
+            },
+            {
+              "name": "Michel Burger",
+              "description": "Angus Beef, Fresh mushroom, Mozzarella Cheese, Ementale cheese, Mayo Sauce",
+              "price": 8,
+              "customizations": {
+                "remove_options": ["No Fresh Mushroom", "No Mozzarella Cheese", "No Ementale Cheese", "No Mayo Sauce"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Kids Meals",
+          "items": [
+            {
+              "name": "Mini Burgers Box",
+              "description": "2 Mini Angus Beef Burgers Box with Fries",
+              "price": 7,
+              "customizations": {
+                "remove_options": ["No Fries"]
+              }
+            },
+            {
+              "name": "Chicken Nuggets",
+              "description": "Six-Piece Chicken Nuggets Box with Fries",
+              "price": 6.5,
+              "customizations": {
+                "remove_options": ["No Fries"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Fries",
+          "items": [
+            {
+              "name": "Small Fries",
+              "price": 3.5
+            },
+            {
+              "name": "Big Fries",
+              "price": 5
+            }
+          ]
+        }
+      ]
     }
   ]
 }
