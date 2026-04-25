@@ -2025,7 +2025,6 @@
       "logo": "al-tayeb-logo.jpg",
       "source_url": "aaltayeb.v8softwares.com",
       "location": "Sahet Anfeh, Anfeh el Koura",
-      "phone": "81116532",
       "categories": [
         {
           "name": "Kaakeh",
@@ -2946,7 +2945,6 @@
       "tagline": "Catering",
       "logo": "macros-kitchen-logo.jpg",
       "source_url": "macrokitchen.v8softwares.com",
-      "phone": "+961 79 164 160",
       "location": "Anfeh el Koura",
       "categories": [
         {
@@ -4924,7 +4922,6 @@
       "logo": "mishway-logo.jpg",
       "logo_bg": "#ffffff",
       "source_url": "mishway_restaurant",
-      "phone": "70713763",
       "categories": [
         {
           "name": "Sandwiches",
@@ -5166,8 +5163,7 @@
     {
       "id": "joudz-bites",
       "name": "Joudz Bites",
-      "logo": "joudz-bites-logo.png",
-      "phone": "03 33 17 99",
+      "logo": "joudz-bites-logo.jpg",
       "location": "Anfeh - Koura",
       "note": "Delivery only",
       "categories": [
