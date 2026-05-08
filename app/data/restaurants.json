@@ -1089,7 +1089,7 @@
             },
             {
               "name": "Cheesy Chicken Fries",
-              "price": 7
+              "price": 7.5
             }
           ]
         },
@@ -1099,7 +1099,7 @@
             {
               "name": "Chicken Caesar",
               "description": "Lettuce, parmesan, croutons, chicken, caesar sauce",
-              "price": 6,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Parmesan", "No Croutons", "No Caesar Sauce"]
               }
@@ -1107,26 +1107,26 @@
             {
               "name": "Crab Salad",
               "description": "Iceberg, corn, crab, mustard sauce",
-              "price": 5.5,
+              "price": 6.5,
               "customizations": {
                 "remove_options": ["No Corn", "No Mustard Sauce"]
               }
             },
             {
               "name": "Green Salad",
-              "price": 4
+              "price": 4.5
             },
             {
               "name": "Fetta Salad",
-              "price": 5.5
+              "price": 6.5
             },
             {
               "name": "Nacho Salad",
-              "price": 7.5
+              "price": 8
             },
             {
               "name": "Crispy Chicken Caesar",
-              "price": 6.5
+              "price": 7.5
             }
           ]
         },
@@ -1136,35 +1136,35 @@
             {
               "name": "Mayel",
               "description": "Mozzarella, cheddar, fried chicken, iceberg, mayo, BBQ",
-              "price": 5,
+              "price": 5.5,
               "customizations": {
                 "remove_options": ["No Cheddar", "No Iceberg", "No Mayo", "No BBQ"]
               }
             },
             {
               "name": "Picon",
-              "price": 3
+              "price": 3.5
             },
             {
               "name": "Akkawi",
-              "price": 3.5
+              "price": 4
             },
             {
               "name": "Akkawi + Mozzarella",
-              "price": 4
+              "price": 4.5
             },
             {
               "name": "Mozarella",
-              "price": 3.5
+              "price": 4
             },
             {
               "name": "Ham & Cheese",
-              "price": 4
+              "price": 4.5
             },
             {
               "name": "Submarine",
               "description": "Mozzarella, salami, ham, iceberg, tomato, mayo, mustard",
-              "price": 5,
+              "price": 5.5,
               "customizations": {
                 "remove_options": ["No Salami", "No Ham", "No Iceberg", "No Tomato", "No Mayo", "No Mustard"]
               }
@@ -1172,7 +1172,7 @@
             {
               "name": "3 Cheeses + Chips",
               "description": "Picon, cheddar, mozzarella, chips",
-              "price": 4.5,
+              "price": 5,
               "customizations": {
                 "remove_options": ["No Picon", "No Cheddar", "No Chips"]
               }
@@ -1180,7 +1180,7 @@
             {
               "name": "Pizza",
               "description": "Mozzarella, ham, salami, pizza sauce, olives",
-              "price": 5,
+              "price": 5.5,
               "customizations": {
                 "remove_options": ["No Ham", "No Salami", "No Pizza Sauce", "No Olives"]
               }
@@ -1188,7 +1188,7 @@
             {
               "name": "Soujouk",
               "description": "Mozzarella, soujouk, tomato, pickles, mayo",
-              "price": 5.5,
+              "price": 6,
               "customizations": {
                 "remove_options": ["No Soujouk", "No Tomato", "No Pickles", "No Mayo"]
               }
@@ -1201,7 +1201,7 @@
             {
               "name": "BBQ Philly Chicken",
               "description": "Chicken, pepper, onion, BBQ, mozzarella, pickles, mayo, iceberg",
-              "price": 6.5,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Pepper", "No Onion", "No Pickles", "No Mayo", "No Iceberg"]
               }
@@ -1209,7 +1209,7 @@
             {
               "name": "Spicy Philly Chicken",
               "description": "Chicken, pepper, onion, spicy, mozzarella, pickles, mayo, iceberg",
-              "price": 6.5,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Pepper", "No Onion", "No Pickles", "No Mayo", "No Iceberg", "No Spicy"]
               }
@@ -1217,7 +1217,7 @@
             {
               "name": "Chicken Light",
               "description": "Chicken, rocca, pickles, tomato, light mayo",
-              "price": 6.5,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Rocca", "No Pickles", "No Tomato", "No Mayo"]
               }
@@ -1225,7 +1225,7 @@
             {
               "name": "Turkey and Cheese",
               "description": "Smoked turkey, mozzarella, iceberg, tomato, pickles, light mayo, mustard",
-              "price": 5.5,
+              "price": 6,
               "customizations": {
                 "remove_options": ["No Iceberg", "No Tomato", "No Pickles", "No Mayo", "No Mustard"]
               }
@@ -1233,7 +1233,7 @@
             {
               "name": "Crab Sandwich",
               "description": "Crab, iceberg, pickles, corn, mustard, mayo",
-              "price": 5.5,
+              "price": 6,
               "customizations": {
                 "remove_options": ["No Iceberg", "No Pickles", "No Corn", "No Mustard", "No Mayo"]
               }
@@ -1249,7 +1249,7 @@
             {
               "name": "Chicken Sub",
               "description": "Chicken, lettuce, pickles, cheese, garlic, mayo",
-              "price": 6.5,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Lettuce", "No Pickles", "No Cheese", "No Garlic", "No Mayo"]
               }
@@ -1257,7 +1257,7 @@
             {
               "name": "Honey Mustard Cheddar Crunch",
               "description": "Crispy chicken, coleslaw, cheddar, pickles, honey mustard sauce",
-              "price": 6.5,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Coleslaw", "No Cheddar", "No Pickles", "No Honey Mustard Sauce"]
               }
@@ -1265,7 +1265,7 @@
             {
               "name": "Tawouk Bel Khebez",
               "description": "Chicken, coleslaw, pickles, garlic, fries",
-              "price": 6,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Coleslaw", "No Pickles", "No Garlic", "No Fries"]
               }
@@ -1273,7 +1273,7 @@
             {
               "name": "Chicken Bomb",
               "description": "Chicken, pepper, onion, corn, fresh mushrooms, mozzarella, special sauce",
-              "price": 6.5,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Pepper", "No Onion", "No Corn", "No Mushrooms", "No Special Sauce"]
               }
@@ -1281,7 +1281,7 @@
             {
               "name": "San Francisco",
               "description": "Chicken, coleslaw, pickles, cheddar, tomato, soy sauce",
-              "price": 6.5,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Coleslaw", "No Pickles", "No Cheddar", "No Tomato", "No Soy Sauce"]
               }
@@ -1289,7 +1289,7 @@
             {
               "name": "Buffalo Crispy Ranch",
               "description": "Buffalo crispy, iceberg, tomato, pickles, ranch sauce",
-              "price": 6.5,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Iceberg", "No Tomato", "No Pickles", "No Ranch Sauce"]
               }
@@ -1297,7 +1297,7 @@
             {
               "name": "BBQ Crunch Melt",
               "description": "Crispy, pickles, coleslaw, mayo, cheddar sauce, BBQ sauce",
-              "price": 6.5,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Pickles", "No Coleslaw", "No Mayo", "No Cheddar Sauce", "No BBQ Sauce"]
               }
