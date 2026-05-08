@@ -1318,7 +1318,7 @@
             {
               "name": "Hamburger",
               "description": "Patty, pickles, tomato, iceberg, mayo, ketchup",
-              "price": 5.5,
+              "price": 6,
               "customizations": {
                 "remove_options": ["No Pickles", "No Tomato", "No Iceberg", "No Mayo", "No Ketchup"]
               }
@@ -1326,7 +1326,7 @@
             {
               "name": "Cheese Burger",
               "description": "Patty, cheddar, pickles, tomato, iceberg, mayo, ketchup",
-              "price": 6,
+              "price": 6.5,
               "customizations": {
                 "remove_options": ["No Cheddar", "No Pickles", "No Tomato", "No Iceberg", "No Mayo", "No Ketchup"]
               }
@@ -1334,7 +1334,7 @@
             {
               "name": "Chicken Burger",
               "description": "Chicken, pickles, iceberg, mayo, garlic",
-              "price": 5.5,
+              "price": 6,
               "customizations": {
                 "remove_options": ["No Pickles", "No Iceberg", "No Mayo", "No Garlic"]
               }
@@ -1342,7 +1342,7 @@
             {
               "name": "Crispy Burger",
               "description": "Crispy chicken, pickles, iceberg, mayo, cocktail sauce",
-              "price": 5.5,
+              "price": 6,
               "customizations": {
                 "remove_options": ["No Pickles", "No Iceberg", "No Mayo", "No Cocktail Sauce"]
               }
@@ -1355,7 +1355,7 @@
             {
               "name": "Barbecue Crispy Wrap",
               "description": "Crispy chicken, iceberg, pickles, chips, mayo, BBQ",
-              "price": 6,
+              "price": 6.5,
               "customizations": {
                 "remove_options": ["No Iceberg", "No Pickles", "No Chips", "No Mayo", "No BBQ"]
               }
@@ -1363,7 +1363,7 @@
             {
               "name": "Spicy Crispy Wrap",
               "description": "Crispy chicken, iceberg, pickles, chips, mayo, spicy",
-              "price": 6,
+              "price": 6.5,
               "customizations": {
                 "remove_options": ["No Iceberg", "No Pickles", "No Chips", "No Mayo", "No Spicy"]
               }
@@ -1371,7 +1371,7 @@
             {
               "name": "Honey Mustard Crispy Wrap",
               "description": "Crispy chicken, iceberg, pickles, chips, mayo, honey mustard",
-              "price": 6,
+              "price": 6.5,
               "customizations": {
                 "remove_options": ["No Iceberg", "No Pickles", "No Chips", "No Mayo", "No Honey Mustard"]
               }
@@ -1379,7 +1379,7 @@
             {
               "name": "Submarine Bl Aajin",
               "description": "Mozzarella, salami, ham, iceberg, tomato, mayo, mustard",
-              "price": 6,
+              "price": 6.5,
               "customizations": {
                 "remove_options": ["No Salami", "No Ham", "No Iceberg", "No Tomato", "No Mayo", "No Mustard"]
               }
@@ -1387,7 +1387,7 @@
             {
               "name": "Djej w Jebne Bl Aajin",
               "description": "Chicken, mozzarella, garlic, pickles, iceberg, mayo",
-              "price": 6.5,
+              "price": 7,
               "customizations": {
                 "remove_options": ["No Garlic", "No Pickles", "No Iceberg", "No Mayo"]
               }
@@ -1395,7 +1395,7 @@
             {
               "name": "Chicken Quesadillas",
               "description": "Chicken, mozarella, cheddar, pepper, onion, corn (served with French Fries)",
-              "price": 8.5,
+              "price": 9.5,
               "customizations": {
                 "remove_options": ["No Mozzarella", "No Cheddar", "No Pepper", "No Onion", "No Corn"]
               }
@@ -1408,7 +1408,7 @@
             {
               "name": "Grilled Chicken Breast",
               "description": "4 pieces chicken breast, French fries, coleslaw or green salad",
-              "price": 9.5,
+              "price": 11,
               "customizations": {
                 "remove_options": ["No Coleslaw"]
               }
@@ -1416,7 +1416,7 @@
             {
               "name": "Hamburger Platter",
               "description": "2 patties, French fries, coleslaw or green salad",
-              "price": 9.5,
+              "price": 11,
               "customizations": {
                 "remove_options": ["No Coleslaw"]
               }
@@ -1424,7 +1424,7 @@
             {
               "name": "Cheese Burger Platter",
               "description": "2 patties, cheddar cheese, French fries, coleslaw or green salad",
-              "price": 10,
+              "price": 11.5,
               "customizations": {
                 "remove_options": ["No Cheddar Cheese", "No Coleslaw"]
               }
@@ -1432,7 +1432,7 @@
             {
               "name": "Chicken Burger Platter",
               "description": "2 chicken slices, French fries, coleslaw or green salad",
-              "price": 9.5,
+              "price": 11,
               "customizations": {
                 "remove_options": ["No Coleslaw"]
               }
@@ -1440,7 +1440,7 @@
             {
               "name": "Crispy Platter",
               "description": "Crispy chicken, French fries, coleslaw",
-              "price": 9,
+              "price": 10.5,
               "customizations": {
                 "remove_options": ["No Coleslaw"]
               }
@@ -1452,14 +1452,14 @@
           "items": [
             {
               "name": "Nutella Crêpe",
-              "price": 4,
+              "price": 5,
               "customizations": {
                 "add_options": ["Kinder (+$1.5)", "Lotus (+$1)", "Oreo (+$1)", "Strawberry (+$1)", "Banana (+$0.5)"]
               }
             },
             {
               "name": "Nutella Kaake", 
-              "price": 4,
+              "price": 5,
               "customizations": {
                 "add_options": ["Kinder (+$1.5)", "Lotus (+$1)", "Oreo (+$1)", "Strawberry (+$1)", "Banana (+$0.5)"]
               }
