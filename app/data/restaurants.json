@@ -2916,11 +2916,11 @@
           "items": [
             {
               "name": "Hommos (حمص)",
-              "price": 5
+              "price": 6
             },
             {
               "name": "Labne (لبنة)",
-              "price": 5
+              "price": 6
             },
             {
               "name": "Moutabbal (متبل)",
@@ -2928,15 +2928,19 @@
             },
             {
               "name": "Waraa Eenab (ورق عنب)",
-              "price": 5
+              "price": 6
             },
             {
               "name": "Jebneh (جبنة)",
-              "price": 5
+              "price": 6
+            },
+            {
+              "name": "Chmandar (شمندر)",
+              "price": 6
             },
             {
               "name": "Chanklich (شنكليش)",
-              "price": 5
+              "price": 6
             }
           ]
         },
@@ -2953,11 +2957,11 @@
             },
             {
               "name": "Fattouch (فتوش) - Medium",
-              "price": 7
+              "price": 8
             },
             {
               "name": "Fattouch (فتوش) - Large",
-              "price": 9
+              "price": 10
             },
             {
               "name": "Green Salad (حشايش) - Medium",
@@ -2970,7 +2974,7 @@
           "items": [
             {
               "name": "Lawha Naye (لوحة نية) - Large",
-              "price": 20
+              "price": 30
             },
             {
               "name": "Lahme Nayye (لحمة نية) - Small",
@@ -2990,7 +2994,7 @@
             },
             {
               "name": "Kebbe Nayye (كبة نية) - Large",
-              "price": 15
+              "price": 17
             },
             {
               "name": "Teble (تابلة نية) - Small",
@@ -3002,7 +3006,7 @@
             },
             {
               "name": "Teble (تابلة نية) - Large",
-              "price": 15
+              "price": 17
             },
             {
               "name": "Habra Nayye (هبرة نية) - Small",
@@ -3014,7 +3018,7 @@
             },
             {
               "name": "Habra Nayye (هبرة نية) - Large",
-              "price": 15
+              "price": 17
             }
           ]
         },
@@ -3023,11 +3027,11 @@
           "items": [
             {
               "name": "Taouk Sandwich (سندويش طاووق)",
-              "price": 6
+              "price": 7
             },
             {
               "name": "Kabab Sandwich (سندويش كباب)",
-              "price": 6
+              "price": 7
             },
             {
               "name": "Meat Sandwich (سندويش لحمة)",
@@ -3040,59 +3044,59 @@
           "items": [
             {
               "name": "French Fries (بطاطا مقلية) - Medium",
-              "price": 6
+              "price": 8
             },
             {
               "name": "French Fries (بطاطا مقلية) - Large",
-              "price": 8
+              "price": 10
             },
             {
               "name": "Mix Mouajanet 8 pcs (معجنات مشكلة) - Medium",
-              "price": 8
+              "price": 10
             },
             {
               "name": "Mix Mouajanet 8 pcs (معجنات مشكلة) - Large",
-              "price": 10
+              "price": 12
             },
             {
               "name": "Fried Kebbeh (كبة مقلية) - Medium",
-              "price": 8
+              "price": 10
             },
             {
               "name": "Fried Kebbeh (كبة مقلية) - Large",
-              "price": 10
+              "price": 12
             },
             {
               "name": "Meat Sambusek (سمبوسك لحمة) - Medium",
-              "price": 6
+              "price": 10
             },
             {
               "name": "Meat Sambusek (سمبوسك لحمة) - Large",
-              "price": 8
+              "price": 12
             },
             {
               "name": "Cheese Rakakat (رقاقات جبنة) - Medium",
-              "price": 6
+              "price": 10
             },
             {
               "name": "Cheese Rakakat (رقاقات جبنة) - Large",
-              "price": 8
+              "price": 12
             },
             {
               "name": "Makanek (مقانق)",
-              "price": 8
+              "price": 10
             },
             {
               "name": "Sojok (سجق)",
-              "price": 8
+              "price": 10
             },
             {
               "name": "Sawda (سودة)",
-              "price": 8
+              "price": 10
             },
             {
               "name": "Hommos Bl Lahme (حمص بالحمة)",
-              "price": 10
+              "price": 12
             },
             {
               "name": "Ras 3asfour (راس عصفور) - Small",
@@ -3114,79 +3118,79 @@
             },
             {
               "name": "Mixed Grill Platter - Medium",
-              "price": 21
+              "price": 25
             },
             {
               "name": "Mixed Grill Platter - Large",
-              "price": 40
+              "price": 45
             },
             {
               "name": "Lahme (لحم مشوي غنم) - Small",
-              "price": 13
+              "price": 15
             },
             {
               "name": "Lahme - Medium",
-              "price": 26
+              "price": 35
             },
             {
               "name": "Lahme - Large",
-              "price": 50
+              "price": 60
             },
             {
               "name": "Kafta (كفتة مشوية) - Small",
-              "price": 10
+              "price": 12
             },
             {
               "name": "Kafta - Medium",
-              "price": 21
+              "price": 25
             },
             {
               "name": "Kafta - Large",
-              "price": 40
+              "price": 45
             },
             {
               "name": "Kabab Halabi (كباب حلبي) - Small",
-              "price": 10
+              "price": 12
             },
             {
               "name": "Kabab Halabi - Medium",
-              "price": 21
+              "price": 25
             },
             {
               "name": "Kabab Halabi - Large",
-              "price": 40
+              "price": 45
             },
             {
               "name": "Tawook (طاووق مشوي) - Small",
-              "price": 10
+              "price": 12
             },
             {
               "name": "Tawook - Medium",
-              "price": 21
+              "price": 25
             },
             {
               "name": "Tawook - Large",
-              "price": 40
+              "price": 45
             },
             {
               "name": "Grilled Chicken (دجاج مشوي)",
-              "price": 10
+              "price": 12
             },
             {
               "name": "Grilled Chicken - Large",
-              "price": 18
+              "price": 20
             },
             {
               "name": "Keres Bl Chahme (قرص بالشحمة) - Small",
-              "price": 7
+              "price": 8
             },
             {
               "name": "Keres Bl Lahme (قرص باللحمة) - Small",
-              "price": 9
+              "price": 10
             },
             {
               "name": "Meat Arayes (عرايس) - Small",
-              "price": 10
+              "price": 12
             }
           ]
         },
@@ -3194,7 +3198,11 @@
           "name": "Cold Beverages (مشروب)",
           "items": [
             {
-              "name": "Water",
+              "name": "Water Small",
+              "price": 1
+            },
+            {
+              "name": "Water Big",
               "price": 2
             },
             {
@@ -3215,11 +3223,19 @@
             },
             {
               "name": "Beer Light",
-              "price": 3.5
+              "price": 3
             },
             {
               "name": "Mexican Beer",
-              "price": 3.5
+              "price": 4
+            },
+            {
+              "name": "Perrier",
+              "price": 3
+            },
+            {
+              "name": "Juice",
+              "price": 3
             }
           ]
         },
@@ -6749,7 +6765,7 @@
             },
             {
               "name": "Mexican Beer",
-              "price": 3.5
+              "price": 4
             },
             {
               "name": "Arak (Glass/1/4/1/2/Bottle)",
